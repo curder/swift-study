@@ -38,7 +38,7 @@ let v: Int = Int(3.1) // 3
 ```
 
 ### CGFloat 浮点型
-使用 UIColor 画一个库。
+使用 UIColor 画一个颜色。
 ```
 import UIKit
 
