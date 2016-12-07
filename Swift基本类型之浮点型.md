@@ -39,13 +39,13 @@ let v: Int = Int(3.1) // 3
 
 ### CGFloat 浮点型
 ```
+
 let red: CGFloat = 0.1
 let green: CGFloat = 0.2
 let blue: CGFloat = 0.8
 
 
 UIColor(red:red,green:green,blue:blue,alpha:1.0)
-
 ```
 
 ### 整型与浮点数的运算
