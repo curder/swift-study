@@ -37,6 +37,17 @@ let v: Int = 3.1 // cannot convert value of type 'Double' to specified type 'Int
 let v: Int = Int(3.1) // 3
 ```
 
+### CGFloat 浮点型
+```
+let red: CGFloat = 0.1
+let green: CGFloat = 0.2
+let blue: CGFloat = 0.8
+
+
+UIColor(red:red,green:green,blue:blue,alpha:1.0)
+
+```
+
 ### 整型与浮点数的运算
 ```
 let integer = 3
