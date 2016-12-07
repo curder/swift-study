@@ -35,7 +35,7 @@ var name: String = "zhang"
 
 #### 输出
 
-
+可以使用`print(_:)` 函数输出常量或者变量。
 
 
 
