@@ -46,7 +46,12 @@ let maxInt: UInt = 1844
 ```
 let x = 1 , y = true , z = 3
 print( x , y , z )
-print( x , y , z , separator:"-") // 自定义分隔符(默认为空格) 结果为：`1-true-3`
+```
+
+#### 自定义分隔符(默认为空格) 
+```
+print( x , y , z , separator:"-") // 结果为：`1-true-3`
+```
 
 print( x , y , z , separator:"-",terminator:":)") // 自定义结束符(默认为 \n ) 1-true-3:)
 ```
