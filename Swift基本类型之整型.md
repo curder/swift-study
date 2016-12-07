@@ -89,4 +89,16 @@ let hexInt:Int = 0xa
 ```
 let bigNum = 100_0000 // 1000000
 ```
+### Swift 不允许隐式的类型转换
 
+这种机制能有效的减少潜在Bug的出现，也表明 Swift 是一门强类型语言。
+
+```
+let x: UInt16 = 10
+let y: UInt8 = 20
+
+x + y // binary operator '+' cannot be applied to operands of type 'UInt16' and 'UInt8'
+
+let m = x + UInt16(y)
+let n = UInt8(x) + y
+```
