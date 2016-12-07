@@ -43,16 +43,11 @@ let maxInt: UInt = 1844
 
 #### 输出
 
-可以使用`print(_:)` 函数输出常量或者变量的值。
-
-　　Swift 用字符串插值（string interpolation）的方式把常量名或者变量名当做占位符加入到长字符串中，Swift 会用当前常量或变量的值替换这些占位符。将常量或变量名放入圆括号中，并在开括号前使用反斜杠将其转义：
-
+// 字符串插值
+Swift 用字符串插值（string interpolation）的方式把常量名或者变量名当做占位符加入到长字符串中，Swift 会用当前常量或变量的值替换这些占位符。将常量或变量名放入圆括号中，并在开括号前使用反斜杠将其转义：
 ```
-let friendlyWelcome = "Bonjour!"
-print("The current value of friendlyWelcome is \(friendlyWelcome)")
-// 输出 "The current value of friendlyWelcome is Bonjour!
+print("\(x) * \(z) = \(x * z)") // 1 * 3 = 3
 ```
-
 #### 注释
 
 * 单行注释 
