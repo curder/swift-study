@@ -47,9 +47,9 @@ print("The current value of friendlyWelcome is \(friendlyWelcome)")
 // 输出 "The current value of friendlyWelcome is Bonjour!
 ```
 
+#### 注释
 
-
-
+单行注释 `//`
 
 
 
