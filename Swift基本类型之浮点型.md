@@ -20,3 +20,27 @@ var b = 1.00_0000_0001 // 1.0000000001
 ```
 
 ### 在浮点型运算中 Swift 不允许隐式的类型转换
+```
+let a: Double = 2.1
+let b: Float = 1.1
+
+a + b // binary operator '+' cannot be applied to operands of type 'Double' and 'Float'
+
+let x = a + Double(b) // 3.20000002384186
+
+let y = Float(a) + b // 3.2
+```
+```
+let w: Float = 3
+let v: Int = 3.1 // cannot convert value of type 'Double' to specified type 'Int'
+
+let v: Int = Int(3.1) // 3
+```
+
+### 整型与浮点数的运算
+```
+let integer = 3
+let fraction = 0.1415926
+
+print(Double(integer) + fraction) // 3.1415926
+```
