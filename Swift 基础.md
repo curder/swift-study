@@ -49,10 +49,14 @@ print("The current value of friendlyWelcome is \(friendlyWelcome)")
 
 #### 注释
 
-单行注释 `//`
+* 单行注释 `//`
 
-
-
+* 多行注释
+```
+/*
+这是一个多行注释
+*/
+```
 
 
 
