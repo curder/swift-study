@@ -32,3 +32,10 @@ point.1
 var ( statusCode , statusMessage ) = httpResponse // 分别得到 statusCode 的值为 200 , statusMessage 的值为 OK
 ```
 
+### 获取元组中部分单元的值
+　　使用 `_` 忽略一些不感兴趣的值。
+```
+let loginResult: ( isLoginSuccess: Bool , userName: String , loginTime: Int ) = ( true , "curder" , 1481101192 )
+
+let ( _ , userName , _ ) = loginResult // 常量 userName 的值为 `curder`
+```
