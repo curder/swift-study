@@ -39,6 +39,7 @@ let v: Int = Int(3.1) // 3
 
 ### CGFloat 浮点型
 ```
+import UIKit
 
 let red: CGFloat = 0.1
 let green: CGFloat = 0.2
