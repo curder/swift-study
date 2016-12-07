@@ -5,3 +5,4 @@
     * [Swift基本类型之浮点型](Swift基本类型之浮点型.md)
     * [Swift 基本类型之布尔类型以及简单的 if 语句](Swift 基本类型之布尔类型以及简单的 if 语句.md)
     * [Swift 基础类型之元组](Swift 基础类型之元组.md)
+    * [Swift 基本类型之其他](Swift 基本类型之其他.md)
