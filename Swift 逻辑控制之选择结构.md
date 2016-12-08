@@ -41,6 +41,28 @@ default:
 > 2.  `switch` 语句必须写 `default`
 
 #### switch 的一些其他用法
+```
+let score = 9
+
+switch score {
+case 1..<60:
+    print("You got an egg!")
+case 60:
+    print("Juse passed")
+case 61 ..< 80:
+    print("Just so so!")
+case 80 ..< 90:
+    print("Good!")
+case 90 ..< 100:
+    print("Great!")
+case 100:
+    print("Perfect!")
+default:
+    print("Error.")
+}
+```
+
+
 
 
 
