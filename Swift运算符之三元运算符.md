@@ -2,7 +2,7 @@
 
 
 ```
-? : 
+question ? answer1 : answer2
 ```
 
 
