@@ -61,9 +61,9 @@ repeat {
 
 ### break 与 continue
 
-break 结束当前循环体
+* break 结束当前循环体
 
-continue 结束当前循环继续下一次循环
+* continue 结束当前循环继续下一次循环
 
 
 
