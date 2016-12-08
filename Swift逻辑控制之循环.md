@@ -47,7 +47,7 @@ while condition {
 
 
 
-### repeate 循环
+### repeate while 循环
 
 
 
