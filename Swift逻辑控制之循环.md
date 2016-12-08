@@ -20,8 +20,12 @@ result // 1024
 
 ### for 循环
 
-
-
+语法结构：
+```
+for initialization; condition; increments {
+	statements
+}
+```
 
 
 
