@@ -32,7 +32,12 @@ for initialization; condition; increments {
 > 2. 必须使用 `{}` 包含循环语句体。
 > 3. 在 Swift 3 中这种写法已经被取消了。
 
+### while 循环
 
+
+
+
+### repeate 循环
 
 
 
