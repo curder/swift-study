@@ -13,10 +13,16 @@ for c in str.characters{
 }
 ```
 
-#### 
+#### å­—ç¬¦ Character
+```
+let englishChar: Character = "a"
 
+let chineseChar: Character = "ä¸­"
 
+let smile: Character = "í ¾í´—"
 
+let coolGuy: Character = "\u{1F60E}"
+```
 
 
 
