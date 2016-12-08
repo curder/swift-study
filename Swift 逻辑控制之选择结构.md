@@ -63,7 +63,20 @@ default:
 }
 ```
 
-
+##### 判断元组
+```
+let vector = (0,1)
+switch vector {
+case (0,0):
+    print("It is origin!")
+case (_,0):
+    print("It is on the x-axis")
+case (0,_):
+    print("It is on the y-axis")
+default:
+    print("It is just an ordinary point")
+}
+```
 
 
 
