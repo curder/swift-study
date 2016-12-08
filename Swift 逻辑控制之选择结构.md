@@ -38,8 +38,8 @@ default:
 
 > **注意：**
 > 1. 和其他语言的语法不同的是，`switch`	不强制需要在每次执行完 `case` 中的语句后的写 `break` 。
-> 2.  `switch` 语句必须写 `default`
-> 3. 如果运行完一个 `case` 语句后想继续运行下一个 `case` 语句，请添加 `falltrough` 关键字
+> 2.  `switch` 语句必须写 `default`。
+> 3. 如果运行完一个 `case` 语句后想继续运行下一个 `case` 语句，请添加 `falltrough` 关键字。
 
 #### switch 的一些其他用法
 ##### 判断范围
