@@ -44,6 +44,18 @@ default:
 #### switch 的一些其他用法
 
 ##### where 与匹配模式
+```
+switch some value to consider {
+case value1:
+    respond to value1
+case value2 where condition:
+    respond to value2
+case value3:
+    respond to value3
+default:
+    otherwise,do something else
+}
+```
 
 
 ##### 判断范围
