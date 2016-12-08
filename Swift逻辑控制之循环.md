@@ -47,11 +47,15 @@ while condition {
 
 
 
-### repeate while 循环
+### repeat while 循环
 
-
-
-
+```
+initialization
+repeat {
+	statements
+    increments
+}while condition
+```
 
 
 
