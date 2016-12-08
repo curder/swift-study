@@ -12,7 +12,8 @@ let hello = String("Hello")
 * 空字符串声明
 
 ```
-
+var emptyString = ""
+var emptyStr = String()
 ```
 
 
