@@ -34,6 +34,16 @@ for initialization; condition; increments {
 
 ### while 循环
 
+```
+initialization
+while condition {
+	statements
+    increments
+}
+
+
+```
+
 
 
 
