@@ -41,6 +41,7 @@ default:
 > 2.  `switch` 语句必须写 `default`
 
 #### switch 的一些其他用法
+##### 判断范围
 ```
 let score = 9
 
