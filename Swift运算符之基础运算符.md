@@ -8,7 +8,7 @@
 
 ```
 var a = 2
-if a = 2 { // 
+if a = 2 { // use of '=' in a boolean context, did you mean '=='?
     
 }
 ```
