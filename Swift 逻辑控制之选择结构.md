@@ -21,8 +21,10 @@ if condition1 {
 switch <#value#> {
 case <#pattern#>:
     <#code#>
+
 case <#pattern2#>:
     <#code2#>
+
 default:
     <#code#>
 }
