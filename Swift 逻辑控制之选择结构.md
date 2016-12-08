@@ -15,8 +15,16 @@ if condition1 {
 > 2. 必须使用 `{}` 包含循环语句体。
 
 
+### switch - case - default
 
-
+```
+switch <#value#> {
+case <#pattern#>:
+    <#code#>
+default:
+    <#code#>
+}
+```
 
 
 
