@@ -16,7 +16,7 @@ if condition1 {
 
 
 ### switch - case - default
-
+语法如下
 ```
 switch <#value#> {
 
