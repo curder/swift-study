@@ -21,7 +21,7 @@ let chineseChar: Character = "ä¸­"
 
 let smile: Character = "í ¾í´—"
 
-let coolGuy: Character = "\u{1F60E}"
+let coolGuy: Character = "\u{1F60E}" // ä¸€ä¸ªé…·è„¸çš„è¡¨æƒ…
 ```
 
 
