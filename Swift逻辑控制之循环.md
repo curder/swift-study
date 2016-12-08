@@ -27,6 +27,9 @@ for initialization; condition; increments {
 }
 ```
 
+> **注意：** 
+> 1. `for` 循环的表达式不强制使用 `()`扩起来。
+> 2. 必须使用 `{}` 包含循环语句体。
 
 
 
