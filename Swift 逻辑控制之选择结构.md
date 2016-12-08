@@ -19,6 +19,7 @@ if condition1 {
 
 ```
 switch <#value#> {
+
 case <#pattern#>:
     <#code#>
 
