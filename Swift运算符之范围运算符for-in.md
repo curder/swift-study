@@ -8,9 +8,16 @@
 | `a..<b` | 相当于数学里的`[a,b)` | 前闭后开运算符 |
 
 
+```
+for index in 1...10 {
+    index
+}
 
 
-
+for index in 0 ..< 10 {
+    index
+}
+```
 
 
 
