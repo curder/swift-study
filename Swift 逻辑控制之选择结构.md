@@ -102,7 +102,7 @@ case ( 0 , let y ):
     print("The y value is \(y)")
 case ( let x , let y ):
     print("It is just an ordinary point.")
-    print("The point is ( \(x) ,\(y) )")
+    print("The point is (\(x),\(y))")
 }
 ```
 
