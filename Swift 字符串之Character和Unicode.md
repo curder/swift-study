@@ -24,10 +24,13 @@ let smile: Character = "������"
 let coolGuy: Character = "\u{1F60E}" // 一个酷脸的表情
 ```
 
-
-
-
-
+### 字符串长度
+```
+let str: String = "abcdefg"
+let str2: String = "\u{1F60E}\u{1F60E}\u{1F60E}"
+str.characters.count // 7
+str2.characters.count // 3
+```
 
 
 
