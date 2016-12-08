@@ -26,5 +26,10 @@ str.isEmpty // 返回 false
 ### 字符串插值
 
 ```
+let name = "curder"
+let age = 25
+let height = 178
 
+
+let str = "My name is \(name). I am \(age) years old. I am \(height) meters tall." // My name is curder. I am 25 years old. I am 178 meters tall.
 ```
