@@ -64,9 +64,11 @@ default:
 ```
 
 ##### 判断元组
+
+判断一个点在那个位置，比如 如果横座标是 0 ，那么我们就认为是在 x 轴座标上。
 ```
-let vector = (0,1)
-switch vector {
+let point = (0,1)
+switch point {
 case (0,0):
     print("It is origin!")
 case (_,0):
