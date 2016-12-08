@@ -84,8 +84,22 @@ default:
 }
 ```
 
+##### 判断并赋值
+```
+let point: ( x: Int , y: Int ) = ( 1 , 0 )
 
-
-
-
+switch point {
+case ( 0 , 0 ) :
+    print("It is origin!")
+case ( let x ,0 ) :
+    print("It is on the x-axis.")
+    print("The x value is \(x)")
+case ( 0 , let y ):
+    print("It is on the y-axis.")
+    print("The y value is \(y)")
+case ( let x , let y ):
+    print("It is just an ordinary point.")
+    print("The point is ( \(x) ,\(y) )")
+}
+```
 
