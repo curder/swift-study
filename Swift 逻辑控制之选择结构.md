@@ -44,6 +44,7 @@ default:
 #### switch 的一些其他用法
 
 ##### where 与匹配模式
+语法如下
 ```
 switch some value to consider {
 case value1:
