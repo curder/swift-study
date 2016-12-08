@@ -8,7 +8,7 @@
         * [Swift 基本类型之其他](Swift 基本类型之其他.md)
     * [Swift 运算符](Swift 运算符.md)
         * [Swift 运算符之基础运算符](Swift 运算符之基础运算符.md)
-        * [Swift运算符之比较运算符、逻辑运算符](Swift运算符之比较运算符、逻辑运算符.md)
+        * [Swift 运算符之比较运算符、逻辑运算符](Swift 运算符之比较运算符、逻辑运算符.md)
         * [Swift运算符之三元运算符](Swift运算符之三元运算符.md)
         * [Swift运算符之范围运算符for-in](Swift运算符之范围运算符for-in.md)
     * [Swift 逻辑控制](Swift逻辑控制.md)
