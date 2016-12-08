@@ -16,3 +16,4 @@
         * [Swift 逻辑控制之选择结构](Swift 逻辑控制之选择结构.md)
     * [Swift 字符串](Swift 字符串.md)
         * [Swift 字符串之Character和Unicode](Swift 字符串之Character和Unicode.md)
+        * [Swift 字符串之 String.index 和 range](Swift 字符串之 String.index 和 range.md)
