@@ -48,7 +48,7 @@ while condition {
 
 
 ### repeat while 循环
-
+　　至少执行一次的循环。
 ```
 initialization
 repeat {
