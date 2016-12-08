@@ -40,5 +40,5 @@ str.insert("?", at: str.endIndex)
 str.remove(at: str.index(before: endIndex))
 
 // 反向截取（改变原字符串）
-str.removeSubrange(str.index(endIndex, offsetBy: -2)..<str.endIndex)
+str.removeSubrange(str.index(endIndex, offsetBy: -2) ..< str.endIndex)
 ```
