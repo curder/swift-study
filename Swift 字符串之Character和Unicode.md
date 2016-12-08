@@ -33,6 +33,9 @@ let str3: String = "中华人们共和国"
 str.characters.count // 7
 str2.characters.count // 3
 str3.characters.count // 7
+
+var cafe = "cafe\u{0301}"
+cafe.characters.count // 4
 ```
 
 
