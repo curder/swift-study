@@ -15,7 +15,7 @@ var power = 10
 for _ in 1...power {
     result *= base
 }
-result
+result // 1024
 ```
 
 
