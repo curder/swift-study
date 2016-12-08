@@ -67,7 +67,7 @@ print( x , y , z , separator:"-") // 结果为：`1-true-3`
 print( x , y , z , separator:"-",terminator:":)") // 结果为：1-true-3:)
 ```
 
-#### 字符串插值
+##### 字符串插值
 　　Swift 用字符串插值（string interpolation）的方式把常量名或者变量名当做占位符加入到长字符串中，Swift 会用当前常量或变量的值替换这些占位符。将常量或变量名放入圆括号中，并在开括号前使用反斜杠将其转义：
 
 ```
