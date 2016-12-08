@@ -68,20 +68,21 @@ default:
 判断一个点在那个位置，比如 如果横坐标是 0 ，那么我们就认为是在 x 轴坐标上。
 
 ```
-let point: (x: Int , y: Int) = ( 0 , 1 )
+let point: ( x: Int , y: Int ) = ( 0 , 1 )
 
 switch point {
-case (0,0):
+case ( 0 , 0 ):
     print("It is origin!")
-case (_,0):
+case ( _ , 0 ):
     print("( \(point.x),\(point.y) ) is on the x-axis")
-case (0,_):
+case ( 0 , _ ):
     print("( \(point.x),\(point.y) ) is on the y-axis")
 case ( -2...2 , -2...2 ):
     print("( \(point.x),\(point.y) ) is near the origin.")
 default:
     print("It is just an ordinary point")
 }
+
 ```
 
 
