@@ -12,8 +12,9 @@
 for index in 1...10 {
     index
 }
+```
 
-
+```
 for index in 0 ..< 10 {
     index
 }
