@@ -40,8 +40,6 @@ while condition {
 	statements
     increments
 }
-
-
 ```
 
 
