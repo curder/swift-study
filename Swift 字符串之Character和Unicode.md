@@ -28,8 +28,11 @@ let coolGuy: Character = "\u{1F60E}" // 一个酷脸的表情
 ```
 let str: String = "abcdefg"
 let str2: String = "\u{1F60E}\u{1F60E}\u{1F60E}"
+let str3: String = "中华人们共和国"
+
 str.characters.count // 7
 str2.characters.count // 3
+str3.characters.count // 7
 ```
 
 
