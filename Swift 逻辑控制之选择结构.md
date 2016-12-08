@@ -42,6 +42,10 @@ default:
 > 3. 如果运行完一个 `case` 语句后想继续运行下一个 `case` 语句，请添加 `falltrough` 关键字。
 
 #### switch 的一些其他用法
+
+##### where 与匹配模式
+
+
 ##### 判断范围
 ```
 let score = 9
