@@ -18,7 +18,7 @@ for _ in 1...power {
 result // 1024
 ```
 
-
+### for 循环
 
 
 
