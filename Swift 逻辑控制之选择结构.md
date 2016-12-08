@@ -86,8 +86,6 @@ default:
 
 ##### 判断并赋值
 
-判断并赋值
-
 ```
 let point: ( x: Int , y: Int ) = ( 1 , 0 )
 
