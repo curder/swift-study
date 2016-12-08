@@ -3,7 +3,11 @@
 ### 遍历字符串
 
 ```
+var str = "Hello,playground"
 
+for c in str.characters{
+    print(c)
+}
 ```
 
 
