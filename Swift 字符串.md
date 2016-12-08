@@ -19,7 +19,8 @@ var emptyStr = String()
 ### 字符串成员变量 isEmpty
 
 ```
-
+let str = "String"
+str.isEmpty // 返回 false
 ```
 
 
