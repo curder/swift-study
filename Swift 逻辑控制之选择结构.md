@@ -82,7 +82,6 @@ case ( -2...2 , -2...2 ):
 default:
     print("It is just an ordinary point")
 }
-
 ```
 
 
