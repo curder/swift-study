@@ -17,7 +17,7 @@ if a = 2 { // use of '=' in a boolean context, did you mean '=='?
 
 |  运算符  |  举例  |  作用  |
 |--|--|--|
-| `+` | `a + b` | |
+| `+` | `a + b` |  |
 | `-` | `a - b` |  |
 | `*` | `a * b` |  |
 | `/` | `a / b` |  |
