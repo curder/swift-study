@@ -57,6 +57,24 @@ default:
     otherwise,do something else
 }
 ```
+具体例子如下
+```
+let point: ( x: Int , y: Int ) = ( 1 , 1 )
+
+switch point {
+case let ( x , y ) where x == y :
+    print("It is on the line x == y!")
+    print("The point is (\(x),\(y))")
+
+case let ( x , y ) where x == -y :
+    print("It is on the line x == -y!")
+    print("The point is (\(x),\(y))")
+
+case let ( x , y ):
+    print("It is just an ordinary point.")
+    print("The point is (\(x),\(y))")
+}
+```
 
 
 ##### 判断范围
