@@ -59,7 +59,7 @@ repeat {
 }while condition
 ```
 
-### break 与 continue
+### break 与 continue 控制转移
 
 * break 立即结束当前循环
 
