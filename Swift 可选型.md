@@ -192,7 +192,9 @@ var error3: ( errorCode: Int , errorMessage: String? )? = ( 404 , "Not Found" )
 ```
 
 ### 可选型的一些实际应用
+
 #### 获取用户输入的年龄
+
 ```
 var ageInput: String = "19"
 
@@ -204,6 +206,7 @@ if let age = age , age < 20 {
 ```
 
 #### 字符串字串范围
+
 ```
 var str = "Hello"
 
