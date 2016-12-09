@@ -35,6 +35,8 @@ print("\(x) -- \(y)") // 输出：nil -- 10
 #### 更好的解决方案
 　　解包前对数据进行判断，如果不等于 `nil` 则进行解包操作。
 ```
+var errorCode: String? = "404"
+
 if errorCode != nil{
     "The errorCode is " + errorCode!
 }else{
@@ -43,6 +45,8 @@ if errorCode != nil{
 ```
 还可以给解包的值使用 `if let` 语句进行赋值。
 ```
+var errorCode: String? = "404"
+
 
 ```
 
