@@ -41,7 +41,7 @@ if errorCode != nil{
     "No Error"
 }
 ```
-
+还可以给解包的值使用 `if let` 语句进行赋值。
 
 
 
