@@ -67,7 +67,7 @@ if let errorCode = errorCode{
 ```
 > 这种解包方式只能在 `{}` 中访问 `errorCode` 常量。
 
-
+#### 一次性解包多个变量的情况
 
 
 
