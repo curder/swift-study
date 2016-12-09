@@ -163,8 +163,6 @@ let message2: String = ( errorMessage != nil ) ? errorMessage! : "no error"
 let message3 = errorMessage ?? "no error"
 ```
 
-[TOC]
-
 ### 可选型在元组中的使用
 
 
