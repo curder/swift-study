@@ -8,8 +8,7 @@
 var x : Int?
 var y : Int
 y = 10
-print("\(x) -- \(y)")
-// 输出：nil -- 10
+print("\(x) -- \(y)") // 输出：nil -- 10
 ```
 
 
