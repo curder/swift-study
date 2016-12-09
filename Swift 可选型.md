@@ -139,7 +139,7 @@ if let errorMessage = errorMessage?.uppercased() {
     errorMessage
 }
 ```
-// 上面的写法将解包和调用操作以及赋值基于一体，使逻辑更加清晰，减少代码的出错率
+> 上面的写法将解包和调用操作以及赋值基于一体，使逻辑更加清晰，减少代码的出错率。
 
 
 
