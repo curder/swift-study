@@ -55,6 +55,8 @@ if let upwrappedErrorCode = errorCode{
 ```
 也可以将上面的常量 `upwrappedErrorCode` 允许使用和 `errorCode` 一致的名称。
 ```
+var errorCode: String? = "404"
+
 if let errorCode = errorCode{
     "The errorCode is " + errorCode
 }else{
