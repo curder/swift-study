@@ -87,6 +87,7 @@ if let errorCode = errorCode {
 ```
 
 还可以新增一些判断条件，如下：
+解包两个可选型，并判断 `errorCode` 的值是否等于 404 。
 ```
 if let errorCode = errorCode , let errorMessage = errorMessage , errorCode == "404" {
     "page not found"
