@@ -100,7 +100,7 @@ if let errorCode = errorCode , let errorMessage = errorMessage , errorCode == "4
 }
 ```
 
-### 可选型 Chaining
+#### 可选型 Chaining
 
 ```
 var errorMessage: String? = "Not Found"
@@ -137,7 +137,7 @@ if let errorMessage = errorMessage?.uppercased() {
 ```
 > 上面的写法将解包和调用操作以及赋值基于一体，使逻辑更加清晰，减少代码的出错率。
 
-### 可选型 Nil-Coalesce
+#### 可选型 Nil-Coalesce
 
 　　如下需求： `message` 变量的值待定，如果 `errorMessage` 可选型的值不等于 `nil` 时，变量 `message` 的值将等于 `errorMessage` 可选型解包后的值，否则将被赋值为 `no error`
 ```
@@ -163,7 +163,9 @@ let message2: String = ( errorMessage != nil ) ? errorMessage! : "no error"
 let message3 = errorMessage ?? "no error"
 ```
 
+[TOC]
 
+### 
 
 
 
