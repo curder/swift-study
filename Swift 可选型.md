@@ -190,3 +190,28 @@ error2 = nil // 这样操作是允许的
 ```
 var error3: ( errorCode: Int , errorMessage: String? )? = ( 404 , "Not Found" )
 ```
+
+### 可选型的一些实际应用
+#### 获取用户输入的年龄
+```
+var ageInput: String = "19"
+
+var age = Int( ageInput ) // 将用户输入强制转换成整型
+
+if let age = age , age < 20 {
+    print("You're a teenager!")
+}
+```
+
+#### 字符串字串范围
+```
+var greetings = "Hello"
+
+greetings.range(of: "o") // `4..<5`
+greetings.range(of: "is") // `nil`
+```
+
+
+
+
+
