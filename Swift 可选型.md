@@ -166,17 +166,27 @@ let message3 = errorMessage ?? "no error"
 ### 可选型在元组中的使用
 
 
+// 将元组中的某个单元设置为可选型
+```
+var error: ( errorCode: Int , errorMessage: String? ) = ( 404 , "Not Found" )
 
+print(error) // (404, Optional("Not Found"))
 
+error.errorMessage = nil // 将元组的第一个分量设置为 `nil`
 
+print(error) // (404, nil)
+```
 
+#### 将整个元组设置为可选型
+```
+var error2: ( errorCode: Int , errorMessage: String )? = ( 404 , "Not Found" )
 
+// error2.errorMessage = nil // 这样设置会报错
 
+error2 = nil // 这样操作是允许的
+```
 
-
-
-
-
-
-
-
+#### 将元组中的某个值以及整个元组都设置为可选型
+```
+var error3: ( errorCode: Int , errorMessage: String? )? = ( 404 , "Not Found" )
+```
