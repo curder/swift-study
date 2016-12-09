@@ -63,7 +63,7 @@ if let errorCode = errorCode{
     "No Error"
 }
 ```
-
+> 这种解包方式只能在 `{}` 中访问 `errorCode` 常量。
 
 
 
