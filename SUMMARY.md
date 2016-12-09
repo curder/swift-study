@@ -18,6 +18,6 @@
         * [Swift 字符串之Character和Unicode](Swift 字符串之Character和Unicode.md)
         * [Swift 字符串之 String.index 和 range](Swift 字符串之 String.index 和 range.md)
     * [Swift 可选型](Swift 可选型.md)
-    * [Swift 数组](Swift 数组.md)
+    * [Swift 容器类](Swift 容器类.md)
         * [Swift 数组之初始化](Swift 数组之初始化.md)
         * [Swift 数组之基本操作](Swift 数组之基本操作.md)
