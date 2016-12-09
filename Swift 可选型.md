@@ -205,10 +205,10 @@ if let age = age , age < 20 {
 
 #### 字符串字串范围
 ```
-var greetings = "Hello"
+var str = "Hello"
 
-greetings.range(of: "o") // `4..<5`
-greetings.range(of: "is") // `nil`
+str.range(of: "o") // 4..<5
+str.range(of: "is") // nil
 ```
 
 
