@@ -23,8 +23,10 @@ print("\(x) -- \(y)") // 输出：nil -- 10
 
 ### 可选型的取值
 
-
-
+#### 使用`!`进行强制解包
+```
+"The errorCode is " + errorCode! // The errorCode is 404
+```
 
 
 
