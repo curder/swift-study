@@ -19,3 +19,4 @@
         * [Swift 字符串之 String.index 和 range](Swift 字符串之 String.index 和 range.md)
     * [Swift 可选型](Swift 可选型.md)
     * [Swift 数组](Swift 数组.md)
+        * [Swift 数组之初始化](Swift 数组之初始化.md)
