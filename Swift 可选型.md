@@ -214,7 +214,7 @@ str.range(of: "o") // 4..<5
 str.range(of: "is") // nil
 ```
 
-
+### 隐式可选型
 
 
 
