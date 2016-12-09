@@ -82,4 +82,4 @@ var oneToFive2 = [1,2,4,3,5]
 numbers == oneToFive
 ```
 
-## 数组的增删改稍作
+## 数组的增删改操作
