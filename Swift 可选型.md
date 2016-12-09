@@ -86,9 +86,13 @@ if let errorCode = errorCode {
 }
 ```
 
+还可以新增一些判断条件，如下：
+```
+if let errorCode = errorCode , let errorMessage = errorMessage , errorCode == "404" {
+    "page not found"
+}
 
-
-
+```
 
 
 
