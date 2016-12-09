@@ -5,6 +5,7 @@ var numbers = [1,2,3,4,5]
 var vowels = ["A","E","I","O","U"]
 var emptyArray = [Int]()
 ```
+## 数据查找
 ### 获取数组元素个数
 ```
 vowels.count
