@@ -141,6 +141,27 @@ if let errorMessage = errorMessage?.uppercased() {
 ```
 > 上面的写法将解包和调用操作以及赋值基于一体，使逻辑更加清晰，减少代码的出错率。
 
+　　如下需求： `message` 变量的值待定，如果 `errorMessage` 可选型的值不等于 `nil` 时，变量 `message` 的值将等于 `errorMessage` 可选型解包后的值，否则将被赋值为 `no error`
+```
+var errorMessage: String? = nil
 
+let message: String
 
+if let errorMessage = errorMessage {
+    message = errorMessage
+}else{
+    message = "no error"
+}
+```
+
+我们可以使用三元运算符进行改写（返回可选型解包后的值）
+
+```
+let message2: String = ( errorMessage != nil ) ? errorMessage! : "no error"
+```
+
+也可以使用 Swift 更简洁的方法（返回可选型解包后的值）
+```
+let message3 = errorMessage ?? "no error"
+```
 
