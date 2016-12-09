@@ -45,6 +45,7 @@ if errorCode != nil{
     "No Error"
 }
 ```
+
 ####  `if-let` 解包
 
 还可以给解包的值使用 `if let` 语句进行赋值。
@@ -59,6 +60,7 @@ if let upwrappedErrorCode = errorCode{
 ```
 
 #### 可以使用相同的变量名
+
 也可以将上面的常量 `upwrappedErrorCode` 允许使用和 `errorCode` 一致的名称。
 ```
 var errorCode: String? = "404"
@@ -97,14 +99,3 @@ if let errorCode = errorCode , let errorMessage = errorMessage , errorCode == "4
     "page not found"
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
