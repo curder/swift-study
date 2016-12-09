@@ -29,7 +29,7 @@ print("\(x) -- \(y)") // 输出：nil -- 10
 ```
 "The errorCode is " + errorCode! // The errorCode is 404
 ```
-> **注意：** 这种写法实在明确知道了可选型不等于 `nil` 的情况下使用。
+> **注意：** 这种写法实在明确知道了可选型不等于 `nil` 的情况下使用。如果可选型的值为 `nil` 则会抛出 **fatal error** 致命错误。
 
 
 
