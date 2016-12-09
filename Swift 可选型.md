@@ -104,15 +104,16 @@ if let errorCode = errorCode , let errorMessage = errorMessage , errorCode == "4
 [TOC]
 ### 可选型
 
-var errorMessage: String? = "Not Found"
 
 　　虽然 `errorMessage` 是一个可选型，这里尝试对他进行解包，如果解包成功（即不等于 `nil`）那么对他进行 `uppercased()` 操作；如果解包失败则不回执行 `uppercased()` 操作。
 　　如果可选型 `errorMessage` 等于 `nil` ，则会返回 `nil`
 ```
+var errorMessage: String? = "Not Found"
 errorMessage?.uppercased()
 ```
 逻辑等同于如下写法
 ```
+var errorMessage: String? = "Not Found"
 if let errorMessage = errorMessage {
     errorMessage.uppercased()
 }
