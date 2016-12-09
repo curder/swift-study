@@ -47,7 +47,11 @@ if errorCode != nil{
 ```
 var errorCode: String? = "404"
 
-
+if let errorCode = errorCode{
+    "The errorCode is " + errorCode
+}else{
+    "No Error"
+}
 ```
 
 
