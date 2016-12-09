@@ -99,3 +99,36 @@ if let errorCode = errorCode , let errorMessage = errorMessage , errorCode == "4
     "page not found"
 }
 ```
+
+
+[TOC]
+### 可选型
+
+var errorMessage: String? = "Not Found"
+
+　　虽然 `errorMessage` 是一个可选型，这里尝试对他进行解包，如果解包成功（即不等于 `nil`）那么对他进行 `uppercased()` 操作；如果解包失败则不回执行 `uppercased()` 操作。
+　　如果可选型 `errorMessage` 等于 `nil` ，则会返回 `nil`
+```
+errorMessage?.uppercased()
+```
+逻辑等同于如下写法
+```
+if let errorMessage = errorMessage {
+    errorMessage.uppercased()
+}
+```
+// 将可选型 `errorMessage` 进行强制解包，并调用 `uppercased()` 操作，如果可选型 `errorMessage` 等于 `nil` 将会抛出 **fatel error** 致命错误，这种写法一般情况下是不安全的，也是不推荐的。
+errorMessage!.uppercased()
+
+var uppercaseErrorMessage = errorMessage?.uppercased() // 变量 `uppercaseErrorMessage` 是一个可选型
+
+
+if let errorMessage = errorMessage?.uppercased() {
+    errorMessage
+}
+
+// 上面的写法将解包和调用操作以及赋值基于一体，使逻辑更加清晰，减少代码的出错率
+
+
+
+
