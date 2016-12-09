@@ -83,8 +83,67 @@ numbers == oneToFive
 ```
 
 ## 数组的增删改操作
+```
+var list = ["Apple","Orange"]
+```
+### 新增数组元素
+```
+list.append("Pear")
+list += ["Banner"]
+list = list + ["Watermelon","Grape"]
+list // ["Apple", "Orange", "Pear", "Banner", "Watermelon", "Grape"]
+```
+### 新增数组单元到指定索引处
+```
+list.insert("Cantaloupe", at: 2)
+list // ["Apple", "Orange", "Cantaloupe", "Pear", "Banner", "Watermelon", "Grape"]
+```
+### 删除第一个元素
+```
+list.removeFirst()
+list // ["Orange", "Cantaloupe", "Pear", "Banner", "Watermelon", "Grape"]
+```
+### 删除最后一个元素
+```
+list.removeLast()
+list // ["Orange", "Cantaloupe", "Pear", "Banner", "Watermelon"]
+```
+### 根据索引删除数组单元
+```
+list.remove(at: 1)
+list // ["Orange", "Pear", "Banner", "Watermelon"]
+```
+### 根据范围删除数组单元
+```
+list.removeSubrange(0..<2)
+list // ["Banner", "Watermelon"]
+```
+### 删除所有数组单元
+```
+list.removeAll()
+list // []
+```
+### 修改具体元素
+```
+list = ["Apple","Orange","Pear","Watermelon"]
+list[0] = "Banner"
+print(list) // ["Banner", "Orange", "Pear", "Watermelon"]
+```
+### 根据区间范围修改元素
+```
+list[1...2] = ["Cantaloupe","Grape"]
+print( list ) // ["Banner", "Cantaloupe", "Grape", "Watermelon"]
+```
+### 修改范围
+```
+list[1...3] = ["Grape"]
+print( list ) // ["Banner", "Grape"]
+```
+> 无论是使用索引还是使用区间修改数组，都可能产生数组越界的问题
 
-### 增
+
+
+
 
 
 
