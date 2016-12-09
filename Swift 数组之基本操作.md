@@ -69,7 +69,9 @@ for (index , value) in vowels.enumerated() {
     print("\(index+1) : \(value)")
 }
 ```
+
 ### 数组的比较（比较的是值）
+
 ```
 var oneToFive = [1,2,3,4,5]
 numbers == oneToFive
