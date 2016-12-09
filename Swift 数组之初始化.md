@@ -9,7 +9,7 @@ var numbers = [1,2,3,4,5] // 整型数组 也可以显式的声明数据类型 v
 var vowels = ["A","B","C","D","E"] // 字符串数组 也可以显式的声明数据类型 var vowels: [String] = ["A","B","C","D","E"]
 ```
 
-#### 声明空数组
+#### 空数组
 ```
 var emptuArray1: [Int] = [] // 空整型数组
 var emptyArray2: Array<String> = [] // 空字符串数组
