@@ -69,7 +69,21 @@ if let errorCode = errorCode{
 
 #### 一次性解包多个变量的情况
 
+```
+var errorCode: String? = "404"
+var errorMessage: String? = "Not Found"
 
+if let errorCode = errorCode , let errorMessage = errorMessage {
+    "The errorCode is " + errorCode + "\nThe errorMessage is " + errorMessage
+}
+
+// 以上写法等同于
+if let errorCode = errorCode {
+    if let errorMessage = errorMessage {
+        "The errorCode is " + errorCode + "\nThe errorMessage is " + errorMessage
+    }
+}
+```
 
 
 
