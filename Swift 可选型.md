@@ -47,6 +47,14 @@ if errorCode != nil{
 ```
 var errorCode: String? = "404"
 
+if let upwrappedErrorCode = errorCode{
+    "The errorCode is " + upwrappedErrorCode
+}else{
+    "No Error"
+}
+```
+也可以将上面的常量 `upwrappedErrorCode` 允许使用和 `errorCode` 一致的名称。
+```
 if let errorCode = errorCode{
     "The errorCode is " + errorCode
 }else{
