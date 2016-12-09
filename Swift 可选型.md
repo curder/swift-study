@@ -130,8 +130,9 @@ errorMessage!.uppercased()
 
 　　将可选型 `errorMessage` 进行强制解包，并调用 `uppercased()` 操作，如果可选型 `errorMessage` 等于 `nil` 将会抛出 **fatel error** 致命错误，这种写法一般情况下是不安全的，也是不推荐的。
 
+```
 var uppercaseErrorMessage = errorMessage?.uppercased() // 变量 `uppercaseErrorMessage` 是一个可选型
-
+```
 
 if let errorMessage = errorMessage?.uppercased() {
     errorMessage
