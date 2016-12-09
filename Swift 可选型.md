@@ -57,6 +57,8 @@ if let upwrappedErrorCode = errorCode{
     "No Error"
 }
 ```
+
+#### 可以使用相同的变量名
 也可以将上面的常量 `upwrappedErrorCode` 允许使用和 `errorCode` 一致的名称。
 ```
 var errorCode: String? = "404"
