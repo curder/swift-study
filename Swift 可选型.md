@@ -69,6 +69,7 @@ if let errorCode = errorCode{
 
 #### 一次性解包多个变量的情况
 
+如果存在两种或者多种需要解包判断的情况，我们可以使用更加优雅的写法
 ```
 var errorCode: String? = "404"
 var errorMessage: String? = "Not Found"
