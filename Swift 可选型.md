@@ -45,6 +45,8 @@ if errorCode != nil{
     "No Error"
 }
 ```
+####  `if-let` 解包
+
 还可以给解包的值使用 `if let` 语句进行赋值。
 ```
 var errorCode: String? = "404"
