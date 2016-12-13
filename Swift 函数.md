@@ -14,9 +14,33 @@ func  函数名 ( 参数变量: 类型 , 参数变量: 类型 ... ) -> 函数返
 
 ### 使用元组返回多个值
 
+```
 
+func findMaxAndMin( numbers: [Int])->( max: Int, min: Int )? {
+    
+    guard numbers.count > 0 else {
+        return nil
+    }
+    
+    var minValue = numbers[0]
+    var maxValue = numbers[0]
+    for number in numbers{
+        minValue = minValue < number ? minValue : number
+        maxValue = maxValue > number ? maxValue : number
+    }
+    return ( maxValue, minValue )
+}
 
+var scores: [Int]? = [202,1232,4321,33,432,666]
 
+scores = scores ?? []
+
+if let resault = findMaxAndMin(numbers: scores!){
+    print("The max score is \(resault.max)")
+    print("The min score is \(resault.min)")
+}
+
+```
 
 
 
