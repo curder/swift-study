@@ -54,7 +54,7 @@ sayHello(to: "Curder", message: "Hello!!!")
 
 
 
-#### 省略外部参数名
+#### 函数省略外部参数名
 ```
 func mutiply( _ num1: Int, _ num2: Int ) -> Int{
     return num1 * num2
