@@ -112,7 +112,7 @@ list // ["Apple", "Orange", "Cantaloupe", "Pear", "Banner", "Watermelon", "Grape
 
 ### 删除元素
 #### 删除第一个元素
-
+快速删除数组的第一个元素。
 ```
 list.removeFirst()
 list // ["Orange", "Cantaloupe", "Pear", "Banner", "Watermelon", "Grape"]
