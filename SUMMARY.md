@@ -25,3 +25,4 @@
         * [Swift 字典之基本操作](Swift 字典之基本操作.md)
         * [Swift 集合之初始化](Swift 集合之初始化.md)
         * [Swift 集合之基本操作](Swift 集合之基本操作.md)
+    * [Swift 函数](Swift 函数.md)
