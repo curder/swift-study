@@ -148,10 +148,3 @@ let anotherSay2: (Void)->Void = say
 let anotherSay3: ()->Void = say
 let anotherSay4: (Void)->() = say
 ```
-
-
-
-
-
-
-
