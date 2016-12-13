@@ -93,8 +93,11 @@ var list = ["Apple","Orange"]
 
 ```
 list.append("Pear")
+
 list += ["Banner"]
+
 list = list + ["Watermelon","Grape"]
+
 list // ["Apple", "Orange", "Pear", "Banner", "Watermelon", "Grape"]
 ```
 
