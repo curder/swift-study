@@ -27,18 +27,38 @@ for i in 0..<arr.count {
 }
 ```
 
+### 对数组遍历
+```
+var array: Array<String> = ["A","V","X","S"]
+for arr in array{
+    arr
+}
 
+// 遍历数组的键值
+for (key,value) in array.enumerated(){
+    key
+    value
+}
+```
 
+### 遍历字典
+```
+var dict: Dictionary<Int,String> = [1:"A",2:"B",3:"d"]
+// 遍历字典的key
+for key in dict.keys{
+    key
+}
 
+// 遍历字典的value
+for value in dict.values{
+   value
+}
+```
 
-
-
-
-
-
-
-
-
-
-
-
+#### 遍历集合
+```
+var set: Set<String> = ["A","V","X","S"]
+for value in set{
+    value
+}
+```
