@@ -139,8 +139,14 @@ let anotherSayHello: (String)->() = sayHello
 如果函数返回值和参数都不存在的情况
 
 ```
+func say(){
+    print("Hello!")
+}
 
-
+let anotherSay: ()->() = say
+let anotherSay2: (Void)->Void = say
+let anotherSay3: ()->Void = say
+let anotherSay4: (Void)->() = say
 ```
 
 
