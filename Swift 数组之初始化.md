@@ -33,7 +33,7 @@ var board = [ [1024,16,2,0] ,[256,4,2,0] ,[64,2,0,0] ,[2,0,0,0] ];
 
 ### Swift 数组之 NSArray
 
-`NSArray` 数组的创建方式
+`NSArray` 数组的创建方式如下：
 ```
 var array2 = [1,2,3,4,5] as NSArray
 
