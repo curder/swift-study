@@ -119,7 +119,7 @@ list // ["Orange", "Cantaloupe", "Pear", "Banner", "Watermelon", "Grape"]
 ```
 
 #### 删除最后一个元素
-
+快速删除数组的最后一个元素
 ```
 list.removeLast()
 list // ["Orange", "Cantaloupe", "Pear", "Banner", "Watermelon"]
