@@ -5,7 +5,7 @@
 var dict: Dictionary<String,String> = ["swift":"雨燕,快速","python":"大蟒","java":"爪洼岛","groovy":"绝妙的，时髦的"] // var dict: [String:String] = .. 或者 var dict: Dictionary = .. 
 ```
 
-
+## 创建字典
 
 
 
