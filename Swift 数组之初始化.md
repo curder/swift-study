@@ -18,6 +18,7 @@ var emptyArray2: Array<String> = [] // 空字符串数组
 var emptyArray3 = [Double]() // 空浮点数数组
 var emptyArray4 = Array<Float>() // 空浮点数数组
 ```
+
 #### 创建具有默认值的数组
 ```
 var allzeros = [Int]( repeating: 0 , count: 5 ) // [0, 0, 0, 0, 0]
