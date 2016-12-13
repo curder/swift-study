@@ -13,6 +13,12 @@ func  函数名 ( 参数变量: 类型 , 参数变量: 类型 ... ) -> 函数返
 > 即 func A (value:String)  与 func A (let value:String)写法是相同的，即value 是常量。
 
 
+### 使用元组返回多个值
+
+
+
+
+
 
 
 
