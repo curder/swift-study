@@ -158,7 +158,7 @@ print(list) // ["Banner", "Orange", "Pear", "Watermelon"]
 ```
 
 #### 根据区间范围修改元素
-
+先获取元素的值然后进行赋值修改。
 ```
 list[1...2] = ["Cantaloupe","Grape"]
 print( list ) // ["Banner", "Cantaloupe", "Grape", "Watermelon"]
