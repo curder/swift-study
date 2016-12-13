@@ -124,6 +124,7 @@ let anotherAdd: (Int, Int) -> Int = add
 
 anotherAdd(1,2)
 ```
+
 如果函数不存在返回值的清空
 ```
 func sayHello(to name: String) -> Void{
