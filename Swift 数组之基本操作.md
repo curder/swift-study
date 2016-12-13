@@ -131,6 +131,7 @@ list // ["Orange", "Cantaloupe", "Pear", "Banner", "Watermelon"]
 list.remove(at: 1)
 list // ["Orange", "Pear", "Banner", "Watermelon"]
 ```
+> 注意：小心数组越界的问题。
 
 #### 根据范围删除数组单元
 
