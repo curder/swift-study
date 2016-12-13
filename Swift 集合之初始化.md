@@ -10,7 +10,29 @@ var emptySet1: Set<Int> = []
 var emptySet2 = Set<Double>()
 ```
 
+### 获取集合中元素的个数
+```
+set.count
+```
+### 判断集合是否为空 返回Bool
+```
+set.isEmpty
+```
+### 随机取出一个元素 返回 Optional
+```
+print( set.first)
+```
+### 判断一个元素是否存在某个集合中
+```
+set.contains("C++")
+```
 
+### 集合的比较
+```
+let setA: Set<Int> = [1,2,3]
+let setB: Set<Int> = [1,3,2]
 
+setA == setB // 返回 true
+```
 
 
