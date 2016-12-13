@@ -26,9 +26,28 @@ user.removeValue(forKey: "email") // 返回删除掉的旧值
 user.removeAll() // 清空字典
 ```
 
+### 获取字典中单元个数
+```
+dict.count
+```
 
+### 判断字典是否为空
+```
+dict.isEmpty
+```
 
+### 获取字典中所有的key
 
+```
+Array( dict.keys)
+```
+```
+Array(dict.values) // 返回字典中所有的value
+```
+// 字典键值的遍历
+for (key,value) in dict{
+    print(key , value)
+}
 
 
 
