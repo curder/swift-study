@@ -136,6 +136,8 @@ let anotherSayHello: (String)->Void = sayHello
 let anotherSayHello: (String)->() = sayHello
 ```
 
+如果函数返回值和参数都不存在的情况
+
 
 
 
