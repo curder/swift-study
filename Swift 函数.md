@@ -15,7 +15,6 @@ func  函数名 ( 参数变量: 类型 , 参数变量: 类型 ... ) -> 函数返
 ### 使用元组返回多个值
 
 ```
-
 func findMaxAndMin( numbers: [Int])->( max: Int, min: Int )? {
     
     guard numbers.count > 0 else {
