@@ -63,7 +63,7 @@ func mutiply( _ num1: Int, _ num2: Int ) -> Int{
 mutiply(1, 2)
 ```
 
-
+### 默认参数与可变参数
 
 
 
