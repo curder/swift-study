@@ -102,7 +102,7 @@ list // ["Apple", "Orange", "Pear", "Banner", "Watermelon", "Grape"]
 ```
 
 ### 新增数组单元到指定索引处
-也可以很方便的将元素添加到某个索引值的位置。
+也可以很方便的将元素添加到某个索引值的位置，换言之填写的索引为新增的元素所在的索引位置。
 ```
 list.insert("Cantaloupe", at: 2)
 list // ["Apple", "Orange", "Cantaloupe", "Pear", "Banner", "Watermelon", "Grape"]
