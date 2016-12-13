@@ -37,7 +37,7 @@ var board = [ [1024,16,2,0] ,[256,4,2,0] ,[64,2,0,0] ,[2,0,0,0] ];
 ```
 var array2 = [1,2,3,4,5] as NSArray
 
-var array3: NSArray = [1,2,3,4,5]
+var array3: NSArray = [1,"2",3.1,4,5]
 ```
 
 
