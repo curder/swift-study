@@ -78,7 +78,7 @@ sayHello(to: "Curder",message: "Hi",punctuation:"!!!") // "Hi,Curder!!!"
 ```
 
 ### 变长参数
-在声明函数的形参的时候 后面加上 `...`，即可。
+在声明函数的形参的时候 后面加上 `...`，即可。在函数中，将该变长参数的值作为数组看待即可。
 
 ```
 func mean( numbers: Double ... )->Double{
