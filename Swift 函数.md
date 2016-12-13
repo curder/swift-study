@@ -96,9 +96,22 @@ mean(numbers: 2,3,4)
 ```
 > 对于一个函数而言，只能有一个变长的参数。
 
-### Swift 常量、变量和**参数
+### inout参数
+// 参数的地址引用
+```
+func swapTwoInts( _ a: inout Int, _ b:inout Int){
+    let t:Int = a
+    a = b
+    b = t
+}
+var x: Int = 1
+var y: Int = 2
 
+swapTwoInts(&x, &y)
 
+x // 2
+y // 1
+```
 
 
 
