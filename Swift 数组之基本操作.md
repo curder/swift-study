@@ -90,7 +90,7 @@ var list = ["Apple","Orange"]
 ```
 
 ### 新增数组元素
-
+下面列举一些新增数组元素的方法。
 ```
 list.append("Pear")
 
