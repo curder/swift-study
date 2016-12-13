@@ -139,6 +139,7 @@ list // ["Orange", "Pear", "Banner", "Watermelon"]
 list.removeSubrange(0..<2)
 list // ["Banner", "Watermelon"]
 ```
+> 注意：小心数组越界的问题。
 
 #### 删除所有数组单元
 
