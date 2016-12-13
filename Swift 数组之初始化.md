@@ -23,6 +23,11 @@ var allzeros = [Int]( repeating: 0 , count: 5 ) // [0, 0, 0, 0, 0]
 var allZeros = Array<Int>(repeating: 0 , count: 5) // [0, 0, 0, 0, 0]
 ```
 
+### Swift 数组之二维数组
+数组中元素还是数组。例如：
+```
+var board = [ [1024,16,2,0] ,[256,4,2,0] ,[64,2,0,0] ,[2,0,0,0] ];
+```
 
 
 
