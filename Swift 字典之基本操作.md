@@ -41,8 +41,10 @@ dict.isEmpty
 ```
 Array( dict.keys)
 ```
+
+### 获取字典的value
 ```
-Array(dict.values) // 返回字典中所有的value
+Array(dict.values)
 ```
 // 字典键值的遍历
 for (key,value) in dict{
