@@ -3,5 +3,6 @@
 如下：
 ```
 
+var set: Set<String> = ["Swift","C++"]
 ```
 
