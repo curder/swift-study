@@ -4,3 +4,6 @@
 var set: Set<String> = ["Swift","C++"]
 ```
 
+### 空集合
+var emptySet1: Set<Int> = []
+var emptySet2 = Set<Double>()
