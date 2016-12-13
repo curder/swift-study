@@ -40,7 +40,28 @@ if let resault = findMaxAndMin(numbers: scores!){
 }
 ```
 
+### 多个参数
+#### 函数内部参数与外部参数
+```
+func sayHello( to name: String , message greeting: String ) -> String {
+    return "\(name),\(greeting)"
+}
+sayHello(to: "Curder", message: "Hello!!!")
+```
 
+> 内部参数有 `to` 与 `message`
+> 外部参数有 `name` 与 `greeting`
+
+
+
+#### 省略外部参数名
+```
+func mutiply( _ num1: Int, _ num2: Int ) -> Int{
+    return num1 * num2
+}
+
+mutiply(1, 2)
+```
 
 
 
