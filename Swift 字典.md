@@ -7,6 +7,12 @@ var dict: Dictionary<String,String> = ["swift":"雨燕,快速","python":"大蟒"
 
 ## 创建字典
 
+### 创建空字典
+
+
+
+
+
 
 
 
