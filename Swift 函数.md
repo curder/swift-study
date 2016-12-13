@@ -113,8 +113,16 @@ x // 2
 y // 1
 ```
 
+### 声明函数型变量
+```
+func add(_ a: Int,_ b: Int)-> Int{
+    return a + b
+}
 
+let anotherAdd: (Int, Int) -> Int = add
 
+anotherAdd(1,2)
+```
 
 
 
