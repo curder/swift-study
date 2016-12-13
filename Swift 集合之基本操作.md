@@ -29,12 +29,19 @@ var setC = Set(["Swift","HTML","CSS"])
 ```
 #### 并集
 
-`union()`
-
 `setA` 与 `setB` 的并集
 ```
 setA.union(setB) // ["JS", "CSS", "Object-C", "HTML", "Swift"]
 ```
+
+
+
+
+
+
+
+
+
 
 
 
