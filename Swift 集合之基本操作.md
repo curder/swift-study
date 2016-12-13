@@ -45,8 +45,3 @@ setA.intersection(setC) // Swift
 setA.subtract(setC) // Object-C
 ```
 > 集合 `setA` 拥有的元素， `setC`  不拥有的元素。
-
-
-
-
-
