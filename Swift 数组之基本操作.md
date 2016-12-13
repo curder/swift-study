@@ -83,9 +83,12 @@ numbers == oneToFive
 ```
 
 ## 数组的增删改操作
+
+假如有如下数组变量。
 ```
 var list = ["Apple","Orange"]
 ```
+
 ### 新增数组元素
 ```
 list.append("Pear")
