@@ -118,7 +118,7 @@ list.removeFirst()
 list // ["Orange", "Cantaloupe", "Pear", "Banner", "Watermelon", "Grape"]
 ```
 
-### 删除最后一个元素
+#### 删除最后一个元素
 
 ```
 list.removeLast()
