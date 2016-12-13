@@ -92,7 +92,7 @@ func mean( numbers: Double ... )->Double{
 mean(numbers: 2)
 mean(numbers: 2,3,4)
 ```
-
+> 对于一个函数而言，只能有一个变长的参数。
 
 
 
