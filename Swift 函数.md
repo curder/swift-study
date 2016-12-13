@@ -78,6 +78,8 @@ sayHello(to: "Curder",message: "Hi",punctuation:"!!!") // "Hi,Curder!!!"
 ```
 
 ### 变长参数
+在声明函数的形参的时候 后面加上 `...`，即可。
+
 ```
 func mean( numbers: Double ... )->Double{
     var sum: Double = 0
