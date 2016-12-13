@@ -147,6 +147,7 @@ list // ["Banner", "Watermelon"]
 list.removeAll()
 list // []
 ```
+
 ### 修改
 #### 修改具体元素
 
