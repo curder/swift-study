@@ -19,7 +19,8 @@ var emptyDict4 = Dictionary<Int,Int>() // 键和值都是Int类型的空字典
 ### 字典值的获取
 由于字典是无序的数据集合，可以通过字典的`key`去获取值。
 ```
-dict["swift"] // 返回一个可选型
+dict["swift"] // 返回一个可选型 Optional("雨燕,快速")
+dict["php"] // nil
 ```
 
 
