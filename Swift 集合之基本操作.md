@@ -34,7 +34,10 @@ var setC = Set(["Swift","HTML","CSS"])
 setA.union(setB) // ["JS", "CSS", "Object-C", "HTML", "Swift"]
 ```
 
-
+#### 交集
+```
+setA.intersection(setC) // Swift
+```
 
 
 
