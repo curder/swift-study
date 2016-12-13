@@ -39,7 +39,6 @@ if let resault = findMaxAndMin(numbers: scores!){
     print("The max score is \(resault.max)")
     print("The min score is \(resault.min)")
 }
-
 ```
 
 
