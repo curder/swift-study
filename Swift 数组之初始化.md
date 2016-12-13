@@ -31,7 +31,7 @@ var allZeros = Array<Int>(repeating: 0 , count: 5) // [0, 0, 0, 0, 0]
 var board = [ [1024,16,2,0] ,[256,4,2,0] ,[64,2,0,0] ,[2,0,0,0] ];
 ```
 
-
+### Swift 数组之 NSArray
 
 
 
