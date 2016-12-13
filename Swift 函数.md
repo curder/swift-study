@@ -114,6 +114,7 @@ y // 1
 ```
 
 ### 声明函数型变量
+如果函数存在返回值的情况
 ```
 func add(_ a: Int,_ b: Int)-> Int{
     return a + b
