@@ -125,21 +125,21 @@ list.removeLast()
 list // ["Orange", "Cantaloupe", "Pear", "Banner", "Watermelon"]
 ```
 
-### 根据索引删除数组单元
+#### 根据索引删除数组单元
 
 ```
 list.remove(at: 1)
 list // ["Orange", "Pear", "Banner", "Watermelon"]
 ```
 
-### 根据范围删除数组单元
+#### 根据范围删除数组单元
 
 ```
 list.removeSubrange(0..<2)
 list // ["Banner", "Watermelon"]
 ```
 
-### 删除所有数组单元
+#### 删除所有数组单元
 
 ```
 list.removeAll()
