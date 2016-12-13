@@ -133,7 +133,6 @@ func sayHello(to name: String) -> Void{
 let anotherSayHello: (String)->Void = sayHello
 // 或者这样声明函数常量
 let anotherSayHello: (String)->() = sayHello
-
 ```
 
 
