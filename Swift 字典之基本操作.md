@@ -8,7 +8,7 @@ var user = ["name":"luo","password":"passwd","occupation":"programmer"]
 ```
 user["occupation"] = "freelancer"
 
-user.updateValue("password", forKey: "password") // 返回字典修改前的旧值
+user.updateValue("password", forKey: "password") // 返回字典修改前的旧值 例如这里返回`passwd`
 ```
 ### 添加
 ```
