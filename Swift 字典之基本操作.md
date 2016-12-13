@@ -46,11 +46,12 @@ Array( dict.keys)
 ```
 Array(dict.values)
 ```
-// 字典键值的遍历
+### 字典键值的遍历
+```
 for (key,value) in dict{
     print(key , value)
 }
-
+```
 
 
 
