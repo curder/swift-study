@@ -126,7 +126,11 @@ anotherAdd(1,2)
 ```
 如果函数不存在返回值的清空
 ```
+func sayHello(to name: String) -> Void{
+    print("Hello \(name)")
+}
 
+let anotherSayHello: (String)->Void = sayHello
 ```
 
 
