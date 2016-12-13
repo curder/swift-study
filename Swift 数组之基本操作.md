@@ -146,7 +146,7 @@ list.removeAll()
 list // []
 ```
 ### 修改
-### 修改具体元素
+#### 修改具体元素
 
 ```
 list = ["Apple","Orange","Pear","Watermelon"]
@@ -154,14 +154,14 @@ list[0] = "Banner"
 print(list) // ["Banner", "Orange", "Pear", "Watermelon"]
 ```
 
-### 根据区间范围修改元素
+#### 根据区间范围修改元素
 
 ```
 list[1...2] = ["Cantaloupe","Grape"]
 print( list ) // ["Banner", "Cantaloupe", "Grape", "Watermelon"]
 ```
 
-### 修改范围
+#### 修改范围
 
 ```
 list[1...3] = ["Grape"]
