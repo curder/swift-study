@@ -16,8 +16,10 @@ var emptyDict3 = [String:String]() // 键是String类型，值是String类型的
 var emptyDict4 = Dictionary<Int,Int>() // 键和值都是Int类型的空字典
 ```
 
-
-
-
+### 字典值的获取
+由于字典是无序的数据集合，
+```
+dict["swift"]
+```
 
 
