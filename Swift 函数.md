@@ -40,7 +40,7 @@ if let resault = findMaxAndMin(numbers: scores!){
 }
 ```
 
-### 多个参数处理
+### 函数的多个参数处理
 #### 函数内部参数与外部参数
 ```
 func sayHello( to name: String , message greeting: String ) -> String {
