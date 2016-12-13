@@ -64,7 +64,32 @@ mutiply(1, 2)
 ```
 
 ### 默认参数与可变参数
+```
+func sayHello(to name: String, message greeting: String = "Hello",punctuation: String = "!")->String{
+    return "\(greeting),\(name)\(punctuation)"
+}
 
+// 调用省略可选参数
+sayHello(to: "Luo") // "Hello,Luo!"
+sayHello(to: "Luo",message: "Hi") // "Hi,Luo!"
+sayHello(to: "Curder",punctuation: "!!!") // "Hello,Curder!!!"
+
+sayHello(to: "Curder",message: "Hi",punctuation:"!!!") // "Hi,Curder!!!"
+```
+
+### 变长参数
+```
+func mean( numbers: Double ... )->Double{
+    var sum: Double = 0
+    for number in numbers{
+        sum += number
+    }
+    return sum / Double(numbers.count)
+}
+
+mean(numbers: 2)
+mean(numbers: 2,3,4)
+```
 
 
 
