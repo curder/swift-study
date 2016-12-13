@@ -10,10 +10,10 @@ var dict: Dictionary<String,String> = ["swift":"雨燕,快速","python":"大蟒"
 ### 创建空字典
 声明不同类型的空字典
 ```
-var emptyDict1: Dictionary<String,Int> = [:]
-var emptyDict2: [Int:String] = [:]
-var emptyDict3 = [String:String]()
-var emptyDict4 = Dictionary<Int,Int>()
+var emptyDict1: Dictionary<String,Int> = [:] // 键是String类型，值是Int类型的空字典
+var emptyDict2: [Int:String] = [:] // 键是Int类型，值是String类型的空字典
+var emptyDict3 = [String:String]() // 键是String类型，值是String类型的空字典
+var emptyDict4 = Dictionary<Int,Int>() // 键和值都是Int类型的空字典
 ```
 
 
