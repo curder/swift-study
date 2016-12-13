@@ -41,7 +41,7 @@ setA.intersection(setC) // Swift
 
 #### 减法
 ```
-
+setA.subtract(setC) // Object-C
 ```
 
 
