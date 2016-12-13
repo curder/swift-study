@@ -29,7 +29,7 @@ var setC = Set(["Swift","HTML","CSS"])
 ```
 #### 并集
 
-`union()`、`unionInPlace()`
+`union()`
 
 `setA` 与 `setB` 的并集
 ```
