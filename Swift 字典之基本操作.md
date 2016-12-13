@@ -36,7 +36,7 @@ dict.count
 dict.isEmpty
 ```
 
-### 获取字典中所有的key
+### 获取字典的key
 
 ```
 Array( dict.keys)
