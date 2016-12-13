@@ -131,6 +131,8 @@ func sayHello(to name: String) -> Void{
 }
 
 let anotherSayHello: (String)->Void = sayHello
+let anotherSayHello: (String)->() = sayHello
+
 ```
 
 
