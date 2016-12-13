@@ -1,4 +1,5 @@
 ## Swift 字典之基本操作
+假如有如下字典变量
 ```
 var user = ["name":"luo","password":"passwd","occupation":"programmer"]
 ```
