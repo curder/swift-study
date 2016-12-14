@@ -54,7 +54,7 @@ arr.sort{ a , b in
     return abs(a - num ) < abs(b - num)
 }
 ```
-
+> 在闭包内能自动捕获外部变量，但是会有内存泄漏的问题。
 
 
 
