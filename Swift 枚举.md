@@ -140,6 +140,27 @@ print("\(myFavoriteLanguage.rawValue) is my favorite language.")
 
 
 
+### 枚举之关联值
+```
+enum AtmStatus {
+    case Success(Int)
+    case Error(String)
+}
+
+var balance = 1000 // 账户与余额
+
+func withDraw( amount: Int) -> AtmStatus{
+    if balance >= amount{
+        balance -= amount
+        return .Success(balance)
+    }else{
+        return .Error("Not enough money")
+    }
+}
+
+withDraw(amount: 1110) // Error("Not enough money")
+```
+
 
 
 
