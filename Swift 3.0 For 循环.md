@@ -46,7 +46,6 @@ for ( index , value ) in arr.enumerated().filter({ ( index, value )  in index % 
     value
 }
 
-
 // 获取
 for ( index , value ) in arr.enumerated() where index % 2 == 0 {
     index
