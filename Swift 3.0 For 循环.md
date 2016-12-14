@@ -40,7 +40,7 @@ for ( index , value ) in arr.enumerated().reversed(){
 
 ### 循环时添加条件
 
-> 取出索引是 2 的倍数的元素.
+> 取出索引是 2 的倍数的元素。
 
 #### 使用闭包获取偶数
 ```
