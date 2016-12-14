@@ -198,7 +198,7 @@ area(shape: circle) // 圆形
 area(shape: point) // 点
 ```
 
-
+### 可选型的实质是枚举
 
 
 
