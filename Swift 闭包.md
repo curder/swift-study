@@ -41,9 +41,19 @@ arr.sort{ a , b in
 
 ### 内容捕获
 
+```
+var arr:[Int] = []
 
+for _ in 0 ..< 100{
+    arr.append( Int(arc4random()%1000) )
+}
+arr
+var num = 100
 
-
+arr.sort{ a , b in
+    return abs(a - num ) < abs(b - num)
+}
+```
 
 
 
