@@ -199,8 +199,25 @@ area(shape: point) // 点
 ```
 
 ### 可选型的实质是枚举
+```
+var website: Optional<String> = Optional.some("webfsd.com")
 
+// website = .none
 
+// 可选型的解包
+switch website {
+case .none:
+    print("No website")
+case let .some(website):
+    print("The website is \(website)")
+}
+
+if let website = website {
+    print("The website is \(website)")
+}else{
+    print("No website")
+}
+```
 
 
 
