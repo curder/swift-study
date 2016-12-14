@@ -138,8 +138,6 @@ myFavoriteLanguage = ProgrammingLanguage.Swift
 print("\(myFavoriteLanguage.rawValue) is my favorite language.")
 ```
 
-
-
 ### 枚举之关联值
 下列是一个用户在 ATM 取款的场景，判断用户取的钱是否小于账户余额。
 ```
