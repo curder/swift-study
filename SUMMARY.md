@@ -1,4 +1,3 @@
-* [其他](other.md)
 * [Swift学习笔记](Swift学习笔记.md)
     * [Swift 基础](Swift 基础.md)
         * [Swift基本类型之整型](Swift基本类型之整型.md)
@@ -28,3 +27,4 @@
     * [Swift 函数](Swift 函数.md)
     * [Swift 闭包](Swift 闭包.md)
     * [Swift 枚举](Swift 枚举.md)
+* [其他](other.md)
