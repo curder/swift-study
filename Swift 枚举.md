@@ -162,7 +162,7 @@ func withDraw( amount: Int) -> AtmStatus{
 withDraw(amount: 1110) // Error("Not enough money")
 ```
 
-
+#### 关联多个值
 
 
 
