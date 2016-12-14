@@ -17,9 +17,15 @@ arr.sort(by: {(a:Int,b:Int) -> Bool in
 ```
 
 闭包的简化写法：
+```
+arr.sort(by: {a , b in return a > b})
 
+arr.sort(by: {a , b in a > b})
 
+arr.sort(by: { $0 > $1 })
 
+arr.sort(by: >)
+```
 
 
 
