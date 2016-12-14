@@ -75,6 +75,12 @@ func season(month: Month) -> Season{
 print( season(month: .April ) ) // Spring
 ```
 
+### 枚举之原始值
+
+
+
+
+
 
 
 
