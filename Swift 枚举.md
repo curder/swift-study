@@ -34,9 +34,44 @@ var currMonth: Month = Month.September
 var currMonth: Month = .September
 ```
 
+### 使用枚举类型
+```
+enum Month{
+    case January
+    case February
+    case March
+    case April
+    case May
+    case June
+    case July
+    case August
+    case September
+    case October
+    case November
+    case December
+}
+
+enum Season{
+    case Spring, Summer, Autumn, Winter
+}
 
 
+func season(month: Month) -> Season{
+    switch month {
+        case .March, .April, .May:
+            return .Spring
+        case .June, .July, .August:
+            return .Summer
+        case .September, .October, .November:
+            return .Autumn
+        case .December, .January, .February:
+            return .Winter
+    }
+}
 
+
+print( season(month: .April ) ) // Spring
+```
 
 
 
