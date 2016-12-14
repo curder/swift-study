@@ -30,6 +30,7 @@ enum Month{
 ```
 var currMonth: Month = Month.September
 
+// 当确定了变量是枚举类型也可以直接使用 .枚举名 获取。
 var currMonth: Month = .September
 ```
 
