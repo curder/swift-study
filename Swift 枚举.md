@@ -164,6 +164,43 @@ withDraw(amount: 1110) // Error("Not enough money")
 
 #### 关联多个值
 
+关联多个值时，参数相当于元组
+```
+enum Shape{
+    case Square( side: Double )
+    case Rectangle( width: Double, height: Double )
+    case Circle(centerx: Double , centery: Double , radius: Double)
+    case Point
+}
+
+let square = Shape.Square(side: 10)
+let rectangle = Shape.Rectangle(width: 20, height: 30)
+let circle = Shape.Circle(centerx: 40, centery: 50, radius: 60)
+let point = Shape.Point
+
+
+func area(shape: Shape) -> Double{
+    switch shape {
+    case let .Square( side ):
+        return side * side
+    case let .Rectangle( width , height ):
+        return width * height
+    case let .Circle( _ , _ , r ):
+        return M_PI * r * r
+    case .Point:
+        return 0
+    }
+}
+
+area(shape: square) // 正方形
+area(shape: rectangle) // 长方形
+area(shape: circle) // 圆形
+area(shape: point) // 点
+```
+
+
+
+
 
 
 
