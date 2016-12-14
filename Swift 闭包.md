@@ -37,8 +37,6 @@ arr.sort(){ a , b in
 arr.sort{ a , b in
     return a > b
 }
-
-
 ```
 
 
