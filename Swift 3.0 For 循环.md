@@ -9,6 +9,51 @@ for i in 0...100{ // 前闭后闭区间
 }
 ```
 
+## 遍历数组
+### 遍历获取数组值
+```
+let arr = [1,2,3,4,5]
+for i in arr {
+    i
+}
+
+for i in 0 ..< arr.count{
+    arr[i]
+}
+```
+
+遍历数组获取索引和值
+```
+for i in arr.enumerated() {
+    i.offset // 数组单元索引
+    i.element // 数组单元值
+}
+```
+
+### 逆序遍历数组获取索引和值
+```
+for ( index , value ) in arr.enumerated().reversed(){
+    index
+    value
+}
+```
+
+### 循环时添加条件
+获取偶数
+```
+for ( index , value ) in arr.enumerated().filter({ ( index, value )  in index % 2 == 0}){
+    index
+    value
+}
+
+
+// 获取
+for ( index , value ) in arr.enumerated() where index % 2 == 0 {
+    index
+    value
+}
+```
+
 
 
 
