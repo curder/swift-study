@@ -26,7 +26,7 @@ enum Month{
     case December
 }
 ```
-
+### 枚举型的取值
 ```
 var currMonth: Month = Month.September
 
