@@ -29,7 +29,7 @@ arr.sort(by: >)
 
 ### 结尾闭包
 ```
-arr.sort(){ a , b in
+arr.sort(by: ){ a , b in
     return a > b
 }
 
