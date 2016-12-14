@@ -142,7 +142,6 @@ print("\(myFavoriteLanguage.rawValue) is my favorite language.")
 
 ### 枚举之关联值
 ```
-
 enum AtmStatus {
     case Success(Int)
     case Error(String)
