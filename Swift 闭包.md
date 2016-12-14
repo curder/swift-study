@@ -27,9 +27,19 @@ arr.sort(by: { $0 > $1 })
 arr.sort(by: >)
 ```
 
+### 结尾闭包
+```
+arr.sort(){ a , b in
+    return a > b
+}
+
+// 或者
+arr.sort{ a , b in
+    return a > b
+}
 
 
-
+```
 
 
 
