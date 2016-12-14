@@ -36,6 +36,7 @@ var currMonth: Month = .September
 
 ### 使用枚举类型
 ```
+// 枚举月份
 enum Month{
     case January
     case February
