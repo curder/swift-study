@@ -39,14 +39,16 @@ for ( index , value ) in arr.enumerated().reversed(){
 ```
 
 ### 循环时添加条件
-获取偶数
+#### 使用闭包获取偶数
 ```
 for ( index , value ) in arr.enumerated().filter({ ( index, value )  in index % 2 == 0}){
     index
     value
 }
+```
 
-// 获取
+#### 使用 where 关键字
+```
 for ( index , value ) in arr.enumerated() where index % 2 == 0 {
     index
     value
