@@ -39,6 +39,7 @@ for ( index , value ) in arr.enumerated().reversed(){
 ```
 
 ### 循环时添加条件
+获取索引偶数
 #### 使用闭包获取偶数
 ```
 for ( index , value ) in arr.enumerated().filter({ ( index, value )  in index % 2 == 0}){
