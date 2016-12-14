@@ -142,12 +142,6 @@ print("\(myFavoriteLanguage.rawValue) is my favorite language.")
 
 ### 枚举之关联值
 ```
-enum Coin: Int{
-    case Penny = 1
-    case Nickel = 5
-    case Dime = 10
-    case Quarter = 25
-}
 
 enum AtmStatus {
     case Success(Int)
