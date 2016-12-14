@@ -1,7 +1,9 @@
 ## Swift 枚举
 
 ### 枚举定义
+
 定义枚举型 Month 时，我们可以使用如下方式：
+
 ```
 emun 枚举名称{
 	case 枚举值
@@ -27,6 +29,7 @@ enum Month{
 }
 ```
 ### 枚举型的取值
+
 ```
 var currMonth: Month = Month.September
 
@@ -35,6 +38,7 @@ var currMonth: Month = .September
 ```
 
 ### 使用枚举类型
+
 ```
 // 枚举月份
 enum Month{
@@ -76,6 +80,7 @@ print( season(month: .April ) ) // Spring
 ```
 
 ### 枚举之原始值
+
 ```
 enum Month: Int{
     case January = 1
@@ -107,6 +112,7 @@ if let month = Month( rawValue: input){
 }
 ```
 ### 使用枚举行默认的原始值
+
 ```
 enum Grade: Int{
     case F,E,D,C,B,A
@@ -115,6 +121,7 @@ let grade: Grade = .A
 print("Your score is \(grade.rawValue)") // Your score is 5
 ```
 ### 枚举其他类型原始值
+
 ```
 enum ProgrammingLanguage: String{
     case Swift // 不填写 使用 ProgrammingLanguage.rawValue 的值为：Swift，即默认原始值为 Swift
