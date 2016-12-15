@@ -211,7 +211,7 @@ ui.themeMode
 ui.fontColor // nil
 ui.backgroundColor // nil
 ```
-我们查看 `ui.fontColor` 和 `ui.backgroundColor` 的值为 `nil` 
+我们查看到 `ui.fontColor` 和 `ui.backgroundColor` 的值为 `nil` 。
 
 ```
 class UI{
