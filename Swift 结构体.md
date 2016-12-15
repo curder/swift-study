@@ -63,8 +63,8 @@ struct Location {
         let firstElement = coordinateString.substring(to: commaIndex)
         let secondElement = coordinateString.substring(from: coordinateString.index(after: commaIndex))
         
-        latitude = Double(firstElement)!
-        longitude = Double(secondElement)!
+        self.latitude = Double(firstElement)!
+        self.longitude = Double(secondElement)!
     }
 }
 
