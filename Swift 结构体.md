@@ -149,7 +149,6 @@ let location3 = Location(coordinateString: "37.3230&-122.0322")
 let location4 = Location(coordinateString: "apple,-122.0322")
 let location5 = Location(coordinateString: "37.3230,apple")
 let location6 = Location(coordinateString: "Hello, World!")
-
 ```
 
 
