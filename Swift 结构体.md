@@ -237,5 +237,5 @@ p2.x // 1
 p1.x // 0
 ```
 
-> `Array` , `Dirctionary` , `Set` 是结构体
+> `Array` , `Dirctionary` , `Set` 是结构体;
 `Int` , `Float` , `Double` , `Bool` , `String` 也都是结构体。
