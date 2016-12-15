@@ -142,12 +142,9 @@ if let e = Matrix.identityMatrix(n: 8) {
 ```
 
 ### 属性观察器
-```
-// 属性观察器
-/**
-如果外部修改了类中的成员属性操作类的 static 静态属性大小，可以通过关键字限制
-*/
 
+如果外部修改了类中的成员属性操作类的 static 静态属性大小，可以通过关键字限制
+```
 class LightBulb{
     static let macCurrent = 30
     var current = 0 {
