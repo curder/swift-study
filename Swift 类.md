@@ -10,10 +10,12 @@ class 类名称{
     var 属性: 属性变量类型
     let 属性：属性常量类型
     
+    // 构造函数
     init(){
         
     }
     
+    // 类方法
     func funcName(<#parameters#>) -> <#return type#> {
         <#function body#>
     }
