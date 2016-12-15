@@ -84,8 +84,8 @@ struct Location {
     let latitude: Double
     let longitude: Double
     
-    // 自定义构造函数
-    init (coordinateString: String){
+    // 自定义构造函数，同时省略参数名
+    init (_ coordinateString: String){
         let commaIndex = coordinateString.range(of: ",")!.lowerBound
         
         let firstElement = coordinateString.substring(to: commaIndex)
