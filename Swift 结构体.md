@@ -31,7 +31,7 @@ struct Place{
 
 var googleHeadQarter = Place( location: googleHeadQarterLocation , name: "google" )
 
-googleHeadQarter.location.latitude // 
+googleHeadQarter.location.latitude // 37.422
 ```
 
 
