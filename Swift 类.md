@@ -91,7 +91,7 @@ person1 === person2 // true
 let person3 = Person(firstName: "Steve", lastName: "Jobs")
 person1 === person3 // false
 ```
-
+> 判定两个不同的实例可以使用 `!==` 进行判断。
 
 
 
