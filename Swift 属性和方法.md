@@ -173,7 +173,7 @@ bulb.current = 20
 bulb.current = 30
 bulb.current = 40
 ```
-> 注意： `didSet` 和 `willSet` 不会在初始化截断调用。
+> 注意： `didSet` 和 `willSet` 不会在初始化阶段调用。
 
 
 
