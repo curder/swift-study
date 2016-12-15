@@ -69,10 +69,9 @@ struct Location {
 }
 
 let location = Location(coordinateString: "37.3230,-122.0322")
-
-// 如上代码中自定义了结构体的构造函数，则不再允许以这种方式初始化结构体
-//let location2 = Location(latitude: 37.3230, longitude:-122.0322)
 ```
-
-
+如上代码中自定义了结构体的构造函数，则不再允许以这种方式初始化结构体
+```
+let location2 = Location(latitude: 37.3230, longitude:-122.0322)
+```
 
