@@ -212,9 +212,9 @@ struct Location {
 
 let appleHeadQuarterLocation = Location(latitude: 37.3230 , longitude: -122.0322)
 
-appleHeadQuarterLocation.printLocation()
-appleHeadQuarterLocation.isNorth()
-appleHeadQuarterLocation.isSouth()
+appleHeadQuarterLocation.printLocation() // The Location is 37.323,-122.0322
+appleHeadQuarterLocation.isNorth() // true
+appleHeadQuarterLocation.isSouth() // false
 
 let googleHeadQuarterLocation = Location(coordinateString: "37.4220,-122.0841")
 appleHeadQuarterLocation.distanceTo(location: googleHeadQuarterLocation!) // nan
