@@ -43,13 +43,7 @@ var array3: NSArray = [1,"2",3.1,4,5]
 
 ### 数组是值类型
 ```
-var dir1 = ["key1":"val","key2":"val2"]
-var dir2 = dir1
 
-dir2["key1"] = "value1"
-
-dir1 // ["key2": "val2", "key1": "val"]
-dir2 // ["key2": "val2", "key1": "value1"]
 ```
 
 
