@@ -157,10 +157,68 @@ let location6 = Location(coordinateString: "Hello, World!")
 
 ## 在结构体中写方法
 
+```
+struct Location {
+    let latitude: Double
+    let longitude: Double
+    
+    init(){
+        self.latitude = 0.0
+        self.longitude = 0.0
+    }
+    
+    // 自定义构造函数
+    // 可失败的构造函数
+    init?(coordinateString: String){
+        // 使用 guard 进行程序保卫性判定,防止 nil 值.
+        guard let commaIndex = coordinateString.range(of: ",")?.lowerBound,
+            let firstElement = Double(coordinateString.substring(to: commaIndex)),
+            let secondElement = Double( coordinateString.substring(from: coordinateString.index(after: commaIndex)) )
+        else{
+            return nil
+        }
+        
+        self.latitude = firstElement
+        self.longitude = secondElement
+    }
+    
+    // 自定义构造函数2
+    init(latitude: Double, longitude: Double) {
+        self.latitude = latitude
+        self.longitude = longitude
+    }
+
+    // 定义没有参数也没有返回值的方法
+    func printLocation() {
+        print("The Location is \(self.latitude),\(self.longitude)")
+    }
+
+    // 定义有返回值的方法
+    func isNorth() -> Bool {
+        return self.latitude > 0
+    }
+    
+    // 方法调用结构体中其他方法
+    func isSouth()-> Bool {
+        return !self.isNorth()
+    }
+    
+    // 方法接收参数
+    func distanceTo(location: Location) -> Double {
+        return sqrt(pow(self.latitude , location.latitude) + pow(self.longitude, location.longitude))
+    }
+}
 
 
+let appleHeadQuarterLocation = Location(latitude: 37.3230 , longitude: -122.0322)
 
+appleHeadQuarterLocation.printLocation()
+appleHeadQuarterLocation.isNorth()
+appleHeadQuarterLocation.isSouth()
 
+let googleHeadQuarterLocation = Location(coordinateString: "37.4220,-122.0841")
+appleHeadQuarterLocation.distanceTo(location: googleHeadQuarterLocation!) // nan
+```
 
 
 
