@@ -70,12 +70,39 @@ struct Location {
 
 let location = Location(coordinateString: "37.3230,-122.0322")
 ```
+
 如上代码中自定义了结构体的构造函数，则不再允许以下面这种方式初始化结构体。
+
 ```
 let location2 = Location(latitude: 37.3230, longitude:-122.0322)
 ```
+
 这时我们可以再定义一个构造函数进行结构体的初始化。
+
 ```
+struct Location {
+    let latitude: Double
+    let longitude: Double
+    
+    // 自定义构造函数
+    init (coordinateString: String){
+        let commaIndex = coordinateString.range(of: ",")!.lowerBound
+        
+        let firstElement = coordinateString.substring(to: commaIndex)
+        let secondElement = coordinateString.substring(from: coordinateString.index(after: commaIndex))
+        
+        self.latitude = Double(firstElement)!
+        self.longitude = Double(secondElement)!
+    }
+    
+    // 自定义构造函数2
+    init(latitude: Double, longitude: Double) {
+        self.latitude = latitude
+        self.longitude = longitude
+    }
+}
 
 
+let location = Location(coordinateString: "37.3230,-122.0322")
+let location2 = Location(latitude: 37.3230, longitude:-122.0322)
 ```
