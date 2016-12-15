@@ -84,7 +84,7 @@ struct Location {
     let latitude: Double
     let longitude: Double
     
-    // 自定义构造函数，同时省略参数名
+    // 自定义构造函数，同时省略参数名,但是为了程序的可读性不建议这么做
     init (_ coordinateString: String){
         let commaIndex = coordinateString.range(of: ",")!.lowerBound
         
