@@ -54,7 +54,7 @@ person1.fullName() // Steve Jobs
 
 
 ### 类的比较
-使用 `===` 判断两个类的实例话对象是否相等，即它们是否是指向同一内存地址。
+使用 `===` 判断两个类的实例话对象是否相等，即比较它们是否是指向同一内存地址。
 
 ```
 class Person {
@@ -90,7 +90,6 @@ person1 === person2 // true
 
 let person3 = Person(firstName: "Steve", lastName: "Jobs")
 person1 === person3 // false
-
 ```
 
 
