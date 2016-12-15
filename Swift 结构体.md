@@ -35,8 +35,22 @@ googleHeadQarter.location.latitude // 37.422
 ```
 
 
+## 结构体之构造函数
+```
+struct Location {
+    var latitude: Double = 0
+    var longitude: Double = 0
+}
 
+/**
+* 结构体的初始化时默认将结构体内所有的属性值补齐;
+* 结构体默认初始化函数内传递的属性值不是任意的，根据定义的时候的顺序传递
+* 对于结构体的属性可以在定义结构体的时候赋初始值，并将其设置为变量，也就是使用 var 关键字声明属性
+**/
 
+Location()
+let appleHeadQarterLocation = Location( latitude: 37.3230,longitude: -122.0322)
+```
 
 
 
