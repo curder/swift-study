@@ -306,7 +306,7 @@ class Location{
     }
 }
 
-// 图书
+// 图书、电影、音乐相关App
 class Book{
     let name: String
     lazy var content: String? = {
