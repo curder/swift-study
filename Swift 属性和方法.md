@@ -177,8 +177,43 @@ bulb.current = 40
 
 如下Demo：
 ```
+enum Theme {
+    case DayMode
+    case NightMode
+}
 
 
+class UI{
+    var fontColor: UIColor!
+    var backgroundColor: UIColor!
+    var themeMode: Theme = .DayMode {
+        didSet{
+            switch themeMode {
+            case .DayMode:
+                fontColor = UIColor.black
+                backgroundColor = UIColor.white
+            case.NightMode:
+                fontColor = UIColor.white
+                backgroundColor = UIColor.black
+            }
+        }
+    }
+    
+    init(themeMode: Theme) {
+        self.themeMode = themeMode
+    }
+    
+}
+
+let ui = UI(themeMode: Theme.DayMode)
+
+ui.themeMode
+ui.fontColor // nil
+ui.backgroundColor // nil
+```
+我们查看 `ui.fontColor` 和 `ui.backgroundColor` 的值为 `nil` 
+
+```
 class UI{
     var fontColor: UIColor!
     var backgroundColor: UIColor!
