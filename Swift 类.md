@@ -100,7 +100,6 @@ class Person {
         self.lastName = lastName
     }
     
-    
     // 定义方法
     func fullName() -> String{
         return self.firstName + " " + self.lastName
