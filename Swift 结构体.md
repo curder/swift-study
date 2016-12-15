@@ -77,7 +77,7 @@ let location = Location(coordinateString: "37.3230,-122.0322")
 let location2 = Location(latitude: 37.3230, longitude:-122.0322)
 ```
 
-这时我们可以再定义一个构造函数进行结构体的初始化。
+这时我们可以再定义一个构造函数进行结构体的初始化。**同时也建议这样做。**
 
 ```
 struct Location {
