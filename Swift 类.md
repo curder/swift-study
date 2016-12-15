@@ -56,9 +56,42 @@ person1.fullName() // Steve Jobs
 ### 类的比较
 使用 `===` 判断两个类的实例话对象是否相等，即它们是否是指向同一内存地址。
 
+```
+class Person {
+    let firstName: String
+    let lastName: String
+    var career: String?
+    
+    init(firstName: String , lastName: String , career: String){
+        self.firstName = firstName
+        self.lastName = lastName
+        self.career = career
+    }
+    
+    init(firstName: String , lastName: String) {
+        self.firstName = firstName
+        self.lastName = lastName
+    }
+    
+    // 定义方法
+    func fullName() -> String{
+        return self.firstName + " " + self.lastName
+    }
+    
+    func changeCareer(newCareer: String) {
+        self.career = newCareer
+    }
+}
 
 
+let person1 = Person(firstName: "Steve", lastName: "Jobs")
+let person2 = person1
+person1 === person2 // true
 
+let person3 = Person(firstName: "Steve", lastName: "Jobs")
+person1 === person3 // false
+
+```
 
 
 
