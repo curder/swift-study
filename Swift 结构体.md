@@ -55,11 +55,11 @@ let appleHeadQarterLocation = Location( latitude: 37.3230,longitude: -122.0322)
 struct Location {
     let latitude: Double
     let longitude: Double
-    
+
     // 自定义构造函数
     init (coordinateString: String){
         let commaIndex = coordinateString.range(of: ",")!.lowerBound
-        
+
         let firstElement = coordinateString.substring(to: commaIndex)
         let secondElement = coordinateString.substring(from: coordinateString.index(after: commaIndex))
         
