@@ -44,9 +44,43 @@ var rect = Rectangle( origin: Point(), size: Size(width: 10 , height: 5) )
 
 rect.origin = Point(x: 10 , y: 10)
 
-print( rect.center ) // 改变计算行属性值
+print( rect.center ) // 改变计算型属性值
 
 rect.center = Point()
 ```
 
+### 类型属性
+```
+class Player {
+    var name: String
+    var score: UInt32 = 0
+    static var highestScore: UInt32 = 0 // 静态属性
+    
+    init(name: String){
+        self.name = name
+    }
+
+    func play() {
+        let score = arc4random() % 100
+        print("\(self.name) played and got \(score) scores.")
+        
+        self.score += score
+        
+        print("Total score of \(self.name) is \(self.score)")
+        
+        if self.score > Player.highestScore{
+            Player.highestScore = self.score
+        }
+        print("Highest scores is \(Player.highestScore)")
+    }
+}
+
+let player1 = Player(name: "Player1")
+let player2 = Player(name: "Player2")
+
+player1.play()
+player1.play()
+
+player2.play()
+```
 
