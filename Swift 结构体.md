@@ -50,3 +50,31 @@ let appleHeadQarterLocation = Location( latitude: 37.3230,longitude: -122.0322)
 > 对于结构体的属性可以在定义结构体的时候赋初始值，并将其设置为变量，也就是使用 var 关键字声明属性
 
 
+### 自定义构造函数
+```
+struct Location {
+    let latitude: Double
+    let longitude: Double
+    
+    // 自定义构造函数
+    init (coordinateString: String){
+        let commaIndex = coordinateString.range(of: ",")!.lowerBound
+        
+        let firstElement = coordinateString.substring(to: commaIndex)
+        let secondElement = coordinateString.substring(from: coordinateString.index(after: commaIndex))
+        
+        latitude = Double(firstElement)!
+        longitude = Double(secondElement)!
+    }
+    
+}
+
+//Location(coordinateString: "1,1")
+let location = Location(coordinateString: "37.3230,-122.0322")
+
+// 如上代码中自定义了结构体的构造函数，则不再允许以这种方式初始化结构体
+//let location2 = Location(latitude: 37.3230, longitude:-122.0322)
+```
+
+
+
