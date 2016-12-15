@@ -290,3 +290,44 @@ if let range = ClosedRange(start: 0, end: 10_000){
 
 > `lazy` 关键字不允许使用在常量属性上。
 
+#### 惰性加载的一些其他场景
+```
+// 根据经纬度计算地理位置
+class Location{
+    let latitude: Double
+    let longitude: Double
+    lazy var address: String? = {
+        return nil
+    }()
+    
+    init(latitude: Double , longitude: Double){
+        self.latitude = latitude
+        self.longitude = longitude
+    }
+}
+
+// 图书
+class Book{
+    let name: String
+    lazy var content: String? = {
+        // 从本地读取书的内容
+        return nil
+    }()
+    init(name: String){
+        self.name = name
+    }
+}
+
+// Web请求
+class Web{
+    let url: String
+    lazy var html: String? = {
+        // 从网络读取url对应的html
+        return nil
+    }()
+    
+    init(url: String){
+        self.url = url
+    }
+}
+```
