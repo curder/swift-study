@@ -257,7 +257,6 @@ point.area()
 ```
 
 
-[TOC]
 ### 枚举类型是值类型
 ```
 enum Direction{
