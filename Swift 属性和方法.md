@@ -250,5 +250,43 @@ ui.fontColor // nil
 ui.backgroundColor // nil
 ```
 
+### 惰性加载（延迟加载）
+```
+class ClosedRange{
+    let start: Int
+    let end: Int
 
+    var width: Int{
+        return end - start + 1
+    }
+    
+    lazy var sum: Int = { // 延迟性属性
+        var res = 0
+        for i in self.start ... self.end{
+            res += i
+        }
+        return res
+    }()
+    
+    
+    init?( start: Int , end: Int ) {
+        if start > end {
+            return nil
+        }
+        
+        self.start = start
+        self.end = end
+    }
+}
+
+if let range = ClosedRange(start: 0, end: 10_000){
+    range.width
+    range.sum
+    range.sum
+    range.sum
+    
+}
+```
+
+> `lazy` 关键字不允许使用在常量属性上。
 
