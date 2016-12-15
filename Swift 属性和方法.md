@@ -44,7 +44,7 @@ var rect = Rectangle( origin: Point(), size: Size(width: 10 , height: 5) )
 
 rect.origin = Point(x: 10 , y: 10)
 
-print( rect.center )
+print( rect.center ) // 改变计算行属性值
 
 rect.center = Point()
 ```
