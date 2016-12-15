@@ -221,9 +221,40 @@ if let website = website {
 
 
 ### 枚举类型定义方法
+```
+// 枚举类型定义方法
+enum Shape{
+    case Square(side: Double) // 正方形
+    case Rectangle(width: Double , height: Double) // 长方形
+    case Circle(centerx: Double , centery: Double , radius: Double) // 圆形
+    case Point // 点
+    
+    // 计算面积的方式
+    func area() -> Double {
+        switch self {
+        case let .Square( side ):
+            return side * side
+        case let .Rectangle( width , height ):
+            return width * height
+        case let .Circle( _ , _ , r ):
+            return M_PI * r * r
+        case .Point:
+            return 0
+        }
+    }
+}
 
 
+let shape = Shape.Square(side: 10)
+let rectangle = Shape.Rectangle(width: 10, height: 5)
+let circle = Shape.Circle(centerx: 10, centery: 20, radius: 8)
+let point = Shape.Point
 
+shape.area()
+rectangle.area()
+circle.area()
+point.area()
+```
 
 
 
