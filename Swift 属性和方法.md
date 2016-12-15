@@ -338,15 +338,13 @@ class Web{
 
 ### 访问控制
 
-```
-// 访问控制
-/*
- Swift 的访问控制是通过文件为单位控制的。其中：
+Swift 的访问控制是通过文件为单位控制的。其中：
  * public 可以被模块外访问
  * internal 可以被本模块访问
  * private 可以被本文件访问
  当我们不显式指定的时候，所有的类、属性或者方法的访问权限都是 **internal** 。
- */
+
+```
 enum Theme {
     case DayMode
     case NightMode
@@ -387,6 +385,5 @@ class UI{
         print("The background color is \(self.backgroundColor == UIColor.black ? "WHITE" : "BLACK")")
     }
 }
-
 ```
 
