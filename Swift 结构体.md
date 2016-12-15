@@ -103,6 +103,6 @@ struct Location {
 }
 
 
-let location = Location(coordinateString: "37.3230,-122.0322")
+let location = Location("37.3230,-122.0322")
 let location2 = Location(latitude: 37.3230, longitude:-122.0322)
 ```
