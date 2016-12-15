@@ -66,7 +66,6 @@ struct Location {
         latitude = Double(firstElement)!
         longitude = Double(secondElement)!
     }
-    
 }
 
 //Location(coordinateString: "1,1")
