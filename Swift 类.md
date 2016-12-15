@@ -79,3 +79,40 @@ person1.fullName() // Steve Jobs
 
 
 
+
+### 类是引用类型 Reference Type
+
+　　类不是值类型，而是一个**引用类型**
+```
+class Person {
+    var firstName: String
+    var lastName: String
+    var career: String?
+    
+    init(firstName: String , lastName: String , career: String){
+        self.firstName = firstName
+        self.lastName = lastName
+        self.career = career
+    }
+    
+    init(firstName: String , lastName: String) {
+        self.firstName = firstName
+        self.lastName = lastName
+    }
+    
+    
+    // 定义方法
+    func fullName() -> String{
+        return self.firstName + " " + self.lastName
+    }
+}
+
+let person1 = Person(firstName: "Steve", lastName: "Jobs",career: "Developer")
+
+let person2 = person1 // person2 是 person1 的别名，共用内存地址空间
+
+person2.career = "CEO"
+
+person1
+person2
+```
