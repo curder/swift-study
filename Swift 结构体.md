@@ -106,6 +106,9 @@ struct Location {
 let location = Location("37.3230,-122.0322")
 let location2 = Location(latitude: 37.3230, longitude:-122.0322)
 ```
+
+> 上面的构造函数中使用了可选型的强制解包，这将导致程序的不可预料的错误，这时我们可以使用 guard 关键词进行判定。
+
 ### 可失败的构造函数
 
 ```
