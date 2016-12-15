@@ -43,7 +43,12 @@ var array3: NSArray = [1,"2",3.1,4,5]
 
 ### 数组是值类型
 ```
+var arr1 = [1,2,3]
+var arr2 = arr1
+arr2[1] = 3
 
+print(arr1) // [1, 2, 3]
+print(arr2) // [1, 3, 3]
 ```
 
 
