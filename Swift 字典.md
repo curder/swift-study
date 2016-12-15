@@ -33,6 +33,12 @@ dict["php"] // nil
 
 ### 字典是值类型
 ```
+var set1 = [4,23,32]
+var set2 = set1
+
+set2.remove(at: 2)
+set1 //[4, 23, 32]
+set2 //[4, 23]
 
 ```
 
