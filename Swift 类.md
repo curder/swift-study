@@ -19,7 +19,7 @@ class 类名称{
     }
 }
 ```
-
+定义一个类
 ```
 class Person {
     var firstName: String
@@ -46,9 +46,7 @@ class Person {
 }
 
 let person1 = Person(firstName: "Steve", lastName: "Jobs")
-
 let person2 = Person(fullName: "Steve Jobs")
-
 person1.fullName() // Steve Jobs
 ```
 
