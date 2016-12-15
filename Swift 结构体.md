@@ -106,3 +106,50 @@ struct Location {
 let location = Location("37.3230,-122.0322")
 let location2 = Location(latitude: 37.3230, longitude:-122.0322)
 ```
+### 可失败的构造函数
+
+```
+struct Location {
+    let latitude: Double
+    let longitude: Double
+    
+    init(){
+        self.latitude = 0.0
+        self.longitude = 0.0
+    }
+    
+    // 自定义构造函数
+    // 可失败的构造函数
+    init?(coordinateString: String){
+        // 使用 guard 进行程序保卫性判定,防止 nil 值.
+        guard let commaIndex = coordinateString.range(of: ",")?.lowerBound,
+            let firstElement = Double(coordinateString.substring(to: commaIndex)),
+            let secondElement = Double( coordinateString.substring(from: coordinateString.index(after: commaIndex)) )
+        else{
+            return nil
+        }
+        
+        self.latitude = firstElement
+        self.longitude = secondElement
+    }
+    
+    // 自定义构造函数2
+    init(latitude: Double, longitude: Double) {
+        self.latitude = latitude
+        self.longitude = longitude
+    }
+}
+
+
+// 所以大多数情况下建议将构造函数的参数与结构体的属性保持一致
+let location = Location(coordinateString: "37.3230,-122.0322")
+let location2 = Location(coordinateString: "37.3230,-122.0322")!
+
+let location3 = Location(coordinateString: "37.3230&-122.0322")
+let location4 = Location(coordinateString: "apple,-122.0322")
+let location5 = Location(coordinateString: "37.3230,apple")
+let location6 = Location(coordinateString: "Hello, World!")
+
+```
+
+
