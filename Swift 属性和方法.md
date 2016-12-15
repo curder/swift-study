@@ -140,3 +140,41 @@ if let e = Matrix.identityMatrix(n: 8) {
     e.printMatrix()
 }
 ```
+
+### 属性观察器
+```
+// 属性观察器
+/**
+如果外部修改了类中的成员属性操作类的 static 静态属性大小，可以通过关键字限制
+*/
+
+class LightBulb{
+    static let macCurrent = 30
+    var current = 0 {
+        willSet { // 在对象中赋值 current 之前，{} 中的逻辑代码将执行
+            print("Current value changed. The Change is \(abs(current - newValue))")
+        }
+        
+        didSet{ // 在对象中赋值 current 完成，{} 中的逻辑代码将执行
+            
+            if self.current == LightBulb.macCurrent {
+                print("Pay attention, the current value get to the maximum point.")
+            }else if self.current > LightBulb.macCurrent{
+                print("Current too height , falling back to previous setting.")
+                self.current = oldValue
+            }
+            
+            
+            print("The current is \(self.current)")
+        }
+    }
+    
+}
+
+let bulb = LightBulb()
+bulb.current = 20
+bulb.current = 30
+bulb.current = 40
+```
+
+
