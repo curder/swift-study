@@ -417,8 +417,4 @@ public class App{
         ui.show()
     }
 }
-
-
-
-
 ```
