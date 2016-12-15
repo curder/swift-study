@@ -346,6 +346,7 @@ Swift 的访问控制是通过**文件**为单位控制的。其中：
  
  * private 可以被本文件访问，当我们不显式指定的时候，所有的类、属性或者方法的访问权限都是 **internal** 。
 
+例如：`Sources` 目录下  `ui.swift` 文件内容
 ```
 enum Theme {
     case DayMode
