@@ -28,5 +28,6 @@
     * [Swift 闭包](Swift 闭包.md)
     * [Swift 枚举](Swift 枚举.md)
     * [Swift 结构体](Swift 结构体.md)
+    * [Swift 类](Swift 类.md)
 * [其他](other.md)
     * [Swift 3.0 For 循环](Swift 3.0 For 循环.md)
