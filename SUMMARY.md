@@ -29,5 +29,6 @@
     * [Swift 枚举](Swift 枚举.md)
     * [Swift 结构体](Swift 结构体.md)
     * [Swift 类](Swift 类.md)
+    * [Swift 属性和方法](Swift 属性和方法.md)
 * [其他](other.md)
     * [Swift 3.0 For 循环](Swift 3.0 For 循环.md)
