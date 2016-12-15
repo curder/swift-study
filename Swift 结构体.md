@@ -220,10 +220,19 @@ let googleHeadQuarterLocation = Location(coordinateString: "37.4220,-122.0841")
 appleHeadQuarterLocation.distanceTo(location: googleHeadQuarterLocation!) // nan
 ```
 
-
-[TOC]
 ## 结构体是值类型
 ```
+struct Point {
+    var x = 0
+    var y = 0
+}
 
+var p1 = Point()
+var p2 = p1 // 赋值 将 p1 的值拷贝了一份赋值给 p2
+
+p2.x += 1
+
+p2.x // 1
+
+p1.x // 0
 ```
-
