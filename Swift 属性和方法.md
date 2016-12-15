@@ -49,7 +49,7 @@ print( rect.center ) // 改变计算型属性值
 rect.center = Point()
 ```
 
-### 类型属性
+### 类型属性 静态属性
 ```
 class Player {
     var name: String
@@ -139,5 +139,4 @@ if let m = Matrix([[1,2,],[3,4]]){
 if let e = Matrix.identityMatrix(n: 8) {
     e.printMatrix()
 }
-
 ```
