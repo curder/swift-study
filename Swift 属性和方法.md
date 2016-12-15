@@ -175,6 +175,7 @@ bulb.current = 40
 ```
 > 注意： `didSet` 和 `willSet` 不会在初始化阶段调用。
 
+如下Demo：
 ```
 
 
