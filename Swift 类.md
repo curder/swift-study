@@ -53,6 +53,8 @@ person1.fullName() // Steve Jobs
 ```
 
 
+[TOC]
+### 类的比较
 
 
 
