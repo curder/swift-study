@@ -22,7 +22,7 @@ appleHeadQarterLocation.latitude
 googleHeadQarterLocation.longitude
 ```
 
-### 结构体的套用
+## 结构体的套用
 ```
 struct Place{
     let location: Location
