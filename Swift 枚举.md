@@ -255,3 +255,23 @@ rectangle.area()
 circle.area()
 point.area()
 ```
+
+
+[TOC]
+### 枚举类型是值类型
+```
+enum Direction{
+    case North
+    case South
+    case East
+    case West
+}
+
+var d1 = Direction.East
+var d2 = d1
+
+d2 = Direction.West
+
+d1 // East
+d2 // West
+```
