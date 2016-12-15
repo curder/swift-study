@@ -115,3 +115,82 @@ person2.career = "CEO"
 person1
 person2
 ```
+
+
+### Swift 引用类型的特点 Reference Type
+```
+class Person {
+    let firstName: String
+    let lastName: String
+    var career: String?
+    
+    init(firstName: String , lastName: String , career: String){
+        self.firstName = firstName
+        self.lastName = lastName
+        self.career = career
+    }
+    
+    init(firstName: String , lastName: String) {
+        self.firstName = firstName
+        self.lastName = lastName
+    }
+    
+    // 定义方法
+    func fullName() -> String{
+        return self.firstName + " " + self.lastName
+    }
+    
+    func changeCareer(newCareer: String) {
+        self.career = newCareer
+    }
+}
+
+
+let person = Person(firstName: "Steve", lastName: "Jobs")
+
+person.career // nil
+person.career = "CEO" // 赋值修改类的变量属性
+person.career // CEO
+
+// 对于一个类的变量属性，如果他的实例对象是常量，依然可以在外界对它的值做修改。
+
+person.changeCareer(newCareer: "winner")
+person.career // winner
+```
+
+#### 在结构体中方法改变自身属性的举例
+```
+struct Location{
+    var x = 0
+    var y = 0
+    
+    mutating func goEast(){
+        self.x += 1
+    }
+}
+```
+
+#### 在枚举方法中改变自身属性
+```
+var location = Location()
+location.goEast()
+
+enum Swith{
+    case On
+    case Off
+    
+    mutating func click() {
+        switch self {
+        case .On:
+            self = .Off
+        case .Off:
+            self = .On
+        }
+    }
+}
+
+var swith = Swith.On
+swith.click() // Off
+swith.click() // On
+```
+
