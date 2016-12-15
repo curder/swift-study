@@ -33,12 +33,13 @@ dict["php"] // nil
 
 ### 字典是值类型
 ```
-var set1 = [4,23,32]
-var set2 = set1
+var dir1 = ["key1":"val","key2":"val2"]
+var dir2 = dir1
 
-set2.remove(at: 2)
-set1 //[4, 23, 32]
-set2 //[4, 23]
+dir2["key1"] = "value1"
+
+dir1 // ["key2": "val2", "key1": "val"]
+dir2 // ["key2": "val2", "key1": "value1"]
 ```
 
 
