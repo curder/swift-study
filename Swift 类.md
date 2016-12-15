@@ -55,6 +55,8 @@ person1.fullName() // Steve Jobs
 
 [TOC]
 ### 类的比较
+使用 `===` 判断两个类是否相等
+
 
 
 
