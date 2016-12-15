@@ -393,5 +393,32 @@ class UI{
 `Sources` 目录下 `app.swift` 文件 内容如下：
 
 ```
+import Foundation
+
+public class App{
+    private let ui = UI()
+    public var name: String
+    
+    public init(name: String){
+        self.name = name
+    }
+    
+    public func switchMode(){
+        switch ui.themeMode {
+        case Theme.DayMode:
+            ui.themeMode = Theme.NightMode
+        case Theme.NightMode:
+            ui.themeMode = Theme.DayMode
+        }
+    }
+    
+    public func show(){
+        print("The App name is \(self.name)")
+        ui.show()
+    }
+}
+
+
+
 
 ```
