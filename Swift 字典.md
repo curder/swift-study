@@ -39,7 +39,6 @@ var set2 = set1
 set2.remove(at: 2)
 set1 //[4, 23, 32]
 set2 //[4, 23]
-
 ```
 
 
