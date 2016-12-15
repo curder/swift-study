@@ -155,3 +155,13 @@ let location6 = Location(coordinateString: "Hello, World!")
 ```
 
 
+[TOC]
+## 在结构体中写方法
+
+
+
+
+
+
+
+
