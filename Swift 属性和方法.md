@@ -175,9 +175,39 @@ bulb.current = 40
 ```
 > 注意： `didSet` 和 `willSet` 不会在初始化阶段调用。
 
+```
+class UI{
+    var fontColor: UIColor!
+    var backgroundColor: UIColor!
+    var themeMode: Theme = .DayMode {
+        didSet{
+            self.chengeTheme(themeMode: themeMode)
+        }
+    }
+    
+    init(themeMode: Theme) {
+        self.themeMode = themeMode
+        self.chengeTheme(themeMode: themeMode)
+    }
+    
+    func chengeTheme(themeMode: Theme) {
+        switch themeMode {
+        case .DayMode:
+            fontColor = UIColor.black
+            backgroundColor = UIColor.white
+        case.NightMode:
+            fontColor = UIColor.white
+            backgroundColor = UIColor.black
+        }
+    }
+}
 
+let ui = UI(themeMode: Theme.DayMode)
 
-
+ui.themeMode
+ui.fontColor // nil
+ui.backgroundColor // nil
+```
 
 
 
