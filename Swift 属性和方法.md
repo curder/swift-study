@@ -185,7 +185,6 @@ enum Theme {
     case NightMode
 }
 
-
 class UI{
     var fontColor: UIColor!
     var backgroundColor: UIColor!
@@ -217,6 +216,11 @@ ui.backgroundColor // nil
 我们查看到 `ui.fontColor` 和 `ui.backgroundColor` 的值为 `nil` 。说明在执行初始化的时候并没有调用 `didSet` ，应该进行如下代码改进。
 
 ```
+enum Theme {
+    case DayMode
+    case NightMode
+}
+
 class UI{
     var fontColor: UIColor!
     var backgroundColor: UIColor!
