@@ -422,7 +422,7 @@ public class App{
 
 [TOC]
 ### 单例模式
-有两个文件，``
+有两个文件，`gameManager.swift` 是一个单利类。
 ```
 
 ```
