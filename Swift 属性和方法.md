@@ -425,9 +425,6 @@ public class App{
 有两个文件，`gameManager.swift` 是一个单利类。
 ```
 import Foundation
-
-// 单例模式
-
 public class GameManager{
     public var score = 0
     public static let defaltGameManager = GameManager()
