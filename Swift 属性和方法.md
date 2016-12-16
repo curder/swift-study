@@ -441,5 +441,17 @@ public class GameManager{
 > 注意： 初始化函数设置为 `private` ，`defaultGameManager` 设置为静态常量。
 
 ```
+import UIKit
+
+let gameManager = GameManager.defaltGameManager
+
+gameManager.addScore()
+gameManager.score // 10
+
+let gm = GameManager.defaltGameManager
+
+gm.addScore()
+
+gm.score // 20
 
 ```
