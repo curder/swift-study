@@ -14,6 +14,7 @@ let http404Error = ( httpStatus: 404 , httpMessage: "The Page Not Found!" )
 ```
 
 ### 显式的指定元组的数据类型
+在声明元组时，可以定义好分量的名称和数据类型，方便后期解包使用分量名称对数据的获取。
 ```
 var point2:( Int ,  Int , Int ) = ( 10 , 20 , 30 )
 let httpResponse:( httpStatus: Int , httpMessage: String ) = ( 200 , "OK" )
