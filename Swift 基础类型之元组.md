@@ -41,7 +41,14 @@ let ( _ , userName , _ ) = loginResult // 常量 userName 的值为 `curder`
 
 ### 可变元组和不可变元组
 使用 `let` 声明的元组是**不可变元组**，使用 `var` 声明的元组是**可变元组**。
+```
+var userInfo = (name: "Stive", true, age: 22)
+let user = (name: "Stive" , true , age: 50)
 
+userInfo.name = "Stive Jobs" // 修改成功
+
+user.name = "Stive Jobs" // 无法修改 error: cannot assign to property: 'user' is a 'let' constant
+```
 
 
 需要注意的是，可变元组虽然可以修改数据，但却不能改变其数据的数据类型：
