@@ -23,15 +23,12 @@ let httpResponse:( httpStatus: Int , httpMessage: String ) = ( 200 , "OK" )
 　　将一个元组的内容分解（`decompose`）成单独的常量和变量。
 ```
 let ( x , y ) = point // 分别得到 x 的值为 2 , y 的值为 1 .
+var ( statusCode , statusMessage ) = httpResponse // 分别得到 statusCode 的值为 200 , statusMessage 的值为 OK
 ```
 　　也可以使用如下的方式使用 point 分量，但这种方式获取不直观。
 ```
 point.0
 point.1
-```
-
-```
-var ( statusCode , statusMessage ) = httpResponse // 分别得到 statusCode 的值为 200 , statusMessage 的值为 OK
 ```
 
 ### 获取元组中部分单元的值
