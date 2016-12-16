@@ -412,7 +412,7 @@ public class App{
         }
     }
     
-    public func show(){
+    public func show() {
         print("The App name is \(self.name)")
         ui.show()
     }
