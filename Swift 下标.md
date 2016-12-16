@@ -6,7 +6,7 @@ struct Vector{
     var x: Double = 0.0
     var y: Double = 0.0
     var z: Double = 0.0
-    
+
     subscript(index: Int) -> Double? {
         get{
             switch index{
@@ -16,12 +16,12 @@ struct Vector{
             default: return nil
             }
         }
-        
+
         set{
             guard let newValue = newValue else{
                 return
             }
-            
+
             switch index{
             case 0: x = newValue
             case 1: y = newValue
@@ -31,7 +31,7 @@ struct Vector{
             
         }
     }
-    
+
     subscript (axis: String) -> Double? {
         // 不写 默认是 getter
         switch axis {
@@ -41,8 +41,6 @@ struct Vector{
         default: return nil
         }
     }
-    
-    
 }
 
 
