@@ -1,7 +1,6 @@
 ## Swift 基本类型之布尔类型以及简单的 if 语句
 
-　　在 Swift 语言中，布尔类型有两个 `true` 和 `false` 
-
+在 Swift 语言中，布尔类型有两个 `true` 和 `false` 
 
 ### 声明布尔值
 ```
@@ -10,7 +9,7 @@ let myBoolFalse = false
 ```
 
 ### if 流程控制
-　　if 关键字后面条件可以不使用 `()` 包裹起来，并且 `{ }` 不允许省略
+　　`if` 关键字后面条件可以不使用 `()` 包裹起来，并且 `{ }` 不允许省略
 ```
 let myBoolTrue: Bool = true
 
