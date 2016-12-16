@@ -61,7 +61,7 @@ var  = "哭"
 
 ```
 let x = 1 , y = true , z = 3
-print( x , y , z )
+print( x , y , z ) // 1 true 3
 ```
 
 ##### 自定义分隔符(默认为空格) 
