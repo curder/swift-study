@@ -70,9 +70,10 @@ print( x , y , z ) // 1 true 3
 // 自定义分隔符(默认为空格) 
 print( x , y , z , separator:"-") // 结果为：`1-true-3`
 
+// 自定义结束符(默认为 \n ) 
 print( x , y , z , separator:"-",terminator:":)") // 结果为：1-true-3:)
 ```
-##### 自定义结束符(默认为 \n ) 
+##### 
 
 ```
 
