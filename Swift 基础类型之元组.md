@@ -17,14 +17,18 @@ let http404Error = ( httpStatus: 404 , httpMessage: "The Page Not Found!" )
 ```
 
 ### 显式的指定元组的数据类型
+
 在声明元组时，可以定义好分量的名称和数据类型，方便后期解包使用分量名称对数据的获取。
+
 ```
 var point2:( Int ,  Int , Int ) = ( 10 , 20 , 30 )
 let httpResponse:( httpStatus: Int , httpMessage: String ) = ( 200 , "OK" )
 ```
 
 ### 元组的解包
-　　将一个元组的内容分解（`decompose`）成单独的常量和变量。
+
+将一个元组的内容分解（`decompose`）成单独的常量和变量。
+
 ```
 var point = ( 2 , 1 )
 let ( x , y ) = point // 分别得到 x 的值为 2 , y 的值为 1 .
@@ -38,7 +42,9 @@ point.1
 ```
 
 ### 获取元组中部分单元的值
-　　对于元组中我们不关心的值，使用 `_` 跳过不关心的值。
+
+对于元组中我们不关心的值，使用 `_` 跳过不关心的值。
+
 ```
 let loginResult: ( isLoginSuccess: Bool , userName: String , loginTime: Int ) = ( true , "curder" , 1481101192 )
 
@@ -48,6 +54,7 @@ let ( _ , userName , _ ) = loginResult // 常量 userName 的值为 `curder`
 ### 可变元组和不可变元组
 
 使用 `let` 声明的元组是**不可变元组**，使用 `var` 声明的元组是**可变元组**。
+
 ```
 var userInfo = (name: "Stive", true, age: 22)
 let user = (name: "Stive" , true , age: 50)
