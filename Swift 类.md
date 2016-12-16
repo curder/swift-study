@@ -142,6 +142,7 @@ user1.getScore(score: 100)
 user1.score
 user1.level
 ```
+
 > 如果类不允许子类继承，可以使用 `final` 关键字修饰类。
 
 
