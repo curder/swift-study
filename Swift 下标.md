@@ -1,7 +1,6 @@
 ## Swift 下标
 
-
-//以结构体为例，使用 `subscript` 关键字申明。如下
+　　以结构体为例，使用 `subscript` 关键字申明。如下
 ```
 struct Vector{
     var x: Double = 0.0
