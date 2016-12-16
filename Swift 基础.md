@@ -44,7 +44,6 @@ print("我的名字是" + 名字) // 打印结果： 我的名字是curder
 var  = "哭"
 ```
 
-
 ![](image/QQ20161207-0.png)
 
 > Mac 系统中使用 `command + control + space`可以呼出表情。 
