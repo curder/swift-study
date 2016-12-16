@@ -438,7 +438,7 @@ public class GameManager{
     }
 }
 ```
-
+> 注意： 初始化函数设置为 `private` ，`defaultGameManager` 设置为静态常量。
 
 
 
