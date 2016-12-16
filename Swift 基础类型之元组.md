@@ -27,7 +27,7 @@ let httpResponse:( httpStatus: Int , httpMessage: String ) = ( 200 , "OK" )
 
 ### 元组的解包
 
-将一个元组的内容分解（`decompose`）成单独的常量和变量。
+将一个元组的内容分解（ `decompose` ）成单独的常量和变量。
 
 ```
 var point = ( 2 , 1 )
