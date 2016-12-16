@@ -2,14 +2,12 @@
 　　元组（`tuples`）把多个值组合成一个复合值。
   * **元组内的值可以是任意类型**
   * **并不强制要求是相同类型**。
-
-### 记录一个点的坐标位置
+ 
 ```
+// 记录一个点的坐标位置
 var point = ( 2 , 1 )
-```
 
-### 记录Http的相应头信息
-```
+// 记录Http的相应头信息
 let http404Error = ( httpStatus: 404 , httpMessage: "The Page Not Found!" )
 ```
 
