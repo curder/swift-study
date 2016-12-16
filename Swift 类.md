@@ -94,6 +94,55 @@ person1 === person3 // false
 > 判定两个不同的实例可以使用 `!==` 进行判断。
 
 
+### 类的继承
+```
+// 角色类
+class Avater{
+    var name: String
+    var life: Int = 100
+    var isAlive: Bool = true
+    
+    init(name: String){
+        self.name = name
+    }
+    
+    func beAttacked(attack: Int) {
+        self.life -= attack
+        if life <= 0{
+            isAlive = false
+        }
+    }
+}
+
+// 用户类 继承自角色类
+class User: Avater{
+    var score: Int = 0
+    var level: Int = 0
+    
+    func getScore(score: Int) {
+        self.score += score
+        if self.score > level * 100{
+            level += 1
+        }
+    }
+}
+
+
+let user1 = User(name: "Stive")
+user1.name
+user1.score
+user1.life
+user1.isAlive
+
+user1.beAttacked(attack: 10)
+user1.life
+
+user1.getScore(score: 10)
+user1.getScore(score: 100)
+user1.score
+user1.level
+```
+> 如果类不允许子类继承，可以使用 `final` 关键字修饰类。
 
 
 
