@@ -453,5 +453,4 @@ let gm = GameManager.defaltGameManager
 gm.addScore()
 
 gm.score // 20
-
 ```
