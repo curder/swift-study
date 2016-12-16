@@ -52,5 +52,8 @@ user.name = "Stive Jobs" // 无法修改 error: cannot assign to property: 'user
 
 
 需要注意的是，可变元组虽然可以修改数据，但却不能改变其数据的数据类型：
+```
+var userInfo = (name: "Stive", true, age: 22)
 
-
+userInfo.name = 22 // 修改了数据类型报错 error: cannot assign value of type 'Int' to type 'String'
+```
