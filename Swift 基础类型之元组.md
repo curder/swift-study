@@ -38,3 +38,9 @@ let loginResult: ( isLoginSuccess: Bool , userName: String , loginTime: Int ) = 
 
 let ( _ , userName , _ ) = loginResult // 常量 userName 的值为 `curder`
 ```
+### 可变元组和不可变元组
+
+
+需要注意的是，可变元组虽然可以修改数据，但却不能改变其数据的数据类型：
+
+
