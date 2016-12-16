@@ -50,8 +50,8 @@ userInfo.name = "Stive Jobs" // 修改成功
 user.name = "Stive Jobs" // 无法修改 error: cannot assign to property: 'user' is a 'let' constant
 ```
 
-
 需要注意的是，可变元组虽然可以修改数据，但却不能改变其数据的数据类型：
+
 ```
 var userInfo = (name: "Stive", true, age: 22)
 
