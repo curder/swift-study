@@ -32,7 +32,7 @@ point.1
 ```
 
 ### 获取元组中部分单元的值
-　　使用 `_` 跳过不关心的值。
+　　对于元组中我们不关心的值，使用 `_` 跳过不关心的值。
 ```
 let loginResult: ( isLoginSuccess: Bool , userName: String , loginTime: Int ) = ( true , "curder" , 1481101192 )
 
