@@ -2,7 +2,7 @@
 
 常见的 label 文本属性控制有： `text` 、`font` 、`textColor`、`backgroundColor` 、`textAlignment` 、`shadowOffset` 、`shadowColor` 、`numberOfLines` 等。
 ```
-// 定义 Label 常量
+// 初始化定义 Label 常量
 let label: UILabel = UILabel(frame: CGRect(x: 20, y: 100, width: 300, height: 100 ))
 
 // 设置 Label 上的文字
