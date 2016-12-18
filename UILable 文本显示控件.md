@@ -1,6 +1,6 @@
 ## UILable 文本显示控件
 
-Label 控件是最基础的显示控件。常见的 label 文本属性控制有： `text` 、`font` 、`textColor`、`backgroundColor` 、`textAlignment` 、`shadowOffset` 、`shadowColor` 、`numberOfLines` 等。
+Label 控件是最基础的显示控件。常见的 label 文本属性控制有： `text` 、`font` 、`textColor`、`backgroundColor` 、`textAlignment` 、`shadowOffset` 、`shadowColor` 、`numberOfLines` 等。使用如下：
 
 ```
 // 初始化定义 Label 常量，并设置这个label的x、y坐标以及长宽等参数值
