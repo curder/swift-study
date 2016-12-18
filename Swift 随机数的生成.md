@@ -18,5 +18,10 @@ let temp = Int(arc4random_uniform(100))+1
 ## 随机数的一些应用
 生成一些随机颜色
 ```
+let redPart: CGFloat = CGFloat(arc4random()%255) / 255
+let greenPart: CGFloat = CGFloat(arc4random()%255) / 255
+let bluePart: CGFloat = CGFloat(arc4random()%255) / 255
 
+// 随机 button 背景色
+btn.backgroundColor = UIColor(red: redPart, green: greenPart, blue: bluePart, alpha: 1.0)
 ```
