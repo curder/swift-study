@@ -1,6 +1,6 @@
 ## UILable 文本显示控件
 
-常见的 label 文本属性控制有： `text` 、`font` 、`textColor`、`backgroundColor` 、`textAlignment` 、`shadowOffset` 、`shadowColor` 、`numberOfLines`
+常见的 label 文本属性控制有： `text` 、`font` 、`textColor`、`backgroundColor` 、`textAlignment` 、`shadowOffset` 、`shadowColor` 、`numberOfLines`等。
 ```
 // 定义 Label 常量
 let label: UILabel = UILabel(frame: CGRect(x: 20, y: 100, width: 300, height: 100 ))
