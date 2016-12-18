@@ -16,3 +16,7 @@ let temp = Int(arc4random_uniform(100))+1
 ```
 
 ## 随机数的一些应用
+生成一些随机颜色
+```
+
+```
