@@ -9,7 +9,12 @@ UISearch 搜索控件
 UISwitch 开关控件
 UISegmentControl 分段控制器
 UITextField 小巧的输入框
-UISider 
+UISider 滑块控件
+UIActivityIndicatorView 提示器控件
+UIprogressView 进度条控件
+UIPageControl 分页控制器
+UIStepper 步进控制器
+UIAlertController 警告框 / 抽屉
 
 
 
