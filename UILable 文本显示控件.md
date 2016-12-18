@@ -29,7 +29,6 @@ label.numberOfLines = 0
 
 // 将 Label 放置到视图
 self.view.addSubview(label)
-
 ```
 
 
