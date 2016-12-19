@@ -353,7 +353,7 @@ func ** (x: Double, p: Double)-> Double{
 
 ```
 
-
+> Apple 的一些运算符信息参考这里： https://developer.apple.com/reference/swift/1851035-swift_standard_library_operators#//apple_ref/doc/uid/TP40016054
 
 
 
