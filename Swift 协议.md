@@ -89,9 +89,89 @@ let aPet: Pet = myDog
 //aPet.birthPlace = "shanghai"
 ```
 
+```
+protocol Pet{
+    var name: String{ get set }
+
+    init(name: String)
+
+    func playWith()
+    func fed()
+}
+
+class Animal{
+    var type: String = "mammal"
+}
 
 
+// 如果一个类有继承的类，则父类必须放在前面
+class Dog: Animal, Pet{
+    
+    // 如果protocol没有init(name)的要求，name有默认名字就够了
+    var name: String = "Puppy"
+    
+    // 如果 protocol 有 init ，则在 class 中必须注明 required
+    required init(name: String){
+        self.name = name
+    }
+    
+    func playWith() {
+        print("Wong")
+    }
+    
+    func fed(){
+        print("I love bones")
+    }
+}
 
+
+final class Cat: Animal, Pet{
+    
+    var name: String = "Kitten"
+    
+    // 如果是final class, init 可以没有 required , 因为也不会再被继承了
+    init(name: String){
+        self.name = name
+    }
+    
+    func playWith() {
+        print("Meow")
+    }
+    
+    func fed(){
+        print("I love fish")
+    }
+}
+
+
+class Bird: Animal{
+    
+    var name: String = "Little Little Bird"
+    
+    init(name: String){
+        self.name = name
+    }
+}
+
+
+// 如果只是继承 Bird ，Bird 的 init 为 required ，则 override 可以省略
+// 否则，必须有 override , 可以没有 required
+// 因为有 Pet ，则 required 也不能省
+class Parrot: Bird, Pet{
+    
+    required override init(name: String){
+        super.init( name: name + " " + name )
+    }
+    
+    func playWith() {
+        print("Hello")
+    }
+    
+    func fed(){
+        print("Thank you!")
+    }
+}
+```
 
 
 
