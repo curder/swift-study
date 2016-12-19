@@ -194,9 +194,65 @@ swap(&a, &b) // Swift 中的一个泛型函数
 
 ### 泛型类型
 
+```
+let arr:Array<Int> = Array<Int>()
+let dict = Dictionary<String,Int>()
+let set  = Set<Float>()
+
+// 创建自定义数据结构 栈（后进先出）
+struct Stack<T>{
+    // 存储栈的内容
+    var items = [T]()
+    
+    func isEmpty() -> Bool{
+        return items.count == 0
+    }
+
+    mutating func push(item: T){
+        items.append(item)
+    }
+
+    mutating func pop() -> T?{
+        
+        guard !self.isEmpty() else{
+            return nil
+        }
+        
+        return items.removeLast()
+    }
+    
+}
+// 扩展 Stack
+extension Stack{
+    
+    func top() -> T?{
+        return items.last
+    }
+    
+    func count() -> Int{
+        return items.count
+    }
+}
 
 
+var s = Stack<Int>()
+s.push(item: 1)
+s.push(item: 2)
+s.pop()
 
+var ss = Stack<String>()
+
+// 两个数据类型的泛型
+struct Pair<T1,T2>{
+    
+    var a: T1
+    var b: T2
+    
+}
+
+var pair = Pair<Int,String>(a: 0 , b: "Hello")
+pair
+```
 
 
 
