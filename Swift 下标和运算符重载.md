@@ -6,7 +6,7 @@ struct Vector{
     var x: Double = 0.0
     var y: Double = 0.0
     var z: Double = 0.0
-
+	// 下标
     subscript(index: Int) -> Double? {
         get{
             switch index{
