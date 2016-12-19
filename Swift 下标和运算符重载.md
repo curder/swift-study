@@ -217,8 +217,9 @@ func >= (left: Vector, right: Vector) -> Bool{
 
 ### 自定义运算符
 #### 定义单目运算符
+Custom operators can begin with one of the ASCII characters `/`, `=` , `-` , `+` , `!` , `*` , `%` , `<` , `>` , `&` , `|` , `^` , or `~` , or with one of the Unicode
 ```
-// Custom operators can begin with one of the ASCII characters /, =, -, +, !, *, %, <, >, &, |, ^, or ~, or with one of the Unicode characters
+ characters
 
 func + (left: Vector , right: Vector) -> Vector{
     return Vector(x: left.x+right.x, y: left.y+right.y
@@ -234,7 +235,6 @@ postfix func +++(vector: inout Vector) -> Vector {
     vector += Vector(x: 1.0, y: 1.0, z: 1.0)
     return vector
 }
-
 print(va+++) // Vector(x: 2.0, y: 3.0, z: 4.0)
 
 
@@ -245,7 +245,6 @@ prefix func +++(vector: inout Vector) -> Vector {
     return ret
 }
 +++va
-
 print(va) // Vector(x: 3.0, y: 4.0, z: 5.0)
 
 ```
