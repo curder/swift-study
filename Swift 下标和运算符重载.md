@@ -213,8 +213,6 @@ func >= (left: Vector, right: Vector) -> Bool{
 }
 ```
 
-[TOC]
-
 ### 自定义运算符
 #### 定义单目运算符
 　　Custom operators can begin with one of the ASCII characters `/`, `=` , `-` , `+` , `!` , `*` , `%` , `<` , `>` , `&` , `|` , `^` , or `~` , or with one of the Unicode characters
@@ -286,6 +284,70 @@ print(va) // Vector(x: 3.0, y: 4.0, z: 5.0)
 
 #### 定义双目运算符
 
+```
+struct Vector{
+    var x: Double = 0.0
+    var y: Double = 0.0
+    var z: Double = 0.0
+    
+    // 下标
+    subscript(index: Int) -> Double? {
+        get{
+            switch index{
+            case 0: return x
+            case 1: return y
+            case 2: return z
+            default: return nil
+            }
+        }
+        
+        set{
+            guard let newValue = newValue else{
+                return
+            }
+            
+            switch index{
+            case 0: x = newValue
+            case 1: y = newValue
+            case 2: z = newValue
+            default: return
+            }
+            
+        }
+    }
+    
+    func length() -> Double {
+        return sqrt( self.x * self.x + self.y * self.y + self.z * self.z )
+    }
+}
+
+var va = Vector(x: 1.0, y: 2.0, z: 3.0)
+var vb = Vector(x: 3.0, y: 4.0, z: 5.0)
+
+func * (left: Vector, right: Vector) -> Double {
+    return left.x * right.x + left.x * right.y + left.z * right.z
+}
+```
+
+// 自定义 ^ 运算符
+```
+infix operator ^
+func ^(left: Vector, right: Vector) -> Double{
+    return cos( (left * right) / (left.length() * right.length()) )
+}
+
+va ^ vb
+
+infix operator ** : ATPrecedence
+precedencegroup ATPrecedence {
+    associativity: left
+    higherThan: AdditionPrecedence
+    lowerThan: MultiplicationPrecedence
+}
+func ** (x: Double, p: Double)-> Double{
+    return pow(x,p)
+}
+```
 
 
 
