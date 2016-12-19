@@ -273,7 +273,7 @@ postfix func +++(vector: inout Vector) -> Vector {
 }
 print(va+++) // Vector(x: 2.0, y: 3.0, z: 4.0)
 
-
+// 前置 +++ 运算符
 prefix operator +++ // 声明一个 swift 不存在的运算符
 prefix func +++(vector: inout Vector) -> Vector {
     let ret = vector
