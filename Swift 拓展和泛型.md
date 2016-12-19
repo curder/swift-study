@@ -115,8 +115,9 @@ ui.fontColor
 ui.backgroundColor
 ```
 
-使用 extension 扩展系统类库
+### 使用 extension 扩展系统类库
 
+```
 extension Int{
     // 计算平方
     var square: Int{
@@ -142,15 +143,13 @@ extension Int{
     
 }
 
-
-
 let num = 8
 num.square // 64
 num.cube // 512
 
 let index = 10
 index.inRange(closedLeft: 0, opendRight: 20) // 判断 index 是否在 0 ..< 20
-
+```
 
 ## Swift 泛型 
 
