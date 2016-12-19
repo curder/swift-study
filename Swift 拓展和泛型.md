@@ -60,6 +60,63 @@ extension Rectangle{
     }
 }
 ```
+### 扩展嵌套枚举
+```
+class UI{
+    
+    enum Theme{
+        case DayMode
+        case NightMode
+    }
+    
+    var fontColor: UIColor!
+    var backgroundColor: UIColor!
+    var themeMode: Theme = .DayMode{
+        didSet{
+            self.changeTheme(themeMode: self.themeMode)
+        }
+    }
+    
+    init(){
+        self.themeMode = .DayMode
+        self.changeTheme(themeMode: self.themeMode)
+        
+    }
+    
+    
+    init(themeMode: Theme){
+        self.themeMode = themeMode
+        self.changeTheme(themeMode: themeMode)
+    }
+    
+    func changeTheme( themeMode: Theme ){
+        switch(themeMode){
+        case .DayMode:
+            fontColor = UIColor.black
+            backgroundColor = UIColor.white
+        case .NightMode:
+            fontColor = UIColor.white
+            backgroundColor = UIColor.black
+        }
+    }
+}
+
+
+let ui = UI()
+ui.themeMode
+ui.fontColor
+ui.backgroundColor
+
+ui.themeMode = UI.Theme.NightMode
+ui.themeMode
+ui.fontColor
+ui.backgroundColor
+
+```
+[TOC]
+
+
+
 
 
 ## Swift 泛型 
