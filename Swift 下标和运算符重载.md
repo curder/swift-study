@@ -121,12 +121,14 @@ func * (left: Vector, right: Vector) -> Double {
 va * vb // 22.0
 ```
 #### 再重载 * 运算符
+
 ```
 func * (left: Vector, a: Double) -> Vector {
     return Vector(x: left.x * a, y: left.y * a, z: left.z * a)
 }
 va * -1.0 // Vector(x: -1.0, y: -2.0, z: -3.0)
 ```
+> 这次运算符接收的参数是不一样的
 
 #### 复用重载的 * 运算符
 ```
