@@ -172,8 +172,49 @@ prefix func - (vector: Vector) -> Vector{
 -va // Vector(x: -4.0, y: -6.0, z: -8.0)
 ```
 
-
-
+#### 重载 == 逻辑运算符
+```
+func == (left: Vector, right: Vector) -> Bool {
+    return left.x == right.x && left.x == right.y && left.z == right.z
+}
+va == vb // false
+```
+####  重载 == 逻辑运算符
+```
+func != (left: Vector, right: Vector) -> Bool{
+//    return left.x != right.x || left.y != right.y || left.z != right.z
+    return !(left == right) // 复用重载的 == 运算符 逻辑取反
+}
+va != vb // true
+```
+#### 重载 < 运算符
+```
+func < (left: Vector, right: Vector) -> Bool {
+    if left.x != right.x {return left.x < right.x}
+    if left.y != right.y {return left.y < right.y}
+    if left.z != right.z {return left.z < right.z}
+    
+    return false
+}
+```
+#### 重载 <= 运算符
+```
+func <= (left: Vector, right: Vector) -> Bool {
+    return left < right || left == right
+}
+```
+#### 重载 > 运算符
+```
+func > (left: Vector, right: Vector)-> Bool{
+    return !(left <= right)
+}
+```
+#### 重载 >= 运算符
+```
+func >= (left: Vector, right: Vector) -> Bool{
+    return !(left > right)
+}
+```
 
 
 
