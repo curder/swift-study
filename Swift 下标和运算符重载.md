@@ -123,19 +123,24 @@ func * (left: Vector, a: Double) -> Vector {
 }
 va * -1.0 // Vector(x: -1.0, y: -2.0, z: -3.0)
 
-// 复用重载的 * 运算符
+### 复用重载的 * 运算符
+```
 func * (a: Double , right: Vector) -> Vector{
     return right * a
 }
 -2.0 * va
+```
+[TOC]
 
-// 重载 += 运算符
+### 重载 += 运算符
+```
 func +=( left: inout Vector , right: Vector){
     left = left + right
 }
 
 va += vb
 va // Vector(x: 4.0, y: 6.0, z: 8.0)
+```
 
 ### 重载 -= 运算符
 ```
