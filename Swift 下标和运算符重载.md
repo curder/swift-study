@@ -337,7 +337,10 @@ func ^(left: Vector, right: Vector) -> Double{
 }
 
 va ^ vb
+```
 
+##### 自定义 ** 运算符求幂运算
+```
 infix operator ** : ATPrecedence
 precedencegroup ATPrecedence {
     associativity: left
