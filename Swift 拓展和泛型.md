@@ -170,6 +170,7 @@ func swapTwoDouble(_ a: inout Double , _ b: inout Double){
 }
 ```
 > 以上函数不管是交换整型还是交换浮点型，都是给两个遍历交换相互的值。那我们可以通过泛型对这种需求做改进。
+
 ```
 // generic function
 func swapTwoThings<T>(_ a: inout T , _ b: inout T){
