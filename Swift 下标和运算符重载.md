@@ -172,7 +172,8 @@ prefix func - (vector: Vector) -> Vector{
 -va // Vector(x: -4.0, y: -6.0, z: -8.0)
 ```
 
-#### 重载 == 逻辑运算符
+#### 重载逻辑运算符
+##### 重载 == 逻辑运算符
 ```
 func == (left: Vector, right: Vector) -> Bool {
     return left.x == right.x && left.x == right.y && left.z == right.z
