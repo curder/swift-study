@@ -1,6 +1,8 @@
 # Swift 拓展和泛型
 
 ## Swift 拓展 Extension
+
+### 计算型属性和便利构造函数
 ```
 struct Point{
     var x = 0.0
