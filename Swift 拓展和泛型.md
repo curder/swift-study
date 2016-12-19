@@ -193,7 +193,7 @@ swap(&a, &b) // Swift 中的一个泛型函数
 
 
 ### 泛型类型
-
+泛型函数与泛型语法。
 ```
 let arr:Array<Int> = Array<Int>()
 let dict = Dictionary<String,Int>()
