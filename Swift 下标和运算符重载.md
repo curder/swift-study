@@ -329,7 +329,7 @@ func * (left: Vector, right: Vector) -> Double {
 }
 ```
 
-// 自定义 ^ 运算符
+##### 自定义 ^ 运算符
 ```
 infix operator ^
 func ^(left: Vector, right: Vector) -> Double{
