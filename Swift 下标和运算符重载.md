@@ -260,6 +260,7 @@ func + (left: Vector , right: Vector) -> Vector{
     return Vector(x: left.x+right.x, y: left.y+right.y
         , z: left.z+right.z)
 }
+// 重载 + 运算符
 func += ( left: inout Vector , right: Vector) {
     left = left + right
 }
