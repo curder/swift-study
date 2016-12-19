@@ -102,7 +102,8 @@ func + (left: Vector , right: Vector) -> Vector{
 }
 va + vb // Vector(x: 4.0, y: 6.0, z: 8.0)
 ```
-> 1. 运算符本质是一个函数；2. 参数 left 与 right 有顺序关系。
+> 1. 运算符本质是一个函数；
+> 2. 参数 left 与 right 有顺序关系。
 
 ### 重载 - 运算符
 ```
