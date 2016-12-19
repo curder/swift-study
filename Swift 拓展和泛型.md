@@ -151,7 +151,7 @@ let index = 10
 index.inRange(closedLeft: 0, opendRight: 20) // 判断 index 是否在 0 ..< 20
 ```
 
-## Swift 泛型 
+## Swift 泛型 Generic
 
 
 
