@@ -153,8 +153,41 @@ index.inRange(closedLeft: 0, opendRight: 20) // 判断 index 是否在 0 ..< 20
 
 ## Swift 泛型 Generic
 
+泛型：是指有一套通用的逻辑，不与类型相关。例如交换两个参数的值。
+```
+func swapTwoInt( _ a: inout Int , _ b: inout Int){
+    (a,b) = (b,a)
+}
 
+var a: Int = 0
+var b: Int = 6
+swapTwoInt(&a, &b)
+a
+b
 
+func swapTwoDouble(_ a: inout Double , _ b: inout Double){
+    (a,b) = (b,a)
+}
+```
+> 以上函数不管是交换整型还是交换浮点型，都是给两个遍历交换相互的值。那我们可以通过泛型对这种需求做改进。
+```
+// generic function
+func swapTwoThings<T>(_ a: inout T , _ b: inout T){
+    (a,b) = (b,a)
+}
+
+var hello = "Hello"
+var bye = "Bye"
+swapTwoThings(&hello, &bye)
+hello
+bye
+
+swapTwoThings(&a, &b)
+a
+b
+
+swap(&a, &b) // Swift 中的一个泛型函数
+```
 
 
 
