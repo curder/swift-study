@@ -1,7 +1,7 @@
 # Swift 拓展和泛型
 
 ## Swift 拓展 Extension
-
+```
 struct Point{
     var x = 0.0
     var y = 0.0
@@ -59,7 +59,7 @@ extension Rectangle{
         self.init(origin: Point(x: originX, y: originY),size: size)
     }
 }
-
+```
 
 
 ## Swift 泛型 
