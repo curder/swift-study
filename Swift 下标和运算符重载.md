@@ -217,7 +217,8 @@ func >= (left: Vector, right: Vector) -> Bool{
 
 ### 自定义运算符
 #### 定义单目运算符
-Custom operators can begin with one of the ASCII characters `/`, `=` , `-` , `+` , `!` , `*` , `%` , `<` , `>` , `&` , `|` , `^` , or `~` , or with one of the Unicode
+　　Custom operators can begin with one of the ASCII characters `/`, `=` , `-` , `+` , `!` , `*` , `%` , `<` , `>` , `&` , `|` , `^` , or `~` , or with one of the Unicode
+
 ```
  characters
 
