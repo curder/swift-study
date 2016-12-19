@@ -350,6 +350,7 @@ precedencegroup ATPrecedence {
 func ** (x: Double, p: Double)-> Double{
     return pow(x,p)
 }
+
 ```
 
 
