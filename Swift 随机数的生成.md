@@ -16,7 +16,7 @@ let temp = Int(arc4random_uniform(100))+1
 ```
 
 ## 随机数的一些应用
-生成一些随机颜色
+生成随机背景色
 ```
 let redPart: CGFloat = CGFloat(arc4random()%255) / 255
 let greenPart: CGFloat = CGFloat(arc4random()%255) / 255
