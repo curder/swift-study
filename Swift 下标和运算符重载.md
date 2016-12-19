@@ -58,6 +58,7 @@ v.y // 9.09
 ```
 
 ### 运算符重载
+假如有如下结构体
 ```
 struct Vector{
     var x: Double = 0.0
