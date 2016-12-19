@@ -36,7 +36,7 @@ rect.translate(x: 10, y: 10)
 
 rect
 
-// 扩展计算型属性
+// 扩展计算型属性和构造函数
 extension Rectangle{
 //    var center: Point = Point() // 不允许扩展存储型属性
     var center: Point {
