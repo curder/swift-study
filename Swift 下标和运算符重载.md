@@ -213,5 +213,41 @@ func >= (left: Vector, right: Vector) -> Bool{
 }
 ```
 
+[TOC]
+
+### 自定义运算符
+#### 定义单目运算符
+```
+// Custom operators can begin with one of the ASCII characters /, =, -, +, !, *, %, <, >, &, |, ^, or ~, or with one of the Unicode characters
+
+func + (left: Vector , right: Vector) -> Vector{
+    return Vector(x: left.x+right.x, y: left.y+right.y
+        , z: left.z+right.z)
+}
+func += ( left: inout Vector , right: Vector) {
+    left = left + right
+}
+
+// 后置 +++ 运算符
+postfix operator +++ // 声明一个 swift 不存在的运算符
+postfix func +++(vector: inout Vector) -> Vector {
+    vector += Vector(x: 1.0, y: 1.0, z: 1.0)
+    return vector
+}
+
+print(va+++) // Vector(x: 2.0, y: 3.0, z: 4.0)
+
+
+prefix operator +++ // 声明一个 swift 不存在的运算符
+prefix func +++(vector: inout Vector) -> Vector {
+    let ret = vector
+    vector += Vector(x: 1.0, y: 1.0, z: 1.0)
+    return ret
+}
++++va
+
+print(va) // Vector(x: 3.0, y: 4.0, z: 5.0)
+
+```
 
 
