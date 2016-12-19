@@ -94,28 +94,30 @@ struct Vector{
 var va = Vector(x: 1.0, y: 2.0, z: 3.0)
 var vb = Vector(x: 3.0, y: 4.0, z: 5.0)
 
-// 重载 + 运算符
+### 重载 + 运算符
+```
 func + (left: Vector , right: Vector) -> Vector{
     return Vector(x: left.x+right.x, y: left.y+right.y
 , z: left.z+right.z)
 }
-
 va + vb // Vector(x: 4.0, y: 6.0, z: 8.0)
+```
+> 1. 运算符本质是一个函数；2. 参数 left 与 right 有顺序关系。
 
-// 1. 运算符本质是一个函数；2. 参数 left 与 right 有顺序关系。
-
-// 重载 - 运算符
+### 重载 - 运算符
+```
 func - (left: Vector, right: Vector) -> Vector{
     return Vector(x: left.x - right.x, y: left.y - right.y, z: left.z - right.z)
 }
 vb - va // Vector(x: 2.0, y: 2.0, z: 2.0)
-
-// 重载 * 运算符
+```
+### 重载 * 运算符
+```
 func * (left: Vector, right: Vector) -> Double {
     return left.x * right.x + left.x * right.y + left.z * right.z
 }
 va * vb // 22.0
-
+```
 ### 再重载 * 运算符
 ```
 func * (left: Vector, a: Double) -> Vector {
