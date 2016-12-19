@@ -135,7 +135,6 @@ func * (a: Double , right: Vector) -> Vector{
 }
 -2.0 * va
 ```
-[TOC]
 
 #### 重载 += 运算符
 ```
@@ -147,7 +146,7 @@ va += vb
 va // Vector(x: 4.0, y: 6.0, z: 8.0)
 ```
 
-### 重载 -= 运算符
+#### 重载 -= 运算符
 ```
 func -= (left: inout Vector, right: Vector){
     left = left - right
