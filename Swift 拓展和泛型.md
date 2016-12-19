@@ -115,6 +115,43 @@ ui.fontColor
 ui.backgroundColor
 ```
 
+使用 extension 扩展系统类库
+
+extension Int{
+    // 计算平方
+    var square: Int{
+        return self * self
+    }
+    
+    // 计算立方
+    var cube: Int{
+        return self * self * self
+    }
+    
+    // 扩展方法 判断整型是否在前闭后开的范围内
+    func inRange(closedLeft left: Int, opendRight right: Int) -> Bool {
+        return self >= left && self < right
+    }
+    
+    // 扩展方法
+    func repetitions( task: () -> Void ){
+        for _ in 0 ..< self {
+            task()
+        }
+    }
+    
+}
+
+
+
+let num = 8
+num.square // 64
+num.cube // 512
+
+let index = 10
+index.inRange(closedLeft: 0, opendRight: 20) // 判断 index 是否在 0 ..< 20
+
+
 ## Swift 泛型 
 
 
