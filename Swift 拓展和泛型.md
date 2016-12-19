@@ -111,11 +111,7 @@ ui.themeMode = UI.Theme.NightMode
 ui.themeMode
 ui.fontColor
 ui.backgroundColor
-
 ```
-[TOC]
-
-
 
 
 
