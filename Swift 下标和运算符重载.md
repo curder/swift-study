@@ -196,21 +196,18 @@ func < (left: Vector, right: Vector) -> Bool {
     
     return false
 }
-```
-#### 重载 <= 运算符
-```
+
+// 重载 <= 运算符
 func <= (left: Vector, right: Vector) -> Bool {
     return left < right || left == right
 }
-```
-#### 重载 > 运算符
-```
+
+// 重载 > 运算符
 func > (left: Vector, right: Vector)-> Bool{
     return !(left <= right)
 }
-```
-#### 重载 >= 运算符
-```
+
+// 重载 >= 运算符
 func >= (left: Vector, right: Vector) -> Bool{
     return !(left > right)
 }
