@@ -220,6 +220,40 @@ func >= (left: Vector, right: Vector) -> Bool{
 　　Custom operators can begin with one of the ASCII characters `/`, `=` , `-` , `+` , `!` , `*` , `%` , `<` , `>` , `&` , `|` , `^` , or `~` , or with one of the Unicode characters
 
 ```
+struct Vector{
+    var x: Double = 0.0
+    var y: Double = 0.0
+    var z: Double = 0.0
+    
+    // 下标
+    subscript(index: Int) -> Double? {
+        get{
+            switch index{
+            case 0: return x
+            case 1: return y
+            case 2: return z
+            default: return nil
+            }
+        }
+        
+        set{
+            guard let newValue = newValue else{
+                return
+            }
+            
+            switch index{
+            case 0: x = newValue
+            case 1: y = newValue
+            case 2: z = newValue
+            default: return
+            }
+            
+        }
+    }
+}
+
+var va = Vector(x: 1.0, y: 2.0, z: 3.0)
+var vb = Vector(x: 3.0, y: 4.0, z: 5.0)
 
 func + (left: Vector , right: Vector) -> Vector{
     return Vector(x: left.x+right.x, y: left.y+right.y
