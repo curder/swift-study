@@ -39,4 +39,4 @@
 * [IOS开发玩转界面 UIKit](IOS开发玩转界面.md)
     * [UILable 文本显示控件](UILable 文本显示控件.md)
     * [UIButton 简单的交互控件](UIButton 简单的交互控件.md)
-    * [UIImage View 图片控件](UIImage View 图片控件.md)
+    * [UIImageView 图片控件](UIImageView 图片控件.md)
