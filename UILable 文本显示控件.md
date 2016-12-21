@@ -11,6 +11,7 @@ label.text = "Hello Swift, This is a Label Study Lession"
 
 // 设置字体大小
 label.font = UIFont.boldSystemFont(ofSize: 20)
+// label.font = UIFont.systemFont(ofSize: 20.0)
 
 // 设置字体颜色 （红色）
 label.textColor = UIColor.red
