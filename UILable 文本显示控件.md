@@ -22,7 +22,7 @@ label.backgroundColor = UIColor.gray
 label.textAlignment = NSTextAlignment.center
 
 // 设置阴影
-label.shadowOffset = CGSize(width: 2, height: 3) // 阴影的偏移默认为 1 px
+label.shadowOffset = CGSize(width: 2, height: 3) // 阴影的偏移默认为 1px
 label.shadowColor = UIColor.orange
 
 // 设置label 的显示行数 0 为无限行
