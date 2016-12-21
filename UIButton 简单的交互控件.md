@@ -1,7 +1,7 @@
 ## UIButton 简单的交互控件
 
 **UIButton 控件**是最基础的显示控件。故名思意，UIButton 控件 是一个按钮，提供给用户让用户与我们设计的App进行交互。
-其中给 button 添加事件的方法是 `addTarget`，如下文例举中的 ``
+其中给 button 添加事件的方法是 `addTarget`，如下文例举中的 `button.addTarget(self, action: #selector(self.click), for: UIControlEvents.touchUpInside)`
 ```
 // 创建一个 button
 //        let button: UIButton = UIButton(frame: CGRect( )
