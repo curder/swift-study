@@ -29,7 +29,7 @@ UIStepper 步进控制器
 UIAlertController 警告框 / 抽屉
 
 ```
- let imageView: UIImageView = UIImageView(frame: CGRect(x: 100, y: 100, width: 100, height: 100) )
+let imageView: UIImageView = UIImageView(frame: CGRect(x: 100, y: 100, width: 100, height: 100) )
 
 imageView.backgroundColor = UIColor.red
 
