@@ -9,7 +9,7 @@ let label: UILabel = UILabel(frame: CGRect(x: 20, y: 100, width: 300, height: 10
 // 设置 Label 上的文字
 label.text = "Hello Swift, This is a Label Study Lession"
 
-// 设置字体大小 （加粗到 14）
+// 设置字体大小 （加粗到 20 ）
 label.font = UIFont.boldSystemFont(ofSize: 20)
 
 // 设置字体颜色 （红色）
