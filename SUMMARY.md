@@ -40,3 +40,4 @@
     * [UILable 文本显示控件](UILable 文本显示控件.md)
     * [UIButton 简单的交互控件](UIButton 简单的交互控件.md)
     * [UIImageView 图片控件](UIImageView 图片控件.md)
+    * [UISearchBar 搜索控件](UISearchBar 搜索控件.md)
