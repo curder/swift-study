@@ -28,5 +28,26 @@ UIStepper 步进控制器
 
 UIAlertController 警告框 / 抽屉
 
+```
+ let imageView: UIImageView = UIImageView(frame: CGRect(x: 100, y: 100, width: 100, height: 100) )
+
+imageView.backgroundColor = UIColor.red
+
+// 设置圆角
+imageView.layer.masksToBounds = true
+
+// 设置圆角半径
+imageView.layer.cornerRadius = 50
+
+// 设置边框属性
+imageView.layer.borderColor = UIColor.green.cgColor
+imageView.layer.borderWidth = 2
+
+// 设置阴影
+imageView.layer.shadowColor = UIColor.purple.cgColor
+imageView.layer.shadowOffset = CGSize(width: 10, height: 10)
+imageView.layer.shadowOpacity = 1
 
 
+self.view.addSubview(imageView)
+```
