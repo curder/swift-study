@@ -15,6 +15,7 @@ label.font = UIFont.boldSystemFont(ofSize: 20)
 
 // 设置字体颜色 （红色）
 label.textColor = UIColor.red
+// // UIColor(red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
 
 // 设置背景色
 label.backgroundColor = UIColor.gray
