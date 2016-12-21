@@ -28,6 +28,7 @@ UIStepper 步进控制器
 
 UIAlertController 警告框 / 抽屉
 
+### 设置组建的 layout 属性
 ```
 let imageView: UIImageView = UIImageView(frame: CGRect(x: 100, y: 100, width: 100, height: 100) )
 
