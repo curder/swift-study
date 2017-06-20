@@ -55,7 +55,7 @@ for value in dict.values{
 }
 ```
 
-#### 遍历集合
+### 遍历集合
 ```
 var set: Set<String> = ["A","V","X","S"]
 for value in set{
