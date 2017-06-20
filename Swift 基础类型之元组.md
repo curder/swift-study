@@ -33,6 +33,7 @@ let httpResponse:( httpStatus: Int , httpMessage: String ) = ( 200 , "OK" )
 var point = ( 2 , 1 )
 let ( x , y ) = point // 分别得到 x 的值为 2 , y 的值为 1 .
 
+let httpResponse:( httpStatus: Int , httpMessage: String ) = ( 200 , "OK" )
 var ( statusCode , statusMessage ) = httpResponse // 分别得到 statusCode 的值为 200 , statusMessage 的值为 OK
 ```
 
