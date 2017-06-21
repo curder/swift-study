@@ -51,7 +51,7 @@ for i in 11.stride (through: 101, by: 3) {
 ```
 initialization
 while condition {
-	statements
+    statements
     increments
 }
 ```
