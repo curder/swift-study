@@ -76,40 +76,6 @@ case false:
 
 ### switch 的一些其他用法
 
-#### where 与匹配模式
-语法如下
-```
-switch some value to consider {
-case value1:
-    respond to value1
-case value2 where condition:
-    respond to value2
-case value3:
-    respond to value3
-default:
-    otherwise,do something else
-}
-```
-具体例子如下
-```
-let point: ( x: Int , y: Int ) = ( 1 , 1 )
-
-switch point {
-case let ( x , y ) where x == y :
-    print("It is on the line x == y!")
-    print("The point is (\(x),\(y))")
-
-case let ( x , y ) where x == -y :
-    print("It is on the line x == -y!")
-    print("The point is (\(x),\(y))")
-
-case let ( x , y ):
-    print("It is just an ordinary point.")
-    print("The point is (\(x),\(y))")
-}
-```
-
-
 #### 判断范围
 ```
 let score = 9
@@ -237,3 +203,78 @@ findAnswer: for m in 1...300 {
 }
 ```
 > 上面的循环将在找到一个符合的值之后跳出最外层的循环
+
+
+### case 的一些用法
+
+#### where 与匹配模式
+语法如下
+```
+switch some value to consider {
+case value1:
+    respond to value1
+case value2 where condition:
+    respond to value2
+case value3:
+    respond to value3
+default:
+    otherwise,do something else
+}
+```
+
+##### 具体`switch`的例子如下：
+```
+let point: ( x: Int , y: Int ) = ( 1 , 1 )
+
+switch point {
+case let ( x , y ) where x == y :
+    print("It is on the line x == y!")
+    print("The point is (\(x),\(y))")
+
+case let ( x , y ) where x == -y :
+    print("It is on the line x == -y!")
+    print("The point is (\(x),\(y))")
+
+case let ( x , y ):
+    print("It is just an ordinary point.")
+    print("The point is (\(x),\(y))")
+}
+```
+
+> 在`case`后面使用匹配模式限定条件后再使用where进行限定。
+
+
+##### `if`
+
+使用`if`语句简化如下代码：
+```
+switch age {
+case 10...19:
+    print("You're a teenager")
+default:
+    print("You're not a teenager")
+}
+
+// 使用if case简化写法
+if case 10...19 = age {
+    print("You're a teenager")
+}
+
+// 使用if case简化写法，再加上where进行限定
+if case 10...19 = age , age >= 18 {
+    print("You're a teenager abd in a college.")
+}
+
+// 再如
+let vector = (4, 0)
+if case (let x , 0) = vector , x > 2 && x < 5 {
+    print("It's the vector!")
+}
+
+```
+
+
+
+
+
+
