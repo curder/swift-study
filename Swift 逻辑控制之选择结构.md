@@ -291,3 +291,4 @@ for case let i in 1...100 where i%3 == 0{
 }
 ```
 
+拓展阅读：[Pattern Matching, Part 4: if case, guard case, for case](http://alisoftware.github.io/swift/pattern-matching/2016/05/16/pattern-matching-4/)
