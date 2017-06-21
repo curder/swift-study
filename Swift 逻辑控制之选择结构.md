@@ -1,6 +1,6 @@
 ## Swift 逻辑控制之选择结构
 
-### if - else if - else
+### `if - else if - else`
 
 语法如下
 
@@ -18,7 +18,7 @@ if condition1 {
 > 2. 必须使用 `{}` 包含循环语句体。
 
 
-### switch - case - default
+### `switch - case - default`
 
 语法如下
 
@@ -36,9 +36,42 @@ default:
 }
 ```
 
+几个举例：
+
+```
+switch rating {
+case "a","A":
+    print("Great!")
+case "b","B":
+    print("Just So so!")
+case "c","C":
+    print("Its Bad")
+default:
+    print("Error")
+}
+
+// 使用switch判断浮点数
+let x = 2.5
+switch x{
+case 2.5:
+    print("I'm 2.5")
+default:
+    print("I'm not 2.5")
+}
+
+// 使用switch判断布尔值
+let y = false
+switch y{
+case true:
+    print("I'm true")
+case false:
+    print("I'm false")
+}
+```
+
 > **注意：**
 > 1. 和其他语言的语法不同的是，`switch`	不强制需要在每次执行完 `case` 中的语句后的写 `break` 。
-> 2.  `switch` 语句必须写 `default`。
+> 2.  `switch` 语句如果不能完全穷举完数据，那么必须写 `default`。
 > 3. 如果运行完一个 `case` 语句后想继续运行下一个 `case` 语句，请添加 `falltrough` 关键字。
 
 #### switch 的一些其他用法
