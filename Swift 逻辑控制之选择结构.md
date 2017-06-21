@@ -199,3 +199,41 @@ It is origin!
 ```
 
 > Swift中的`switch case`和其他语言中的不同，它不是必须强制的使用`break`中断上一次判断，如果需要在判断语句中使用类似c、c++、java类似的 `switch case` 判断的效果，可以通过`fallthrough`关键字实现。使用这个关键字后，将在执行完当前分支成功后跳到下一个分支，而不是跳出判断分支。
+
+
+
+##### 控制转移
+
+查找 `x^4 - y^2 = 15 * x * y` 在300以内的正整数解。
+
+我们可以很方便的使用`for in` 写出程序代码，如下：
+```
+var getAnswer = false
+for m in 1...300 {
+    for n in 1...300 {
+        if m*m*m*m - n*n == 15*m*n {
+            print(m, n)
+            getAnswer = true
+            break
+        }
+    }
+    if getAnswer {
+        break
+    }
+}
+```
+> 上面的代码能很快的找出符合结果的答案，但是有太多的冗余代码。
+
+在Swift中，我们可以给循环取一个别名，在使用`break`、`continue`等关键词时停止这个循环
+```
+findAnswer: for m in 1...300 {
+    for n in 1...300 {
+        if m*m*m*m - n*n == 15*m*n {
+            print(m, n)
+            
+            break findAnswer
+        }
+    }
+}
+```
+> 上面的循环将在找到一个符合的值之后跳出最外层的循环
