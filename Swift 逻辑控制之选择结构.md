@@ -74,9 +74,9 @@ case false:
 > 2.  `switch` 语句如果不能完全穷举完数据，那么必须写 `default`。
 > 3. 如果运行完一个 `case` 语句后想继续运行下一个 `case` 语句，请添加 `fallthrough` 关键字。
 
-#### switch 的一些其他用法
+### switch 的一些其他用法
 
-##### where 与匹配模式
+#### where 与匹配模式
 语法如下
 ```
 switch some value to consider {
@@ -110,7 +110,7 @@ case let ( x , y ):
 ```
 
 
-##### 判断范围
+#### 判断范围
 ```
 let score = 9
 
@@ -132,7 +132,7 @@ default:
 }
 ```
 
-##### 判断元组
+#### 判断元组
 
 判断一个点在那个位置，比如 如果横坐标是 0 ，那么我们就认为是在 x 轴坐标上。
 
@@ -153,7 +153,7 @@ default:
 }
 ```
 
-##### 判断并赋值
+#### 判断并赋值
 解包元组并赋值给常量。
 ```
 let point: ( x: Int , y: Int ) = ( 1 , 0 )
@@ -173,7 +173,7 @@ case ( let x , let y ):
 }
 ```
 
-##### `fallthrough` 关键字
+#### `fallthrough` 关键字
 
 ```
 let point: ( x: Int , y: Int ) = ( 0 , 0)
@@ -202,7 +202,7 @@ It is origin!
 
 
 
-##### 控制转移
+#### 控制转移
 
 查找 `x^4 - y^2 = 15 * x * y` 在300以内的正整数解。
 
