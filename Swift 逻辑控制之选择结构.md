@@ -292,3 +292,50 @@ for case let i in 1...100 where i%3 == 0{
 ```
 
 拓展阅读：[Pattern Matching, Part 4: if case, guard case, for case](http://alisoftware.github.io/swift/pattern-matching/2016/05/16/pattern-matching-4/)
+
+
+#### `guard` 代码风格
+
+有一个函数，接收几个参数，如下：
+```
+/**
+ * money 拥有的金钱
+ * price 价格
+ * capacity 容量
+ * volume 物体体积
+ * 用户使用money购买价值price的物品，物品的体积是volume，然而用户拥有的最大容量是capacity
+ */
+func buy(money: Int, price: Int, capacity: Int, volume: Int) {
+    
+    if money >= price { // 是否有足够的金钱
+        if capacity >= volume { // 是否有足够的容量
+            print("I can buy it!")
+            print("\(money-price) Yuan left.")
+            print("\(capacity-volume) cubic meters left.")
+        }else{
+            print("Not enough capactiy.") // 容量不够
+        }
+    }else{
+        print("Not enough money.") // 金钱不够
+    }
+}
+
+// 使用guard改写代码
+
+func buyGuard(money: Int, price: Int, capacity: Int, volume: Int) {
+    
+    guard money >= price else {
+        print("Not enough money.") // 金钱不够
+        return
+    }
+
+    guard capacity >= volume else {
+        print("Not enough capactiy.") // 容量不够
+        return
+    }
+    
+    print("I can buy it!")
+    print("\(money-price) Yuan left.")
+    print("\(capacity-volume) cubic meters left.")
+}
+```
