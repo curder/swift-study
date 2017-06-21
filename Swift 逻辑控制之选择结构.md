@@ -339,3 +339,5 @@ func buyGuard(money: Int, price: Int, capacity: Int, volume: Int) {
     print("\(capacity-volume) cubic meters left.")
 }
 ```
+
+> 使用`guard` 关键字将不符的条件全部排除，然后我们可以专注于自己的业务逻辑开发，使得代码清晰。
