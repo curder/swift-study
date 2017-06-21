@@ -244,7 +244,7 @@ case let ( x , y ):
 > 在`case`后面使用匹配模式限定条件后再使用where进行限定。
 
 
-##### `if`
+##### `if case`
 
 使用`if`语句简化如下代码：
 ```
@@ -273,8 +273,21 @@ if case (let x , 0) = vector , x > 2 && x < 5 {
 
 ```
 
+> 注意使用 `,` 分割where限定条件
 
+##### `for case`
 
+// 求1 ... 100 以内被3整除的数
+```
+for i in 1...100 {
+    if i%3 == 0{
+        print(i)
+    }
+}
 
-
+// 使用 for case 简写
+for case let i in 1...100 where i%3 == 0{
+    print(i)
+}
+```
 
