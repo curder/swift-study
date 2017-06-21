@@ -72,7 +72,7 @@ case false:
 > **注意：**
 > 1. 和其他语言的语法不同的是，`switch`	不强制需要在每次执行完 `case` 中的语句后的写 `break` 。
 > 2.  `switch` 语句如果不能完全穷举完数据，那么必须写 `default`。
-> 3. 如果运行完一个 `case` 语句后想继续运行下一个 `case` 语句，请添加 `falltrough` 关键字。
+> 3. 如果运行完一个 `case` 语句后想继续运行下一个 `case` 语句，请添加 `fallthrough` 关键字。
 
 #### switch 的一些其他用法
 
@@ -142,11 +142,11 @@ let point: ( x: Int , y: Int ) = ( 0 , 1 )
 switch point {
 case ( 0 , 0 ):
     print("It is origin!")
-case ( _ , 0 ):
+case ( _ , 0 ): // 忽略元祖数据
     print("( \(point.x),\(point.y) ) is on the x-axis")
 case ( 0 , _ ):
     print("( \(point.x),\(point.y) ) is on the y-axis")
-case ( -2...2 , -2...2 ):
+case ( -2...2 , -2...2 ): // 对于元祖元素使用区间运算符匹配
     print("( \(point.x),\(point.y) ) is near the origin.")
 default:
     print("It is just an ordinary point")
@@ -173,3 +173,29 @@ case ( let x , let y ):
 }
 ```
 
+##### `fallthrough` 关键字
+
+```
+let point: ( x: Int , y: Int ) = ( 0 , 0)
+
+switch point {
+case ( 0 , 0 ):
+    print("It is origin!")
+    fallthrough
+case ( _ , 0 ): 
+    print("( \(point.x),\(point.y) ) is on the x-axis")
+    fallthrough
+case ( 0 , _ ):
+    print("( \(point.x),\(point.y) ) is on the y-axis")
+default:
+    print("It is just an ordinary point")
+}
+```
+上面的程序执行将打印出如下结果：
+```
+It is origin!
+( 0,0 ) is on the x-axis
+( 0,0 ) is on the y-axis
+```
+
+> Swift中的`switch case`和其他语言中的不同，它不是必须强制的使用`break`中断上一次判断，如果需要在判断语句中使用类似c、c++、java类似的 `switch case` 判断的效果，可以通过`fallthrough`关键字实现。使用这个关键字后，将在执行完当前分支成功后跳到下一个分支，而不是跳出判断分支。
