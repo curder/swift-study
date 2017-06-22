@@ -110,7 +110,7 @@ if let errorCode = errorCode ,
 var errorMessage: String? = "Not Found"
 errorMessage?.uppercased()
 ```
-　　虽然 `errorMessage` 是一个可选型，这里尝试对他进行解包，如果解包成功（即不等于 `nil`）那么对他进行 `uppercased()` 操作；如果解包失败则不回执行 `uppercased()` 操作。
+　　虽然 `errorMessage` 是一个可选型，这里尝试对它进行解包，如果解包成功（即不等于 `nil`）那么对他进行 `uppercased()` 操作；如果解包失败则不回执行 `uppercased()` 操作。
 　　如果可选型 `errorMessage` 等于 `nil` ，则会返回 `nil`。
 
 逻辑等同于如下写法
@@ -141,7 +141,7 @@ if let errorMessage = errorMessage?.uppercased() {
 ```
 > 上面的写法将解包和调用操作以及赋值基于一体，使逻辑更加清晰，减少代码的出错率。
 
-#### 可选型 Nil-Coalesce
+#### 可选型 `Nil-Coalesce`
 
 　　如下需求： `message` 变量的值待定，如果 `errorMessage` 可选型的值不等于 `nil` 时，变量 `message` 的值将等于 `errorMessage` 可选型解包后的值，否则将被赋值为 `no error`
 ```
@@ -220,7 +220,17 @@ str.range(of: "is") // nil
 
 ### 隐式可选型
 
+隐式可选性使用`!`来声明，相比于可选性的不同是，这种类型的变量或者常量**可以不使用解包就读取变量或者常量的值。**
 
+```
+var errorMessage: String! = nil
+
+errorMessage = "Not Found"
+
+"The message is " + errorMessage
+```
+
+> 这种可选性在使用的时候可以不解包，直接使用，这种隐式可选性是不安全的，因为我们不需要解包就可以使用，当可选性的值是nil的时候讲会给程序带来error
 
 
 
