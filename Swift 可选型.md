@@ -220,7 +220,7 @@ str.range(of: "is") // nil
 
 ### 隐式可选型
 
-隐式可选性使用`!`来声明，相比于可选性的不同是，这种类型的变量或者常量**可以不使用解包就读取变量或者常量的值。**
+隐式可选性使用`!`来声明，相比于可选型的不同是，这种类型的变量或者常量**可以不使用解包就读取变量或者常量的值而直接使用。**
 
 ```
 var errorMessage: String! = nil
@@ -230,15 +230,37 @@ errorMessage = "Not Found"
 "The message is " + errorMessage
 ```
 
-> 这种可选性在使用的时候可以不解包，直接使用，这种隐式可选性是不安全的，因为我们不需要解包就可以使用，当可选性的值是nil的时候讲会给程序带来error
+> 这种可选型在使用的时候可以不解包，直接使用，这种隐式可选性是不安全的，因为我们不需要解包就可以使用，当可选性的值是nil的时候讲会给程序带来error
 
 
 
+```
+class City {
+    let cityName: String
+    unowned var country: Country
+    
+    init(cityName: String, country: Country) {
+        self.cityName = cityName
+        self.country = country
+    }
+}
+
+class Country {
+    let countryName: String
+    var capitalCity: City! // 隐式可选性
+    
+    init(countryName: String, capitalCity: String) {
+        self.countryName = countryName
+        self.capitalCity = City(cityName: capitalCity, country: self)
+    }
+    
+    func showInfo() {
+        print("This is \(countryName)")
+        print("The capital is \(capitalCity.cityName)")
+    }
+}
 
 
-
-
-
-
-
-
+let china = Country(countryName: "中国", capitalCity: "北京")
+china.showInfo()
+```
