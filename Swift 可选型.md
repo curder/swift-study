@@ -37,7 +37,7 @@ print("\(x) -- \(y)") // 输出：nil -- 10
 ```
 var errorCode: String? = "404"
 
-if errorCode != nil{
+if errorCode != nil {
     "The errorCode is " + errorCode!
 }else{
     "No Error"
@@ -62,16 +62,18 @@ if let upwrappedErrorCode = errorCode { // 允许解包的常量名和可选型�
 #### 可以使用相同的变量名
 
 也可以将上面的常量 `upwrappedErrorCode` 允许使用和 `errorCode` 一致的名称。
+
 ```
 var errorCode: String? = "404"
 
-if let errorCode = errorCode{
+if let errorCode = errorCode {
     "The errorCode is " + errorCode
 }else{
     "No Error"
 }
 ```
-> 这种解包方式只能在 `{}` 中访问 `errorCode` 常量。
+
+> 这种解包方式只能在 `{}` 中访问 `errorCode` 常量。在其他地方访问 `errorCode`变量依然是可选型。
 
 #### 使用 `if-let` 同时解包多个变量
 
