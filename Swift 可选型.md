@@ -1,7 +1,5 @@
 ### Swift 可选型
 
-[TOC]
-
 　　可选类型用来表示值缺失的情况。我们可以在具体的值与 `nil` 之间做一个选择。
 
 ### 可选类型定义
@@ -52,12 +50,14 @@ if errorCode != nil{
 ```
 var errorCode: String? = "404"
 
-if let upwrappedErrorCode = errorCode{
+if let upwrappedErrorCode = errorCode { // 允许解包的常量名和可选型的名字一致
     "The errorCode is " + upwrappedErrorCode
 }else{
     "No Error"
 }
 ```
+
+> 当然也可以使用 `if var` 的方式对可选型进行解包，不过通常在大多数的情况下，我们对一个可选性只是对其解包读取值，并不会去修改可选型的值。
 
 #### 可以使用相同的变量名
 
