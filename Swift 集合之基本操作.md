@@ -39,6 +39,12 @@ var setC = Set(["Swift","HTML","CSS"])
 ```
 #### 并集
 
+Swift 提供了两个并集操作
+* union()
+* unionInPlace()
+
+它们的区别在于`union()` 并不改变集合的值，而 `unionInPlace` 则会改变集合的值
+
 `setA` 与 `setB` 的并集
 ```
 setA.union(setB) // ["JS", "CSS", "Object-C", "HTML", "Swift"]
