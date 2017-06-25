@@ -31,6 +31,35 @@ dict["swift"] // 返回一个可选型 Optional("雨燕,快速")
 dict["php"] // nil
 ```
 
+### 数组的基本查询
+```
+dict.count // 判断字典的元素个数
+
+dict.isEmpty // 判断字段是否为空
+
+Array(dict.keys) // 返回字典中所有的键，并存储在数组中
+Array(dict.values) // 返回字典中所有的值，并存储在数组中
+```
+
+### 字典的遍历
+```
+// 遍历字典的键
+for key in dict.keys {
+    print(key)
+}
+
+// 遍历字典中的值
+for value in dict.values {
+    print(value)
+}
+
+// 遍历字典中的所有键值
+for (key, value) in dict {
+    print("\(key) - \(value)")
+}
+```
+
+
 ### 字典是值类型
 ```
 var dir1 = ["key1":"val","key2":"val2"]
