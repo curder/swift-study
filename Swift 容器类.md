@@ -24,3 +24,60 @@
 
 
 
+### for in 遍历
+
+#### 对Range使用for-in
+```
+for number in 1..<10{
+    number
+}
+```
+
+#### 对String.charcaters使用for-in
+```
+for c in "Hello".characters {
+    c
+}
+```
+
+#### 对Array使用for-in
+```
+var vowels = ["a", "b", "c", "d"]
+for vowel in vowels {
+    vowel
+}
+
+for (key, vowel) in vowels.enumerated() {
+    key
+    vowel
+}
+```
+
+#### 对Dictionary使用for-in
+```
+var dict: Dictionary<Int,String> = [1:"a",2:"b",3:"d"]
+
+// 遍历字典键
+for key in dict.keys {
+    key
+}
+// 遍历字典值
+for value in dict.values {
+    value
+}
+// 遍历字典键值
+for (key, value) in dict {
+    key
+    value
+}
+```
+
+#### 对Set使用for-in
+```
+var set = Set(["a", "b", "c", "d"])
+
+for vowel in set {
+    vowel
+}
+```
+
