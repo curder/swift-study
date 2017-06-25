@@ -68,13 +68,7 @@ setA.formIntersection(setC) // Swift
 
 #### 集合的差集操作
 
-Swift提供两种操作
-* `subtract()`
-* `formSubtract()`
-它们的区别是，`subtract()`的操作不影响原集合，而`formSubtract()`则会已影响原集合。
-
 ```
 setA.subtract(setC) // Object-C
-
 ```
 > 集合 `setA` 拥有的元素， `setC`  不拥有的元素。
