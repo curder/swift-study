@@ -55,6 +55,9 @@ vowels.contains("B") // false
 ```
 
 ### 遍历数组
+
+普通遍历数据方式
+
 ```
 for number in numbers{
     number
@@ -65,7 +68,8 @@ for index in 0..<numbers.count{
 }
 ```
 
-### 遍历数组同时获取数组的索引
+遍历数组同时获取数组的索引
+
 ```
 for (index , value) in vowels.enumerated() {
     print("\(index+1) : \(value)")
@@ -75,18 +79,19 @@ for (index , value) in vowels.enumerated() {
 ### 数组的比较（比较的是值）
 
 ```
-var oneToFive = [1,2,3,4,5]
-numbers == oneToFive
+var oneToFive = [1, 2, 3, 4, 5]
+numbers == oneToFive // true
 
-var oneToFive2 = [1,2,4,3,5]
-numbers == oneToFive
+var oneToFive2 = [1, 2, 4, 3, 5]
+numbers == oneToFive2 // false
+
 ```
 
 ## 数组的增删改操作
 
 假如有如下数组变量。
 ```
-var list = ["Apple","Orange"]
+var list = ["Apple", "Orange"]
 ```
 ### 新增
 #### 新增数组元素
@@ -94,7 +99,7 @@ var list = ["Apple","Orange"]
 ```
 list.append("Pear")
 
-list += ["Banner"]
+list += ["Banner"] // 使用 += 的方式添加数组元素必须添加的是一个数组，并且数组中的类型要与之前的一直，比如这里的字符串
 
 list = list + ["Watermelon","Grape"]
 
@@ -102,7 +107,8 @@ list // ["Apple", "Orange", "Pear", "Banner", "Watermelon", "Grape"]
 ```
 
 #### 新增数组单元到指定索引处
-也可以很方便的将元素添加到某个索引值的位置，换言之填写的索引为新增的元素所在的索引位置。
+
+在Swift中可以很方便的将元素添加到某个索引值的位置，换言之填写的索引为新增的元素所在的索引位置。
 ```
 list.insert("Cantaloupe", at: 2)
 list // ["Apple", "Orange", "Cantaloupe", "Pear", "Banner", "Watermelon", "Grape"]
