@@ -14,12 +14,22 @@ b.insert("HTML") // 新增后 b 的值不变，因为集合中元素是唯一的
 
 ### 删除
 ```
-a.remove("PHP") // 返回值删除的元素。删除指定元素后， a 的值为 ["Object-C", "Swift"]
+a.remove("PHP") // 返回值删除的元素的值。删除指定元素后， a 的值为 ["Object-C", "Swift"]
 
 c.remove("JS") // 删除不存在的元素，返回 nil
 
 a.removeAll() // 清空集合中所有元素
 ```
+
+使用`remove()`组建自己的业务逻辑
+```
+if let remove = a.remove("Swift") {
+    print("Swift is removed")
+}
+```
+
+> 使用 `remove()` 方法对集合删除操作时，如果删除的元素不存在的话，则返回nil。
+
 ### 其他操作
 假如有如下集合：
 ```
