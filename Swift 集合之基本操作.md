@@ -36,6 +36,7 @@ if let remove = a.remove("Swift") {
 var setA: Set<String> = ["Swift","Object-C"]
 var setB: Set<String> = ["HTML","CSS","JS"]
 var setC = Set(["Swift","HTML","CSS"])
+var setD: Set<String> = ["Swift"]
 ```
 #### 集合的并集操作
 
@@ -69,6 +70,45 @@ setA.formIntersection(setC) // Swift
 #### 集合的差集操作
 
 ```
-setA.subtract(setC) // Object-C
+setA.subtract(setC) // Object-C 表示setA独有的而setC不具备的元素
+setC.subtract(setA) // "Swift","HTML","CSS" 表示setC独有而setA不具备的元素
 ```
 > 集合 `setA` 拥有的元素， `setC`  不拥有的元素。
+
+
+#### 集合的抑或操作
+Swift提供两种操作
+* `symmetricDifference()`
+* `formSymmetricDifference()`
+它们的区别是，`symmetricDifference()`的操作不影响原集合，而`formSymmetricDifference()`则会已影响原集合。
+
+```
+setA.symmetricDifference(setC) // "Object-C","HTML","CSS"
+setA.formSymmetricDifference(setC) // "Object-C","HTML","CSS"
+```
+
+
+#### 集合的子集、真子集判断
+
+```
+setD.isSubset(of: setA)
+setD.isStrictSubset(of: setA)
+
+```
+
+
+#### 集合的超集、超子集判断
+子集、真子集的反方向判断
+```
+setA.isSuperset(of: setD)
+setA.isStrictSuperset(of: setD)
+```
+
+
+#### 集合的相离判断
+
+两个集合毫无相同的元素
+
+```
+
+```
