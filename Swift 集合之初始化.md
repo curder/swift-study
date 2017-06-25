@@ -45,3 +45,14 @@ set2.remove(at: 2)
 set1 //[4, 23, 32]
 set2 //[4, 23]
 ```
+
+### 集合的遍历
+使用 `for in` 结构遍历集合
+
+```
+var sets: Set<String> = ["set1", "set2", "set3"]
+
+for set in sets {
+    print(set)
+}
+```
