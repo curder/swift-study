@@ -37,25 +37,20 @@ var setA: Set<String> = ["Swift","Object-C"]
 var setB: Set<String> = ["HTML","CSS","JS"]
 var setC = Set(["Swift","HTML","CSS"])
 ```
-#### 并集
-
-Swift 提供了两个并集操作
-* union()
-* unionInPlace()
-
-它们的区别在于`union()` 并不改变集合的值，而 `unionInPlace` 则会改变集合的值
+#### 集合的并集操作
 
 `setA` 与 `setB` 的并集
 ```
+
 setA.union(setB) // ["JS", "CSS", "Object-C", "HTML", "Swift"]
 ```
 
-#### 交集
+#### 集合的交集操作
 ```
 setA.intersection(setC) // Swift
 ```
 
-#### 减法
+#### 集合的减法操作
 
 ```
 setA.subtract(setC) // Object-C
