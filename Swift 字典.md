@@ -23,6 +23,8 @@ if let value = dict["swift"] {
 }
 ```
 
+> 字典的无序的。
+> 在同一个字典中不允许声明同一个key作为字典的键。
 
 ### 字典值的获取
 由于字典是无序的数据集合，可以通过字典的`key`去获取值。
@@ -55,7 +57,7 @@ for value in dict.values {
 
 // 遍历字典中的所有键值
 for (key, value) in dict {
-    print("\(key) - \(value)")
+    print("\(key) : \(value)")
 }
 ```
 
