@@ -107,8 +107,9 @@ setA.isStrictSuperset(of: setD)
 
 #### 集合的相离判断
 
-两个集合毫无相同的元素
+判断两个集合毫无相同的元素
 
 ```
-
+setA.isDisjoint(with: setB)
+setA.isDisjoint(with: setC)
 ```
