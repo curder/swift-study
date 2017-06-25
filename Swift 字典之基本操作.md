@@ -29,7 +29,7 @@ user.updateValue("webfsd.com", forKey: "website")
 ### 删除
 ```
 user["website"] = nil
-user.removeValue(forKey: "email") // 返回删除掉的旧值
+user.removeValue(forKey: "email") // 返回删除掉的字典的旧值
 
 user.removeAll() // 清空字典
 ```
