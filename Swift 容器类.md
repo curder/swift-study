@@ -24,7 +24,7 @@
 
 
 
-### for in 遍历
+### for-in 遍历
 
 #### 对Range使用for-in
 ```
