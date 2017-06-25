@@ -39,20 +39,42 @@ var setC = Set(["Swift","HTML","CSS"])
 ```
 #### 集合的并集操作
 
-`setA` 与 `setB` 的并集
-```
+Swift提供两种操作
+* `union()`
+* `formUnion()`
+它们的区别是，`union()`的操作不影响原集合，而`formUnion()`则会已影响原集合。
 
+求`setA` 与 `setB` 的并集
+
+```
 setA.union(setB) // ["JS", "CSS", "Object-C", "HTML", "Swift"]
+
+
+setA.formUnion(setB) // ["JS", "CSS", "Object-C", "HTML", "Swift"] ，此时 setA的值也等于这个返回值
 ```
 
 #### 集合的交集操作
+
+Swift提供两种操作
+* `intersection()`
+* `formIntersection()`
+它们的区别是，`Intersection()`的操作不影响原集合，而`formIntersection()`则会已影响原集合。
+
 ```
 setA.intersection(setC) // Swift
+
+setA.formIntersection(setC) // Swift
 ```
 
-#### 集合的减法操作
+#### 集合的差集操作
+
+Swift提供两种操作
+* `subtract()`
+* `formSubtract()`
+它们的区别是，`subtract()`的操作不影响原集合，而`formSubtract()`则会已影响原集合。
 
 ```
 setA.subtract(setC) // Object-C
+
 ```
 > 集合 `setA` 拥有的元素， `setC`  不拥有的元素。
