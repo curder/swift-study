@@ -200,3 +200,35 @@ let anotherSay3: ()->Void = say
 let anotherSay4: (Void)->() = say
 ```
 > 就是 `Void` 和`()` 都可以表示返回值为空的情况。
+
+
+#### 函数型变量的应用
+
+使用系统函数`sorted()` 传入函数型变量，对数组中的元素进行从大到小的排序
+
+```
+var arr: [Int] = []
+for _ in 0..<100 {
+    arr.append(Int(arc4random() % 1000))
+}
+
+
+
+arr.sorted() // 不改变原有数组的值进行从小到大排序
+arr.sort() // 改变有数组的值进行从小到大排序
+
+
+// 那么我们想数组从大到小排序要怎么做呢？
+
+arr.sorted(by: biggerNumberFirst) // 使用函数型变量传值给参数
+
+func biggerNumberFirst (a: Int, _ b: Int) -> Bool {
+//    if a > b {
+//        return true
+//    } else {
+//        return false
+//    }
+    return a > b
+}
+```
+
