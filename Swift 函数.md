@@ -63,7 +63,7 @@ func mutiply( _ num1: Int, _ num2: Int ) -> Int{
 mutiply(1, 2)
 ```
 
-### 函数默认参数与可变参数
+### 函数默认参数
 ```
 func sayHello(to name: String, message greeting: String = "Hello",punctuation: String = "!")->String{
     return "\(greeting),\(name)\(punctuation)"
@@ -77,7 +77,7 @@ sayHello(to: "Curder",punctuation: "!!!") // "Hello,Curder!!!"
 sayHello(to: "Curder",message: "Hi",punctuation:"!!!") // "Hi,Curder!!!"
 ```
 
-### 函数变长参数
+### 函数可变参数
 
 在声明函数的形参的时候 后面加上 `...`，即可。在函数中，将该变长参数的值作为数组看待即可。
 
