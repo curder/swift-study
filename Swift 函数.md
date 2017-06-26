@@ -228,7 +228,7 @@ func biggerNumberFirst (a: Int, _ b: Int) -> Bool {
 //    } else {
 //        return false
 //    }
-    return a > b
+    return a > b // 可以直接使用运算符简化上面的写法
 }
 ```
 
