@@ -35,7 +35,7 @@ var scores: [Int]? = [202,1232,4321,33,432,666]
 
 scores = scores ?? []
 
-if let resault = findMaxAndMin(scores!){
+if let resault = findMaxAndMin(numbers:scores!){
     print("The max score is \(resault.max)")
     print("The min score is \(resault.min)")
 }
