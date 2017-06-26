@@ -162,7 +162,9 @@ initArray(arr: &arr, by: 0) // 需要使用 & 取地址符传递数据，改变�
 ```
 
 ### 声明函数型变量
+
 如果函数存在返回值的情况
+
 ```
 func add(_ a: Int,_ b: Int)-> Int{
     return a + b
@@ -172,6 +174,7 @@ let anotherAdd: (Int, Int) -> Int = add
 
 anotherAdd(1,2)
 ```
+> 上面的操作将 `add()` 函数直接赋值给 `anotherAdd()`，那么 `anotherAdd` 也是一个函数。
 
 如果函数不存在返回值的清空
 ```
@@ -196,3 +199,4 @@ let anotherSay2: (Void)->Void = say
 let anotherSay3: ()->Void = say
 let anotherSay4: (Void)->() = say
 ```
+> 就是 `Void` 和`()` 都可以表示返回值为空的情况。
