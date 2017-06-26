@@ -148,6 +148,19 @@ x // 2
 y // 1
 ```
 
+按值传递的数组
+```
+func initArray(arr: inout [Int], by value: Int) {
+    for i in 0..<arr.count {
+        arr[i] = value
+    }
+}
+
+var arr = [1, 2, 3, 4, 5]
+
+initArray(arr: &arr, by: 0) // 需要使用 & 取地址符传递数据，改变原数组的值
+```
+
 ### 声明函数型变量
 如果函数存在返回值的情况
 ```
