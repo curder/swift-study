@@ -98,7 +98,25 @@ mean(numbers: 2,3,4)
 > 对于一个函数而言，只能有一个变长的参数。
 
 ### inout参数
-// 参数的地址引用
+
+函数的参数默认是 `let` 常量类型，我们不能在函数内部对传入的参数进行修改，在Swift3.0中，可以在函数内部使用 `var` 声明函数参数为变量进行修改。
+```
+func toBinary(num: Int) -> String {
+    var num = num // 需要将传入的变量定义为 `var` 变量
+    var res = ""
+    repeat {
+        res = String(num%2) + res
+        num /= 2
+    } while num != 0
+    
+    return res
+}
+
+toBinary(num: 100)
+```
+
+参数的地址引用
+
 ```
 func swapTwoInts( _ a: inout Int, _ b:inout Int){
     let t:Int = a
