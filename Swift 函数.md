@@ -158,7 +158,7 @@ func initArray(arr: inout [Int], by value: Int) {
 
 var arr = [1, 2, 3, 4, 5]
 
-initArray(arr: &arr, by: 0) // 需要使用 & 取地址符传递数据，改变原数组的值
+initArray(arr: &arr, by: 0) // 需要使用 & 取地址符传递数据，改变原数组的值 [0, 0, 0, 0, 0]
 ```
 
 ### 声明函数型变量
