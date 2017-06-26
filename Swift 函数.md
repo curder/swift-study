@@ -79,11 +79,13 @@ sayHello(to: "Curder",message: "Hi",punctuation:"!!!") // "Hi,Curder!!!"
 
 ### 函数可变参数
 
-在声明函数的形参的时候 后面加上 `...`，即可。在函数中，将该变长参数的值作为数组看待即可。
+在声明函数的形参的时候 后面加上 `...`，在函数中，将该变长参数的值作为数组看待即可。
 
 ```
 func mean( numbers: Double ... )->Double{
     var sum: Double = 0
+    
+    // 将变长的参数的值作为数组看待
     for number in numbers{
         sum += number
     }
