@@ -241,3 +241,27 @@ func cmpByNumberString(a: Int, _ b: Int) -> Bool {
 
 arr.sorted(by: cmpByNumberString) // [101, 105, 116, 129, 131, 142, 142, 146, 182, 183, 184, 187, 189, 197, 206, 207, 207, 229, 23, 240, 252, 253, 255, 262, 291, 295, 295, 32, 33, 377, 38, 395, 398, 422, 439, 450, 458, 464, 470, 475, 485, 488, 488, 494, 503, 505, 509, 518, 572, 573, 58, 584, 598, 6, 605, 615, 616, 619, 622, 624, 625, 633, 638, 647, 649, 655, 674, 680, 685, 713, 746, 746, 756, 757, 771, 771, 787, 789, 790, 791, 792, 792, 794, 806, 818, 836, 844, 864, 868, 880, 880, 888, 898, 902, 922, 944, 947, 960, 962, 99]
 ```
+
+#### 返回函数类型和函数嵌套
+```
+// 计费方式1
+func tierMailFeeByWeight(weight: Int) -> Int {
+    return 1 * weight
+}
+
+// 计费方式2
+func tier2MailFeeByWeight(weight: Int) -> Int {
+    return 3 * weight
+}
+
+// 函数嵌套的应用
+func feeByUnitPrice(price: Int, weight: Int) -> Int {
+    // 判断计费方式 将函数作为返回值的用法
+    func chooseMailFeeCalculationByWeight(weight: Int) -> (Int) -> Int {
+        return weight <= 10 ? tierMailFeeByWeight : tier2MailFeeByWeight
+    }
+
+    let mailFeeByWeight = chooseMailFeeCalculationByWeight(weight: weight)
+    return mailFeeByWeight(weight) + price * weight
+}
+```
