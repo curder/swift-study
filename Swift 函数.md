@@ -36,7 +36,7 @@ var scores: [Int]? = [202,1232,4321,33,432,666]
 
 scores = scores ?? []
 
-if let resault = findMaxAndMin(numbers: scores!){
+if let resault = findMaxAndMin(scores!){
     print("The max score is \(resault.max)")
     print("The min score is \(resault.min)")
 }
@@ -135,7 +135,7 @@ let anotherSayHello: (String)->Void = sayHello
 let anotherSayHello: (String)->() = sayHello
 ```
 
-如果函数返回值和参数都不存在的情况
+如果函数返回值和参数都不存在的情况，可以显式的定义 `->Void`的方式定义。
 
 ```
 func say(){
