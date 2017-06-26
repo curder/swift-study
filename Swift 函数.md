@@ -115,10 +115,10 @@ func toBinary(num: Int) -> String {
 toBinary(num: 100)
 ```
 
-参数的地址引用
+参数的地址引用，使用`inout`关键字
 
 ```
-func swapTwoInts( _ a: inout Int, _ b:inout Int){
+func swapTwoInts( _ a: inout Int, _ b:inout Int) {
     let t:Int = a
     a = b
     b = t
@@ -126,7 +126,23 @@ func swapTwoInts( _ a: inout Int, _ b:inout Int){
 var x: Int = 1
 var y: Int = 2
 
-swapTwoInts(&x, &y)
+swapTwoInts(&x, &y) // 使用 & 按引用传递
+
+x // 2
+y // 1
+```
+
+上面的函数也可以使用Swift中的元组实现。
+
+```
+func swapTwoInts2( _ a:inout Int, _ b:inout Int){
+    (a, b) = (b, a)
+}
+
+var x: Int = 1
+var y: Int = 2
+
+swapTwoInts2(&x, &y)
 
 x // 2
 y // 1
