@@ -1,5 +1,6 @@
 ## Swift 闭包
-　　**Swift 中闭包是引用类型** 有些时候定义一个函数可能只需要使用一次，
+
+**Swift 中闭包是引用类型** 有些时候定义一个函数可能只需要使用一次，
 闭包本质上是函数
 
 ### 闭包写法
@@ -15,10 +16,13 @@ arr.sort(by: {(a:Int,b:Int) -> Bool in
     return a > b
 })
 ```
+> 在闭包的定义中，因为不会被外部调用，所以给闭包取外部的参数名没有意义。
 
 闭包的简化写法：
 ```
-arr.sort(by: {a , b in return a > b})
+arr.sort(by: {(a:Int , b:Int)-> Bool in return a > b}) // 如果闭包的函数体只有一行的情况，我们可以将其写在一行里。
+
+arr.sort(by: {a , b in return a > b}) 
 
 arr.sort(by: {a , b in a > b})
 
