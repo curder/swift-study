@@ -28,16 +28,20 @@ arr.sort(by: {a , b in a > b})
 
 arr.sort(by: { $0 > $1 })
 
-arr.sort(by: >) // > 符号本身就是函数.
+arr.sort(by: >) // ">" 符号本身就是函数.
 ```
 
 ### 结尾闭包
+
+Trailing Closure
+
+如果需要传递的闭包在函数参数的末尾，我们可以使用结尾闭包的方式书写，如下：
 ```
 arr.sort(by: ){ a , b in
     return a > b
 }
 
-// 或者
+// 如果将闭包放到()外部，而原函数调用没有任何参数需要传递，那么这里我们可以将小括号去掉。
 arr.sort{ a , b in
     return a > b
 }
