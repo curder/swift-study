@@ -47,6 +47,27 @@ arr.sort{ a , b in
 }
 ```
 
+使用结尾闭包的一个例子。
+```
+var arr:[Int] = []
+
+for i in 0 ..< 100{
+    arr.append( Int(arc4random()%1000) )
+}
+
+var r = arr.map(){(number)-> String in
+    var number = number
+    var res = ""
+    repeat {
+        res = String(number%2) + res
+        number /= 2
+    }while number != 0
+    
+    return res
+}
+```
+
+
 ### 内容捕获
 
 ```
