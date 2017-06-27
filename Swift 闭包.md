@@ -70,6 +70,7 @@ var r = arr.map(){(number)-> String in
 
 ### 内容捕获
 
+一下是demo，随机取100个数字，以100为中心，将离100最近的数字越靠前
 ```
 var arr:[Int] = []
 
@@ -87,9 +88,40 @@ arr.sort{ a , b in
 
 
 
+### 闭包和函数都有引用类型
+
+```
+// 计算跑步的里程数，单位m
+func runningMetersWithMetersPerDay(metersPerDay: Int) -> () -> Int {
+    
+    var totalMeters = 0 // 跑步的总数
+    return {
+        totalMeters += metersPerDay // 两个变量都是通过闭包外部的内容捕获获得值的。
+        return totalMeters
+    } // 返回闭包
+}
+
+var planA = runningMetersWithMetersPerDay(metersPerDay: 5000)
+planA() // 5000
+planA() // 10000
+
+var planB = runningMetersWithMetersPerDay(metersPerDay: 1000)
+planB() // 1000
+planB() // 2000
 
 
+var anotherPlan = planA // 将闭包赋值给另一个变量
 
+anotherPlan() // 15000 在调用的过程中它们的值会累加，说明是引用类型
+planA() // 20000 在调用的过程中它们的值会累加，说明是引用类型
+
+
+let planC = runningMetersWithMetersPerDay(metersPerDay: 2000) // 对于引用类型，不代表里面的值不能被修改
+planC() // 2000
+planC() // 4000
+
+//planC = runningMetersWithMetersPerDay(metersPerDay: 3000) // 这句赋值会报错
+```
 
 
 
