@@ -22,13 +22,13 @@ arr.sort(by: {(a:Int,b:Int) -> Bool in
 ```
 arr.sort(by: {(a:Int , b:Int)-> Bool in return a > b}) // 如果闭包的函数体只有一行的情况，我们可以将其写在一行里。
 
-arr.sort(by: {a , b in return a > b}) 
+arr.sort(by: {a , b in return a > b}) // Swift type inference.
 
 arr.sort(by: {a , b in a > b})
 
 arr.sort(by: { $0 > $1 })
 
-arr.sort(by: >)
+arr.sort(by: >) // > 符号本身就是函数.
 ```
 
 ### 结尾闭包
