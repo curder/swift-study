@@ -6,6 +6,9 @@ struct 结构体名称 {
 
 }
 ```
+
+> 结构体的定义使用 `struct` 关键字开始，由于结构体也是一种新的数据类型，所以首字母需要大写。
+
 ## 声明结构体
 ```
 struct Location { // Location 为数据类型，首字母大写
@@ -47,26 +50,29 @@ googleHeadQarter.location.latitude // 37.422
 ## 结构体之构造函数
 ```
 struct Location {
-    var latitude: Double = 0
+    var latitude: Double = 0 // 结构体可以赋初始值
     var longitude: Double = 0
 }
 
-Location()
+Location() // 都不填写的话，就使用初始值
 let appleHeadQarterLocation = Location( latitude: 37.3230,longitude: -122.0322)
 ```
 >  结构体的初始化时默认将结构体内所有的属性值补齐;
 > 结构体默认初始化函数内传递的属性值不是任意的，根据定义的时候的顺序传递
-> 对于结构体的属性可以在定义结构体的时候赋初始值，并将其设置为变量，也就是使用 var 关键字声明属性
+> 对于结构体的属性可以在定义结构体的时候赋初始值，并将其设置为变量，也就是使用 `var` 关键字声明属性
 
 
 ### 自定义构造函数
+
+使用 `init` 定义函数，不需要写 func，也不需要返回值。
+
 ```
 struct Location {
     let latitude: Double
     let longitude: Double
 
-    // 自定义构造函数
-    init (coordinateString: String){
+    // 自定义构造函数，不需要写 func，也不需要返回值。
+    init (coordinateString: String) {
         let commaIndex = coordinateString.range(of: ",")!.lowerBound
 
         let firstElement = coordinateString.substring(to: commaIndex)
