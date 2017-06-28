@@ -84,7 +84,7 @@ print( season(month: .April ) ) // Spring
 ### 枚举之原始值
 
 ```
-enum Month: Int{
+enum Month: Int { // 定义原始值是整形类型
     case January = 1
     case February = 2
     case March = 3
@@ -117,7 +117,7 @@ if let month = Month( rawValue: input) {
 
 ```
 enum Grade: Int{
-    case F,E,D,C,B,A
+    case F, E, D, C, B, A
 }
 let grade: Grade = .A
 print("Your score is \(grade.rawValue)") // Your score is 5
