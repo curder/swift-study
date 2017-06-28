@@ -2,16 +2,16 @@
 
 ### 枚举定义
 
-定义枚举型 Month 时，我们可以使用如下方式：
+定义语法：
 
 ```
-emun 枚举名称{
+emun 枚举名称 {
 	case 枚举值
     case 枚举值
     ...
 }
 ```
-具体如下：
+定义枚举型 Month 时，我们可以使用如下方式：
 ```
 enum Month{
     case January
