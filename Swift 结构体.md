@@ -166,6 +166,8 @@ let location3 = Location(latitude: 37.3230, longitude: -122.0322, placeName: "Ap
 
 ### 可失败的构造函数
 
+使用 `init?` 关键字定义可失败的构造函数，叫做Failable-Initializer。在失败的构造函数中，我们可以大胆的返回`nil`值，而不会构造函数内解包出错等问题使程序抛出错误而终止程序。
+
 ```
 struct Location {
     let latitude: Double
@@ -176,7 +178,7 @@ struct Location {
         self.longitude = 0.0
     }
     
-    // 自定义构造函数
+    // 自定义构造函数1
     // 可失败的构造函数
     init?(coordinateString: String){
         // 使用 guard 进行程序保卫性判定,防止 nil 值.
@@ -184,7 +186,7 @@ struct Location {
             let firstElement = Double(coordinateString.substring(to: commaIndex)),
             let secondElement = Double( coordinateString.substring(from: coordinateString.index(after: commaIndex)) )
         else{
-            return nil
+            return nil // `init?` 可是失败的构造函数支持返回nil
         }
         
         self.latitude = firstElement
