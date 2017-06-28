@@ -6,7 +6,7 @@
 
 ```
 emun 枚举名称 {
-	case 枚举值
+    case 枚举值
     case 枚举值
     ...
 }
@@ -192,7 +192,7 @@ case let .Success(newBanacle):
 case let .Error(errorMessage):
     print("Error: \(errorMessage)")
 case .Waiting:
-	print("Waiting")    
+    print("Waiting")    
 }
 ```
 
@@ -224,7 +224,7 @@ func area(shape: Shape) -> Double{
         return side * side
     case let .Rectangle( width , height ):
         return width * height
-    case let .Circle( _ , _ , r ):
+    case let .Circle( _ , _ , r ): // 使用 _ 忽略元祖的解包参数
         return M_PI * r * r
     case .Point:
         return 0
@@ -238,16 +238,17 @@ area(shape: point) // 点
 ```
 
 ### 可选型的实质是枚举
-```
-var website: Optional<String> = Optional.some("webfsd.com")
 
-// website = .none
+```
+var website: Optional<String> = Optional.some("webfsd.com") // 定义可选型 var website: Stirng? = "webfsd.com"
+
+website = .none // nil
 
 // 可选型的解包
 switch website {
 case .none:
     print("No website")
-case let .some(website):
+case let .some(website): // 将关联值传递给website
     print("The website is \(website)")
 }
 
