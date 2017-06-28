@@ -278,6 +278,9 @@ appleHeadQuarterLocation.distanceTo(location: googleHeadQuarterLocation!) // nan
 ```
 
 ## 结构体是值类型
+
+`Value Type`值类型，赋值即是拷贝。
+
 ```
 struct Point {
     var x = 0
