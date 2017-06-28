@@ -12,7 +12,7 @@ emun 枚举名称 {
 }
 ```
 
-定义枚举型 Month 时，我们可以使用如下方式：
+例如：定义枚举型 Month 时，我们可以使用如下方式：
 
 ```
 enum Month{
@@ -58,7 +58,7 @@ enum Month{
     case December
 }
 
-// 枚举月份
+// 枚举月份 可以将case省略而将定义放在一行
 enum Season{
     case Spring, Summer, Autumn, Winter
 }
