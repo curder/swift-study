@@ -167,6 +167,7 @@ print("\(myFavoriteLanguage.rawValue) is my favorite language.") // Swift is my 
 enum AtmStatus {
     case Success(Int) // 枚举的值关联一个整型值
     case Error(String) // 枚举的值关联一个字符串
+    case Waiting
 }
 
 var balance = 1000 // 账户与余额
@@ -180,8 +181,19 @@ func withDraw( amount: Int) -> AtmStatus { // 返回值为枚举型
     }
 }
 
-withDraw(amount: 1110) // Error("Not enough money")
+let result = withDraw(amount: 100)
+switch result { // 在判断语句中使用 let 解包
+case let .Success(newBanacle):
+    print("\(newBanacle) Yuan left in your account.")
+case let .Error(errorMessage):
+    print("Error: \(errorMessage)")
+case .Waiting:
+	print("Waiting")    
+}
 ```
+
+> 枚举型中关联值不是必须的，可以有的存在，有的不存在。
+
 
 #### 关联多个值
 
