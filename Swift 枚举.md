@@ -122,6 +122,21 @@ enum Grade: Int{
 let grade: Grade = .A
 print("Your score is \(grade.rawValue)") // Your score is 5
 ```
+> 枚举型的原始值默认从0开始计算，逐步+1。
+
+
+自定义枚举型的原始值
+```
+enum Coin: Int{
+    case Penny = 1
+    case Nickel = 5
+    case Dime = 10
+    case Quarter = 25
+}
+let coin: Coin = .Quarter
+print("It's \(coin.rawValue) cents") // It's 25 cents
+```
+
 ### 枚举其他类型原始值
 
 ```
