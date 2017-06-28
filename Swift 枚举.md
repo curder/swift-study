@@ -261,6 +261,9 @@ if let website = website {
 
 
 ### 枚举类型定义方法
+
+枚举型中也可以定义方法
+
 ```
 // 枚举类型定义方法
 enum Shape{
@@ -271,7 +274,7 @@ enum Shape{
     
     // 计算面积的方式
     func area() -> Double {
-        switch self {
+        switch self { // 枚举变量判断自己
         case let .Square( side ):
             return side * side
         case let .Rectangle( width , height ):
