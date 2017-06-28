@@ -139,8 +139,10 @@ print("It's \(coin.rawValue) cents") // It's 25 cents
 
 ### 枚举其他类型原始值
 
+枚举型的rawValue为String定义
+
 ```
-enum ProgrammingLanguage: String{
+enum ProgrammingLanguage: String { // 枚举型的rawValue为String
     case Swift // 不填写 使用 ProgrammingLanguage.rawValue 的值为：Swift，即默认原始值为 Swift
     case ObjectiveC = "Objective-C"
     case C
@@ -152,22 +154,24 @@ var myFavoriteLanguage: ProgrammingLanguage = .ObjectiveC
 print("\(myFavoriteLanguage.rawValue) is my favorite language.") // Objective-C is my favorite language.
 
 myFavoriteLanguage = ProgrammingLanguage.Swift
-print("\(myFavoriteLanguage.rawValue) is my favorite language.")
+print("\(myFavoriteLanguage.rawValue) is my favorite language.") // Swift is my favorite language.
 ```
 
 ### 枚举之关联值
+
+在Swift中，枚举型支持枚举的可能性可以和一个变量相关联（Associat Value），并且他们之间的值类型可以不同。
 
 #### 关联一个值
 下列是一个用户在 ATM 取款的场景，判断用户取的钱是否小于账户余额。
 ```
 enum AtmStatus {
-    case Success(Int)
-    case Error(String)
+    case Success(Int) // 枚举的值关联一个整型值
+    case Error(String) // 枚举的值关联一个字符串
 }
 
 var balance = 1000 // 账户与余额
 
-func withDraw( amount: Int) -> AtmStatus{
+func withDraw( amount: Int) -> AtmStatus { // 返回值为枚举型
     if balance >= amount{
         balance -= amount
         return .Success(balance)
