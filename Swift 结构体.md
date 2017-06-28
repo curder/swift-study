@@ -13,8 +13,16 @@ struct Location { // Location 为数据类型，首字母大写
     let longitude: Double // 经度
 }
 
-let appleHeadQarterLocation = Location( latitude: 37.3230, longitude: -122.0322)
-var googleHeadQarterLocation: Location = Location(latitude: 37.4220, longitude: -122.0841)
+let appHeadQuarterLocation: Location = Location(latitude: 37.3230, longitude: -122.0322) // 定义Apple总部的位置
+let googleHeadQuarterLocation: Location = Location(latitude: 37.4220, longitude: -122.0841) // 定义Google总部的位置
+
+appHeadQuarterLocation.latitude // 查看Apple的经度属性值
+googleHeadQuarterLocation.longitude // 查看Google的纬度属性值
+
+
+appHeadQuarterLocation.latitude = 0 // 此处会报错，因为结构体Location所定义的latitude为常量
+appHeadQuarterLocation = googleHeadQuarterLocation // 此处也会报错，因为appHeadQuarterLocation定义的是一个常量值
+
 ```
 ## 获取属性值
 ```
@@ -23,13 +31,14 @@ googleHeadQarterLocation.longitude
 ```
 
 ## 结构体的嵌套使用
+结构体的使用时非常灵活的，我们不仅仅可以使用之前学习使用的基本数据类型`Int`、`String`、`Doubel` 等等，还可以在结构体内部嵌套结构体。如下
 ```
 struct Place{
-    let location: Location
-    var name: String
+    let location: Location // 该结构体是上文中设置的Location的类型
+    var name: String // 字符串类型的属性
 }
 
-var googleHeadQarter = Place( location: googleHeadQarterLocation , name: "google" )
+var googleHeadQarter = Place( location: googleHeadQuarterLocation , name: "google" )
 
 googleHeadQarter.location.latitude // 37.422
 ```
