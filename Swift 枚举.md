@@ -162,7 +162,11 @@ print("\(myFavoriteLanguage.rawValue) is my favorite language.") // Swift is my 
 在Swift中，枚举型支持枚举的可能性可以和一个变量相关联（Associat Value），并且他们之间的值类型可以不同。
 
 #### 关联一个值
+
 下列是一个用户在 ATM 取款的场景，判断用户取的钱是否小于账户余额。
+
+> 如果关联值是`Associat Value`，则不需要像声明 `Raw Value`一样在声明enum时指明类型。
+
 ```
 enum AtmStatus {
     case Success(Int) // 枚举的值关联一个整型值
@@ -197,13 +201,15 @@ case .Waiting:
 
 #### 关联多个值
 
-关联多个值时，参数相当于元组
+关联多个值时，参数相当于**元组**。
+
+> 关联值时还可以定义名称，也可以理解为是元祖的分量名称。
 ```
-enum Shape{
-    case Square( side: Double )
-    case Rectangle( width: Double, height: Double )
-    case Circle(centerx: Double , centery: Double , radius: Double)
-    case Point
+enum Shape {
+    case Square( side: Double ) // 正方形
+    case Rectangle( width: Double, height: Double ) // 长方形
+    case Circle(centerx: Double , centery: Double , radius: Double) // 圆形
+    case Point // 点，不存在关联值
 }
 
 let square = Shape.Square(side: 10)
