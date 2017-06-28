@@ -11,7 +11,9 @@ emun 枚举名称 {
     ...
 }
 ```
+
 定义枚举型 Month 时，我们可以使用如下方式：
+
 ```
 enum Month{
     case January
