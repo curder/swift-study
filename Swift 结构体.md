@@ -78,7 +78,7 @@ struct Location {
         let firstElement = coordinateString.substring(to: commaIndex)
         let secondElement = coordinateString.substring(from: coordinateString.index(after: commaIndex))
         
-        self.latitude = Double(firstElement)!
+        self.latitude = Double(firstElement)! // 定义的常量可以在这里初始化
         self.longitude = Double(secondElement)!
     }
 }
@@ -119,10 +119,50 @@ struct Location {
 
 
 let location = Location("37.3230,-122.0322")
-let location2 = Location(latitude: 37.3230, longitude:-122.0322)
+let location2 = Location(latitude: 37.3230, longitude: -122.0322)
 ```
 
-> 上面的结构体构造函数中使用了可选型的强制解包，这将导致程序的不可预料的错误，这时我们可以使用 guard 关键词进行判定。
+> 上面的结构体构造函数中使用了可选型的强制解包，这将导致程序的不可预料的错误，这时我们可以使用 `guard` 关键词进行判定。
+
+
+对于结构体而言，结构体中的属性可以赋初始值，也可以在`init`函数中赋值，但是可选性却例外，我们可以在结构体外部对可选型的值进行修改
+
+```
+struct Location {
+    let latitude: Double
+    let longitude: Double
+    var placeName: String?
+    
+    // 自定义构造函数，同时省略参数名,但是为了程序的可读性不建议这么做。
+    init (_ coordinateString: String){
+        let commaIndex = coordinateString.range(of: ",")!.lowerBound
+        
+        let firstElement = coordinateString.substring(to: commaIndex)
+        let secondElement = coordinateString.substring(from: coordinateString.index(after: commaIndex))
+        
+        self.latitude = Double(firstElement)!
+        self.longitude = Double(secondElement)!
+    }
+    
+    // 自定义构造函数2
+    init(latitude: Double, longitude: Double) {
+        self.latitude = latitude
+        self.longitude = longitude
+    }
+    
+ 	// 我们可以写一个全参数的初始化init方法，给可选性赋值
+ 	init(latitude: Double, longitude: Double, placeName: String?) {
+        self.latitude = latitude
+        self.longitude = longitude
+        self.placeName = placeName
+    }
+}
+
+let location3 = Location(latitude: 37.3230, longitude: -122.0322, placeName: "Apple Head Quarter")
+
+```
+
+
 
 ### 可失败的构造函数
 
