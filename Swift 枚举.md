@@ -33,7 +33,7 @@ enum Month{
 ### 枚举型的取值
 
 ```
-var currMonth: Month = Month.September
+var currMonth = Month.September
 
 // 当确定了变量是枚举类型也可以直接使用 .枚举名 获取。
 var currMonth: Month = .September
@@ -107,13 +107,13 @@ func monthsBeforeNewYear( _ month: Month ) -> Int{
 let month: Month = .October
 monthsBeforeNewYear(month) // 距离新年还有 2 个月
 
-// 使用 Month 的构造函数进行数据处理
+// 使用枚举型的构造函数进行数据处理
 let input = 2
-if let month = Month( rawValue: input){
+if let month = Month( rawValue: input) {
     monthsBeforeNewYear(month)
 }
 ```
-### 使用枚举行默认的原始值
+### 使用枚举型默认的原始值
 
 ```
 enum Grade: Int{
