@@ -204,6 +204,7 @@ case .Waiting:
 关联多个值时，参数相当于**元组**。
 
 > 关联值时还可以定义名称，也可以理解为是元祖的分量名称。
+
 ```
 enum Shape {
     case Square( side: Double ) // 正方形
@@ -301,6 +302,7 @@ point.area()
 
 
 ### 枚举类型是值类型
+
 ```
 enum Direction{
     case North
