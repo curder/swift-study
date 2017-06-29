@@ -298,4 +298,4 @@ p1.x // 0 原始值并没有改变。
 ```
 
 > `Array` , `Dirctionary` , `Set` 是结构体；
-`Int` , `Float` , `Double` , `Bool` , `String` 也都是结构体。
+`Int` , `Float` , `Double` , `Bool` , `String` 也都是结构体，所以他们都是值类型的数据结构。
