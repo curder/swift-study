@@ -215,11 +215,13 @@ class Person {
 
 let person1 = Person(firstName: "Steve", lastName: "Jobs")
 let person2 = person1
-person1 === person2 // true
+person1 === person2 // true 引用同一个内存空间
 
-// 重新实例化后，发现对象不相等
+// 重新实例化一个相同内容的数据后，发现对象不相等
 let person3 = Person(firstName: "Steve", lastName: "Jobs")
-person1 === person3 // false
+person1 === person3 // false 两次实例化，计算机分配了两个内存空间存储不同的对象
+
+person1 !== person3 // true
 ```
 > 判定两个不同的实例可以使用 `!==` 进行判断。
 
