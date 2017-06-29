@@ -6,33 +6,38 @@
 
 ```
 struct Point {
-    var x = 0.0
+    var x = 0.0 // 存储型属性
     var y = 0.0
 }
 
 struct Size {
-    var width = 0.0
+    var width = 0.0 // 存储型属性
     var height = 0.0
 }
 
+
 class Rectangle {
-    var origin = Point()
+    var origin = Point() // 存储型属性
     var size = Size()
-    var center: Point{
+
+    // 计算性属性,必须声明称变量，因为它的值是根据其他属性的值计算得出。
+    // 另外，计算型属性必须声明数据类型，否则将会报错 (error: computed property must have an explicit type)
+    var center: Point {
         // getter
-        get{
-            let centerX = origin.x + size.width/2
-            let centerY = origin.y + size.height/2
+        get {
+            let centerX = origin.x + size.width / 2
+            let centerY = origin.y + size.height / 2
             return Point(x: centerX , y: centerY)
         }
         // setter
-        set{
-            origin.x = newValue.x - size.width / 2
+        set {
+            origin.x = newValue.x - size.width / 2 // newValue 是要传递给center计算性属性的新值
             origin.y = newValue.y - size.height / 2
         }
     }
     
-    var area: Double{
+    // 计算性属性，只有 getter 即只读属性（无setter）。
+    var area: Double {
         return size.width * size.height
     }
     
@@ -45,14 +50,20 @@ class Rectangle {
 
 var rect = Rectangle( origin: Point(), size: Size(width: 10 , height: 5) )
 
+rect.center
+
 rect.origin = Point(x: 10 , y: 10)
 
 print( rect.center ) // 改变计算型属性值
 
 rect.center = Point()
+rect
 ```
 
-### 类型属性 静态属性
+### 静态属性
+
+使用 `static` 关键字声明静态属性，该属性定义在类型属性上 Type Property。
+
 ```
 class Player {
     var name: String
