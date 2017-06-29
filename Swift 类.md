@@ -54,13 +54,14 @@ person1.fullName() // Steve Jobs
 
 
 ### 类的比较
-使用 `===` 判断两个类的实例话对象是否相等，即比较它们是否是指向同一内存地址。
+
+**类是引用类型（Reference Type）**，使用 `===` 判断两个类的实例话对象是否相等，即比较它们是否是指向同一内存地址。
 
 ```
 class Person {
     let firstName: String
     let lastName: String
-    var career: String?
+    var career: String? // 职业，字符串的可选性
     
     init(firstName: String , lastName: String , career: String){
         self.firstName = firstName
@@ -88,6 +89,7 @@ let person1 = Person(firstName: "Steve", lastName: "Jobs")
 let person2 = person1
 person1 === person2 // true
 
+// 重新实例化后，发现对象不相等
 let person3 = Person(firstName: "Steve", lastName: "Jobs")
 person1 === person3 // false
 ```
