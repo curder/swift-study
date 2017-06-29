@@ -102,6 +102,7 @@ player2.play()
 ```
 
 ### 类型方法 静态方法
+
 ```
 // 类型方法
 struct Matrix{
