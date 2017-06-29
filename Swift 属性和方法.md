@@ -62,19 +62,20 @@ rect
 
 ### 静态属性
 
-使用 `static` 关键字声明静态属性，该属性定义在类型属性上 Type Property。
+使用 `static` 关键字声明静态属性，该属性定义在类型属性上的Type Property。
 
 ```
 class Player {
-    var name: String
+    var name: String // 存储型属性
     var score: UInt32 = 0
-    static var highestScore: UInt32 = 0 // 静态属性
+    static var highestScore: UInt32 = 0 // 使用关键字static声明静态属性，存储最高分
     
-    init(name: String){
+    init(name: String) { // 构造函数中给存储型属性赋值
         self.name = name
     }
-
+    
     func play() {
+        
         let score = arc4random() % 100
         print("\(self.name) played and got \(score) scores.")
         
@@ -82,7 +83,7 @@ class Player {
         
         print("Total score of \(self.name) is \(self.score)")
         
-        if self.score > Player.highestScore{
+        if self.score > Player.highestScore { // 使用类自身调用静态变量，而不是使用self调用自己的静态属性并且也不能省略Player的书写
             Player.highestScore = self.score
         }
         print("Highest scores is \(Player.highestScore)")
@@ -92,9 +93,11 @@ class Player {
 let player1 = Player(name: "Player1")
 let player2 = Player(name: "Player2")
 
-player1.play()
-player1.play()
+player1.play() // 玩一局得分
+player1.play() // 玩第二局得分
 
+player2.play()
+player2.play()
 player2.play()
 ```
 
@@ -158,6 +161,7 @@ if let e = Matrix.identityMatrix(n: 8) {
 ### 属性观察器
 
 如果外部修改了类中的成员属性操作类的 static 静态属性大小，可以通过关键字限制。可以通过关键字 `didSet`、`willSet` 进行逻辑判断。
+
 ```
 class LightBulb{
     static let macCurrent = 30
@@ -187,9 +191,11 @@ bulb.current = 20
 bulb.current = 30
 bulb.current = 40
 ```
+
 > 注意： `didSet` 和 `willSet` 不会在初始化阶段调用。
 
 如下Demo：
+
 ```
 enum Theme {
     case DayMode
@@ -224,7 +230,9 @@ ui.themeMode
 ui.fontColor // nil
 ui.backgroundColor // nil
 ```
+
 我们查看到 `ui.fontColor` 和 `ui.backgroundColor` 的值为 `nil` 。说明在执行初始化的时候并没有调用 `didSet` ，应该进行如下代码改进。
+
 
 ```
 enum Theme {
@@ -266,6 +274,7 @@ ui.backgroundColor // nil
 ```
 
 ### 惰性加载（延迟加载）
+
 ```
 class ClosedRange{
     let start: Int
@@ -306,6 +315,7 @@ if let range = ClosedRange(start: 0, end: 10_000){
 > `lazy` 关键字不允许使用在常量属性上。
 
 #### 惰性加载的一些其他场景
+
 ```
 // 根据经纬度计算地理位置
 class Location{
@@ -358,6 +368,7 @@ Swift 的访问控制是通过**文件**为单位控制的。其中：
  * private 可以被本文件访问，当我们不显式指定的时候，所有的类、属性或者方法的访问权限都是 **internal** 。
 
 例如：`Sources` 目录下  `ui.swift` 文件内容如下：
+
 ```
 enum Theme {
     case DayMode
@@ -432,7 +443,9 @@ public class App{
 
 
 ### 单例模式
+
 有两个文件，`gameManager.swift` 是一个单利类。
+
 ```
 import Foundation
 public class GameManager{
@@ -448,6 +461,7 @@ public class GameManager{
     }
 }
 ```
+
 > 注意： 初始化函数设置为 `private` ，`defaultGameManager` 设置为静态常量。
 
 ```
