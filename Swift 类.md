@@ -227,6 +227,9 @@ person.career // winner
 ```
 
 #### 在结构体中方法改变自身属性的举例
+
+使用 `mutating` 关键字定义在结构体方法前，说明当前方法需要自己修改自己的属性。
+
 ```
 struct Location{
     var x = 0
@@ -239,6 +242,9 @@ struct Location{
 ```
 
 #### 在枚举方法中改变自身属性
+
+使用 `mutating` 关键字定义在结构体方法前，说明当前方法需要自己修改自己的属性。
+
 ```
 var location = Location()
 location.goEast()
