@@ -21,7 +21,9 @@ class 类名称{
     }
 }
 ```
+
 定义一个类
+
 ```
 class Person {
     var firstName: String
@@ -52,105 +54,10 @@ let person2 = Person(fullName: "Steve Jobs")
 person1.fullName() // Steve Jobs
 ```
 
-
-### 类的比较
-
-**类是引用类型（Reference Type）**，使用 `===` 判断两个类的实例话对象是否相等，即比较它们是否是指向同一内存地址。
-
-```
-class Person {
-    let firstName: String
-    let lastName: String
-    var career: String? // 职业，字符串的可选性
-    
-    init(firstName: String , lastName: String , career: String){
-        self.firstName = firstName
-        self.lastName = lastName
-        self.career = career
-    }
-    
-    init(firstName: String , lastName: String) {
-        self.firstName = firstName
-        self.lastName = lastName
-    }
-    
-    // 定义方法
-    func fullName() -> String{
-        return self.firstName + " " + self.lastName
-    }
-    
-    func changeCareer(newCareer: String) {
-        self.career = newCareer
-    }
-}
-
-
-let person1 = Person(firstName: "Steve", lastName: "Jobs")
-let person2 = person1
-person1 === person2 // true
-
-// 重新实例化后，发现对象不相等
-let person3 = Person(firstName: "Steve", lastName: "Jobs")
-person1 === person3 // false
-```
-> 判定两个不同的实例可以使用 `!==` 进行判断。
-
-
-### 类的继承
-```
-// 角色类
-class Avater{
-    var name: String
-    var life: Int = 100
-    var isAlive: Bool = true
-    
-    init(name: String){
-        self.name = name
-    }
-    
-    func beAttacked(attack: Int) {
-        self.life -= attack
-        if life <= 0{
-            isAlive = false
-        }
-    }
-}
-
-// 用户类 继承自角色类
-class User: Avater{
-    var score: Int = 0
-    var level: Int = 0
-    
-    func getScore(score: Int) {
-        self.score += score
-        if self.score > level * 100{
-            level += 1
-        }
-    }
-}
-
-
-let user1 = User(name: "Stive")
-user1.name
-user1.score
-user1.life
-user1.isAlive
-
-user1.beAttacked(attack: 10)
-user1.life
-
-user1.getScore(score: 10)
-user1.getScore(score: 100)
-user1.score
-user1.level
-```
-
-> 如果类不允许子类继承，可以使用 `final` 关键字修饰类。
-
-
 ### 类是引用类型 Reference Type
 
-　　类不是值类型，而是一个**引用类型**
+类不是值类型，而是一个**引用类型**
+
 ```
 class Person {
     var firstName: String
@@ -186,6 +93,9 @@ person2
 
 
 ### Swift 引用类型的特点 Reference Type
+
+**类是引用类型（Reference Type）**。下面以引用类型 `Class` 和值类型`Struce`、`Enum`作比较。
+
 ```
 class Person {
     let firstName: String
@@ -241,9 +151,9 @@ struct Location{
 }
 ```
 
-#### 在枚举方法中改变自身属性
+#### 在枚举类型方法中改变自身属性
 
-使用 `mutating` 关键字定义在结构体方法前，说明当前方法需要自己修改自己的属性。
+使用 `mutating` 关键字定义在枚举类型的方法前，说明当前方法需要自己修改自己的属性。
 
 ```
 var location = Location()
@@ -268,3 +178,98 @@ swith.click() // Off
 swith.click() // On
 ```
 
+
+### 类的比较
+
+使用 `===` 判断两个类的实例话对象是否相等，即比较它们是否是指向同一内存地址。
+
+```
+class Person {
+    let firstName: String
+    let lastName: String
+    var career: String? // 职业，字符串的可选性
+    
+    init(firstName: String , lastName: String , career: String){
+        self.firstName = firstName
+        self.lastName = lastName
+        self.career = career
+    }
+    
+    init(firstName: String , lastName: String) {
+        self.firstName = firstName
+        self.lastName = lastName
+    }
+    
+    // 定义方法
+    func fullName() -> String{
+        return self.firstName + " " + self.lastName
+    }
+    
+    func changeCareer(newCareer: String) {
+        self.career = newCareer
+    }
+}
+
+
+let person1 = Person(firstName: "Steve", lastName: "Jobs")
+let person2 = person1
+person1 === person2 // true
+
+// 重新实例化后，发现对象不相等
+let person3 = Person(firstName: "Steve", lastName: "Jobs")
+person1 === person3 // false
+```
+> 判定两个不同的实例可以使用 `!==` 进行判断。
+
+
+### 类的继承
+
+```
+// 角色类
+class Avater{
+    var name: String
+    var life: Int = 100
+    var isAlive: Bool = true
+    
+    init(name: String){
+        self.name = name
+    }
+    
+    func beAttacked(attack: Int) {
+        self.life -= attack
+        if life <= 0{
+            isAlive = false
+        }
+    }
+}
+
+// 用户类 继承自角色类
+class User: Avater{
+    var score: Int = 0
+    var level: Int = 0
+    
+    func getScore(score: Int) {
+        self.score += score
+        if self.score > level * 100{
+            level += 1
+        }
+    }
+}
+
+
+let user1 = User(name: "Stive")
+user1.name
+user1.score
+user1.life
+user1.isAlive
+
+user1.beAttacked(attack: 10)
+user1.life
+
+user1.getScore(score: 10)
+user1.getScore(score: 100)
+user1.score
+user1.level
+```
+
+> 如果类不允许子类继承，可以使用 `final` 关键字修饰类。
