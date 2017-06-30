@@ -422,7 +422,7 @@ class UI{
 }
 ```
 
-`Sources` 目录下 `app.swift` 文件 内容如下：
+`Sources` 目录下 `app.swift` 文件中定义相关的结构或者类，内容如下：
 
 ```
 import Foundation
@@ -431,11 +431,11 @@ public class App{
     private let ui = UI()
     public var name: String
     
-    public init(name: String){
+    public init(name: String) {
         self.name = name
     }
     
-    public func switchMode(){
+    public func switchMode() {
         switch ui.themeMode {
         case Theme.DayMode:
             ui.themeMode = Theme.NightMode
