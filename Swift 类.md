@@ -231,28 +231,30 @@ person1 !== person3 // true
 在Swift中，类可以继承，而结构体不可以，当我们发现在业务逻辑中需要使用继承，那么应该选择类这种数据类型。
 
 ```
-// 角色类
+// 游戏角色类
+
 class Avater{
-    var name: String
-    var life: Int = 100
-    var isAlive: Bool = true
+    var name: String // 角色名
+    var life: Int = 100 // 血量
+    var isAlive: Bool = true // 是否还活着
     
-    init(name: String){
+    init(name: String) {
         self.name = name
     }
     
+    // 角色受攻击逻辑
     func beAttacked(attack: Int) {
         self.life -= attack
-        if life <= 0{
+        if life <= 0 {
             isAlive = false
         }
     }
 }
 
-// 用户类 继承自角色类
-class User: Avater{
-    var score: Int = 0
-    var level: Int = 0
+// 玩家继承自角色类
+class User: Avater {
+    var score: Int = 0 // 玩家得分
+    var level: Int = 0 // 玩家等级
     
     func getScore(score: Int) {
         self.score += score
@@ -263,19 +265,37 @@ class User: Avater{
 }
 
 
-let user1 = User(name: "Stive")
-user1.name
+let user1 = User(name: "Stive") // 从父类继承的构造函数
+user1.name // 读取父类属性
 user1.score
 user1.life
 user1.isAlive
 
-user1.beAttacked(attack: 10)
+user1.beAttacked(attack: 10) // 读取父类方法
 user1.life
 
 user1.getScore(score: 10)
 user1.getScore(score: 100)
 user1.score
 user1.level
+
+
+// 魔术师类
+class Magician: User {
+    var magic: Int = 100
+}
+
+let magician = Magician(name: "harry potter") // 调用父类的父类的构造函数
+
+// 调用父类或者父类的父类的属性
+magician.name
+magician.life
+magician.isAlive
+magician.score
+magician.level
+magician.magic
 ```
+
+类与类的继承不仅仅可以子类继承父类，可以一层层的继承下去。
 
 > 如果类不允许子类继承，可以使用 `final` 关键字修饰类。
