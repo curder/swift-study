@@ -377,7 +377,7 @@ Swift 的访问控制是通过**文件**为单位控制的。其中：
  
  * private 可以被本文件访问
 
-例如：`Sources` 目录下  `ui.swift` 文件内容如下：
+例如：`Sources` 目录下  `Ui.swift` 文件内容如下：
 
 ```
 enum Theme {
@@ -422,7 +422,7 @@ class UI{
 }
 ```
 
-`Sources` 目录下 `app.swift` 文件中定义相关的结构或者类，内容如下：
+`Sources` 目录下 `App.swift` 文件中定义相关的结构或者类，内容如下：
 
 ```
 import Foundation
