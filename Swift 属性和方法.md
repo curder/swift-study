@@ -454,13 +454,13 @@ public class App{
 
 ### 单例模式
 
-有两个文件，`gameManager.swift` 是一个单利类。
+有两个文件，`gameManager.swift` 是一个单例类。
 
 ```
 import Foundation
-public class GameManager{
+public class GameManager {
     public var score = 0
-    public static let defaltGameManager = GameManager()
+    public static let defaltGameManager = GameManager() // 自己初始化自己
     
     private init(){
         
@@ -477,7 +477,7 @@ public class GameManager{
 ```
 import UIKit
 
-let gameManager = GameManager.defaltGameManager
+let gameManager = GameManager.defaltGameManager // 不允许实例化 GameManager，只能通过GameManager的静态属性 defaltGameManager 获得 GameManager 的实例
 
 gameManager.addScore()
 gameManager.score // 10
