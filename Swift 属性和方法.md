@@ -62,7 +62,7 @@ rect
 
 ### 静态属性
 
-使用 `static` 关键字声明静态属性，该属性定义在类型属性上的Type Property。
+使用 `static` 关键字声明静态属性，该属性定义在类型属性上的Type Property。静态属性存储在类型中，不是存储在类的实例化对象上
 
 ```
 class Player {
@@ -103,8 +103,9 @@ player2.play()
 
 ### 类型方法 静态方法
 
+定义在整个类型上的静态方法。
+
 ```
-// 类型方法
 struct Matrix{
     var m: [[Int]]
     var row: Int
@@ -161,7 +162,7 @@ if let e = Matrix.identityMatrix(n: 8) {
 
 ### 属性观察器
 
-如果外部修改了类中的成员属性操作类的 static 静态属性大小，可以通过关键字限制。可以通过关键字 `didSet`、`willSet` 进行逻辑判断。
+如果外部修改了类中的成员属性操作类的 `static` 静态属性大小，可以通过关键字限制。可以通过关键字 `didSet`、`willSet` 进行逻辑判断。
 
 ```
 class LightBulb{
@@ -192,6 +193,8 @@ bulb.current = 20
 bulb.current = 30
 bulb.current = 40
 ```
+
+> 属性观察器经常应用在保护数据是否合法的场景中。
 
 > 注意： `didSet` 和 `willSet` 不会在初始化阶段调用。
 
@@ -276,8 +279,14 @@ ui.backgroundColor // nil
 
 ### 惰性加载（延迟加载）
 
+很多时候我们有这种需求，当我们有一个大计算量的属性需要计算，我们会将逻辑放在构造函数中，可能使用这个计算型属性的情况不多。每次实例化都需要重新计算这个属性，这样会导致性能的浪费。
+
+我们也可以把这个计算逻辑放入到计算型属性中，那假如用户经常调用的话就会一次又一次的重新计算。
+
+为了调节这中矛盾。Swift为我们发明了一种 Lazy Property ，延迟属性。
+
 ```
-class ClosedRange{
+class ClosedRange {
     let start: Int
     let end: Int
 
@@ -285,13 +294,13 @@ class ClosedRange{
         return end - start + 1
     }
     
-    lazy var sum: Int = { // 延迟性属性
+    lazy var sum: Int = { // 计算型延迟加载
         var res = 0
         for i in self.start ... self.end{
             res += i
         }
         return res
-    }()
+    }() // 延迟性属性闭包的调用
     
     
     init?( start: Int , end: Int ) {
@@ -306,8 +315,8 @@ class ClosedRange{
 
 if let range = ClosedRange(start: 0, end: 10_000){
     range.width
-    range.sum
-    range.sum
+    range.sum // 第一次调用会计算
+    range.sum // 重复调用不会多次计算属性值
     range.sum
     
 }
@@ -319,7 +328,7 @@ if let range = ClosedRange(start: 0, end: 10_000){
 
 ```
 // 根据经纬度计算地理位置
-class Location{
+class Location {
     let latitude: Double
     let longitude: Double
     lazy var address: String? = {
@@ -333,7 +342,7 @@ class Location{
 }
 
 // 图书、电影、音乐相关App
-class Book{
+class Book {
     let name: String
     lazy var content: String? = {
         // 从本地读取书的内容
@@ -345,14 +354,14 @@ class Book{
 }
 
 // Web请求
-class Web{
+class Web {
     let url: String
     lazy var html: String? = {
         // 从网络读取url对应的html
         return nil
     }()
     
-    init(url: String){
+    init(url: String) {
         self.url = url
     }
 }
