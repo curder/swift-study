@@ -28,6 +28,8 @@ class 类名称{
 class Person {
     var firstName: String
     var lastName: String
+    
+    // 指定构造函数
     init(firstName: String , lastName: String) {
         self.firstName = firstName
         self.lastName = lastName
@@ -64,12 +66,14 @@ class Person {
     var lastName: String
     var career: String?
     
+    // 指定构造函数
     init(firstName: String , lastName: String , career: String){
         self.firstName = firstName
         self.lastName = lastName
         self.career = career
     }
     
+    // 指定构造函数
     init(firstName: String , lastName: String) {
         self.firstName = firstName
         self.lastName = lastName
@@ -102,12 +106,14 @@ class Person {
     let lastName: String
     var career: String?
     
+    // 指定构造函数
     init(firstName: String , lastName: String , career: String){
         self.firstName = firstName
         self.lastName = lastName
         self.career = career
     }
     
+    // 指定构造函数
     init(firstName: String , lastName: String) {
         self.firstName = firstName
         self.lastName = lastName
@@ -191,12 +197,14 @@ class Person {
     let lastName: String
     var career: String? // 职业，字符串的可选性
     
+    // 指定构造函数
     init(firstName: String , lastName: String , career: String){
         self.firstName = firstName
         self.lastName = lastName
         self.career = career
     }
     
+    // 指定构造函数
     init(firstName: String , lastName: String) {
         self.firstName = firstName
         self.lastName = lastName
@@ -237,6 +245,7 @@ class Avatar{
     var life: Int = 100 // 血量
     var isAlive: Bool = true // 是否还活着
     
+    // 指定构造函数
     init(name: String) {
         self.name = name
     }
@@ -321,6 +330,7 @@ class Avatar{
 
     var isAlive: Bool = true // 是否还活着
     
+    // 指定构造函数
     init(name: String) {
         self.name = name
     }
@@ -435,6 +445,7 @@ class Avatar{
         return "I'm avatar \(name)."
     }
     
+    // 指定构造函数
     init(name: String) {
         self.name = name
     }
@@ -560,6 +571,7 @@ class Avatar{
         return "I'm avatar \(name)."
     }
     
+    // 指定构造函数
     init(name: String) {
         self.name = name
     }
@@ -577,13 +589,13 @@ class Avatar{
 class User: Avatar {
     var score: Int = 0 // 玩家得分
     var level: Int = 0 // 玩家等级
-    override var description: String { // 子类重新定义属性覆盖父类属性
+    override var description: String { // 子类重写属性覆盖父类属性
         return "I'm user \(name)."
     }
     
     var gourp: String
     
-    init(group: String, name: String) { // 子类构造函数初始化group属性
+    init(group: String, name: String) { // 子类指定构造函数初始化对象属性
         // 构造
         self.gourp = group // 首先初始化自身的属性
         super.init(name: name) // 使用super关键字调用父类的构造函数初始化父类的属性
@@ -607,7 +619,7 @@ class User: Avatar {
 final class Warrior: User {
     var weapon: String // 武器属性
     
-    // 子类构造函数初始化weapon属性
+    // 子类指定构造函数初始化对象属性
     init(group: String, name: String, weapon: String) {
         
         self.weapon = weapon // 首先初始化自身的属性
@@ -784,9 +796,110 @@ player1.weapon
 并且遍历构造函数只能调用自身的遍历构造函数，不能使用父类继承的指定构造函数。而自身的指定构造函数则可以调用父类的指定构造函数。
 
 
+### Swift构造函数的继承
+
+```
+// 游戏角色类
+class Avatar {
+    var name: String // 角色名
+    var life: Int = 100 {
+        didSet {
+            if self.life <= 0 {
+                self.isAlive = false
+            }
+            if self.life > 100 {
+                self.life = 100
+            }
+        }
+    }// 血量
+    var isAlive: Bool = true // 是否还活着
+    var description: String { // 存储型属性
+        return "I'm avatar \(name)."
+    }
+    
+    // 指定构造函数
+    init(name: String) {
+        self.name = name
+    }
+    
+    // 便利的构造函数 （构造函数中调用了另外的一个自身的构造函数，它自身并没有把整个对象构造完成）
+    convenience init (firstName: String, lastName: String) {
+        self.init(name: firstName + lastName)
+    }
+    
+    // 角色受攻击逻辑
+    func beAttacked(attack: Int) {
+        self.life -= attack
+        if life <= 0 {
+            isAlive = false
+        }
+    }
+}
+
+// 玩家继承自角色类
+class User: Avatar {
+    var score: Int = 0 // 玩家得分
+    var level: Int = 0 // 玩家等级
+    override var description: String { // 子类重新定义属性覆盖父类属性
+        return "I'm user \(name)."
+    }
+    
+    var gourp: String
+    
+    // 指定构造函数
+    init(name: String, group: String) { // 子类构造函数初始化group属性
+        // 构造
+        self.gourp = group // 首先初始化自身的属性
+        super.init(name: name) // 使用super关键字调用父类的构造函数初始化父类的属性
+        
+        // 进一步完善
+        if group == "" {
+            self.getScore(score: -10)
+        }
+    }
+    
+    // 方便的构造函数 （构造函数中调用了另外的一个自身的构造函数，它自身并没有把整个对象构造完成）
+    convenience init(group: String) {
+        // 没有名字自动生成名字
+        let name = User.generateUserName()
+
+        self.init(name: name, group: group)
+    }
+    
+    // 重载构造函数
+    convenience override init(name: String) {
+        self.init(name: name, group: "")
+    }
+    
+    static func generateUserName () -> String {
+        return "Player" + String(arc4random())
+    }
+    
+    func getScore(score: Int) {
+        self.score += score
+        if self.score > level * 100{
+            level += 1
+        }
+    }
+}
+
+let user = User(firstName: "Stive", lastName: "Jobs")
+
+class Monster: Avatar {
+    //如果子类没有实现父类的指定构造函数，则会自动继承父类的指定构造函数。 所以下面的遍历构造函数也可以使用自身继承自父类的指定构造函数了。
+    convenience init(type: String) {
+        self.init(name: type)
+    }
+}
+
+let monster = Monster(type: "")
+```
+
+> 如果子类实现了父类所有的指定构造函数，则自动继承父类的所有便利构造函数。
+> 如果子类没有实现父类的指定构造函数，则会自动继承父类的指定构造函数。又根据上面的原则，那么对应的便利构造函数也就都继承下来。
 
 
-
+相关阅读：[简书-Swift中的构造函数及其继承](http://www.jianshu.com/p/ff52f6f3e6c0)
 
 
 
