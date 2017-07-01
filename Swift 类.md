@@ -895,11 +895,129 @@ class Monster: Avatar {
 let monster = Monster(type: "")
 ```
 
-> 如果子类实现了父类所有的指定构造函数，则自动继承父类的所有便利构造函数。
-> 如果子类没有实现父类的指定构造函数，则会自动继承父类的指定构造函数。又根据上面的原则，那么对应的便利构造函数也就都继承下来。
+> 在类的继承关系中
+> 1. 如果子类实现了父类所有的指定构造函数，则自动继承父类的所有便利构造函数。
+> 2. 如果子类没有实现父类的指定构造函数，则会自动继承父类的指定构造函数。又根据上面的原则，那么对应的便利构造函数也就都继承下来。
 
 
 相关阅读：[简书-Swift中的构造函数及其继承](http://www.jianshu.com/p/ff52f6f3e6c0)
 
 
+### required构造函数
 
+在类的编写过程中，我们书写一个父类的构造函数时，如果构造函数很重要，必须要继承的子类实现这个构造函数，可以使用 `required` 关键字。
+
+在子类继承类并重写该构造函数时，不需要写`override` 覆盖父类的这个 `required` 构造函数。
+
+```
+// 游戏角色类
+class Avatar {
+    var name: String // 角色名
+    var life: Int = 100 {
+        didSet {
+            if self.life <= 0 {
+                self.isAlive = false
+            }
+            if self.life > 100 {
+                self.life = 100
+            }
+        }
+    }// 血量
+    var isAlive: Bool = true // 是否还活着
+    var description: String { // 存储型属性
+        return "I'm avatar \(name)."
+    }
+    
+    // required构造函数
+    required init(name: String) {
+        self.name = name
+    }
+    
+    // 便利的构造函数 （构造函数中调用了另外的一个自身的构造函数，它自身并没有把整个对象构造完成）
+    convenience init (firstName: String, lastName: String) {
+        self.init(name: firstName + lastName)
+    }
+    
+    // 角色受攻击逻辑
+    func beAttacked(attack: Int) {
+        self.life -= attack
+        if life <= 0 {
+            isAlive = false
+        }
+    }
+}
+
+// 玩家继承自角色类
+class User: Avatar {
+    var score: Int = 0 // 玩家得分
+    var level: Int = 0 // 玩家等级
+    override var description: String { // 子类重新定义属性覆盖父类属性
+        return "I'm user \(name)."
+    }
+    
+    var gourp: String
+    
+    // 指定构造函数
+    init(name: String, group: String) { // 子类构造函数初始化group属性
+        // 构造
+        self.gourp = group // 首先初始化自身的属性
+        super.init(name: name) // 使用super关键字调用父类的构造函数初始化父类的属性
+        
+        // 进一步完善
+        if group == "" {
+            self.getScore(score: -10)
+        }
+    }
+    
+    // 方便的构造函数 （构造函数中调用了另外的一个自身的构造函数，它自身并没有把整个对象构造完成）
+    convenience init(group: String) {
+        // 没有名字自动生成名字
+        let name = User.generateUserName()
+
+        self.init(name: name, group: group)
+    }
+    
+    // 重载required构造函数
+    convenience required init(name: String) {
+        self.init(name: name, group: "")
+    }
+    
+    static func generateUserName () -> String {
+        return "Player" + String(arc4random())
+    }
+    
+    func getScore(score: Int) {
+        self.score += score
+        if self.score > level * 100{
+            level += 1
+        }
+    }
+}
+
+let user = User(firstName: "Stive", lastName: "Jobs")
+
+class Monster: Avatar {
+    //如果子类没有实现父类的指定构造函数，则会自动继承父类的指定构造函数。 所以下面的遍历构造函数也可以使用自身继承自父类的指定构造函数了。
+    convenience init(type: String) {
+        self.init(name: type)
+    }
+}
+
+let monster = Monster(type: "")
+
+
+class NPC: Avatar {
+    let career: String
+    
+    // required 构造函数
+    convenience required init(name: String) {
+        self.init(name: name, career: "")
+    }
+    
+    init(name: String, career: String) {
+        self.career = career
+
+        super.init(name: name)
+    }
+}
+```

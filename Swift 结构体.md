@@ -159,7 +159,6 @@ struct Location {
 }
 
 let location3 = Location(latitude: 37.3230, longitude: -122.0322, placeName: "Apple Head Quarter")
-
 ```
 
 
@@ -209,6 +208,56 @@ let location3 = Location(coordinateString: "37.3230&-122.0322")
 let location4 = Location(coordinateString: "apple,-122.0322")
 let location5 = Location(coordinateString: "37.3230,apple")
 let location6 = Location(coordinateString: "Hello, World!")
+```
+
+### 在结构体中创建多个构造函数
+
+对于结构体，没有便利的构造函数和指定的构造函数之分，如果结构体中的函数需要调用自身的其它构造函数，内部逻辑直接使用`self.init(...)`进行调用。
+
+```
+struct Point {
+    var x = 0.0
+    var y = 0.0
+}
+
+struct Size {
+    var width = 0.0
+    var height = 0.0
+}
+
+struct Rectangle {
+    var origin = Point()
+    var size = Size()
+    
+    var center: Point {
+        get {
+            let centerX = origin.x + size.width / 2
+            let centerY = origin.y + size.height / 2
+            return Point(x: centerX, y: centerY)
+        }
+        set {
+            origin.x = newValue.x - size.width / 2
+            origin.y = newValue.y - size.height / 2
+        }
+    }
+    
+    // 构造函数0
+    init(origin: Point, size: Size) {
+        self.origin = origin
+        self.size = size
+    }
+    
+    // 构造函数1调用其它构造函数，不需要任何关键字进行修饰，内部直接使用 self.init() 进行调用
+    init(center: Point, size: Size) {
+        let originX = center.x - size.width / 2
+        let originY = center.y - size.height / 2
+        self.init(origin: Point(x: originX, y: originY), size: size) // 调用自身的指定构造函数
+    }
+    
+    var area: Double {
+        return size.width * size.height
+    }
+}
 ```
 
 
