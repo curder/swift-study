@@ -2,7 +2,7 @@
 
 ### 定义类
 
-类是自定义的数据类型，所以类名首字母需要大写
+类是自定义的数据类型，所以类名首字母需要大写。
 类属性必须赋初始值，或者使用构造函数中赋初始值
 
 ```
@@ -232,7 +232,6 @@ person1 !== person3 // true
 
 ```
 // 游戏角色类
-
 class Avater{
     var name: String // 角色名
     var life: Int = 100 // 血量
@@ -296,6 +295,117 @@ magician.level
 magician.magic
 ```
 
-类与类的继承不仅仅可以子类继承父类，可以一层层的继承下去。
+类与类的继承不仅仅可以子类继承父类，可以一层层不断的继承下去。
 
 > 如果类不允许子类继承，可以使用 `final` 关键字修饰类。
+
+
+### 类的多态
+
+举例在游戏中的角色之间的关系，使用多态对角色进行批量操作。
+
+```
+// 游戏角色类
+class Avater{
+    var name: String // 角色名
+    var life: Int = 100 { // 属性观察器
+        didSet {
+            if self.life <= 0 {
+                self.isAlive = false
+            }
+            if self.life > 100 {
+                self.life = 100
+            }
+        }
+    } // 血量
+
+    var isAlive: Bool = true // 是否还活着
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    // 角色受攻击逻辑
+    func beAttacked(attack: Int) {
+        self.life -= attack
+        if life <= 0 {
+            isAlive = false
+        }
+    }
+}
+
+// 玩家继承自角色类
+class User: Avater {
+    var score: Int = 0 // 玩家得分
+    var level: Int = 0 // 玩家等级
+    
+    func getScore(score: Int) {
+        self.score += score
+        if self.score > level * 100{
+            level += 1
+        }
+    }
+}
+
+// 魔术师类
+final class Magician: User {
+    var magic: Int = 100
+    
+    // 治疗
+    func heal(user: User){
+        user.life += 10
+    }
+}
+
+//战士类
+final class Warrior: User {
+    var weapon: String? // 武器属性
+}
+
+// 怪兽
+class Monster: Avater {
+    func attack(user: User, amount: Int) {
+        user.beAttacked(attack: amount)
+    }
+}
+
+// 僵尸
+final class Zombie: Monster {
+    var type: String = "Default"
+}
+
+let player1 = Magician(name: "Harry Potter") // 魔法师角色对象
+let player2 = Warrior(name: "Stive") // 战士角色对象
+
+let zombie = Zombie(name: "Default Zombie") // 僵尸角色对象
+let monster = Monster(name: "Monster") // 怪兽角色对象
+
+func printBasicInfo(avatar: Avater) { // 打印对象的基本信息
+    print("The avatar's name is \(avatar.name)")
+    print("The life is \(avatar.life). He is \((avatar.isAlive) ? "still alive" : "dead")")
+    print("")
+}
+
+
+printBasicInfo(avatar: player1)
+printBasicInfo(avatar: player2)
+printBasicInfo(avatar: zombie)
+printBasicInfo(avatar: monster)
+
+// 批量操作Avatar对象
+let avatarArr: [Avater] = [player1, player2, zombie, monster]
+
+// 全部受到10攻击
+for avatar in avatarArr {
+    avatar.beAttacked(attack: 10)
+}
+
+
+printBasicInfo(avatar: player1)
+printBasicInfo(avatar: player2)
+printBasicInfo(avatar: zombie)
+printBasicInfo(avatar: monster)
+
+player1.heal(user: player2) // 魔法师给用户治疗
+```
+
