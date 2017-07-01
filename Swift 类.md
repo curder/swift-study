@@ -409,3 +409,127 @@ printBasicInfo(avatar: monster)
 player1.heal(user: player2) // 魔法师给用户治疗
 ```
 
+### 类的重载
+
+当继承的过程中，我们想在子类中重写父类的属性或者方法时，需要使用 `override` 关键字重写父类的方法或者属性。
+
+当父类中的属性或者方法是 `final` 时候，那么这时这个方法是不可以覆盖的。
+
+```
+
+// 游戏角色类
+class Avatar{
+    var name: String // 角色名
+    var life: Int = 100 {
+        didSet {
+            if self.life <= 0 {
+                self.isAlive = false
+            }
+            if self.life > 100 {
+                self.life = 100
+            }
+        }
+    }// 血量
+    var isAlive: Bool = true // 是否还活着
+    var description: String { // 存储型属性
+        return "I'm avatar \(name)."
+    }
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    // 角色受攻击逻辑
+    func beAttacked(attack: Int) {
+        self.life -= attack
+        if life <= 0 {
+            isAlive = false
+        }
+    }
+}
+
+// 玩家继承自角色类
+class User: Avatar {
+    var score: Int = 0 // 玩家得分
+    var level: Int = 0 // 玩家等级
+    override var description: String { // 子类重新定义属性覆盖父类属性
+        return "I'm user \(name)."
+    }
+    
+    func getScore(score: Int) {
+        self.score += score
+        if self.score > level * 100{
+            level += 1
+        }
+    }
+}
+
+// 魔术师类
+final class Magician: User {
+    var magic: Int = 100
+    override var description: String { // 子类重新定义属性覆盖父类属性
+        return "I'm magician \(name)."
+    }
+    
+    // 治疗
+    func heal(user: User){
+        user.life += 10
+    }
+}
+
+//战士类
+final class Warrior: User {
+    var weapon: String? // 武器属性
+    override var description: String { // 子类重新定义属性覆盖父类属性
+        return "I'm warrior \(name)."
+    }
+    
+    override func beAttacked(attack: Int) { // 子类重载了父类的方法
+        self.life -= attack/2
+    }
+}
+
+// 怪兽
+class Monster: Avatar {
+    override var description: String { // 子类重新定义属性覆盖父类属性
+        return "I'm monster \(name)."
+    }
+    func attack(user: User, amount: Int) {
+        user.beAttacked(attack: amount)
+    }
+}
+
+// 僵尸
+final class Zombie: Monster {
+    var type: String = "Default"
+    override var description: String { // 子类重新定义属性覆盖父类属性
+        return "I'm zombie \(name)."
+    }
+}
+
+let player1 = Magician(name: "Harry Potter") // 魔法师角色对象
+let player2 = Warrior(name: "Stive") // 战士角色对象
+
+let zombie = Zombie(name: "Default Zombie") // 僵尸角色对象
+let monster = Monster(name: "Monster") // 怪兽角色对象
+
+print(player1.description)
+print(player2.description)
+print(zombie.description)
+print(monster.description)
+
+let avatarArr: [Avatar] = [player1, player2, zombie, monster]
+
+for avatar in avatarArr {
+    print(avatar.description)
+}
+
+// 调用不同类实例化对象的方法
+monster.attack(user: player1, amount: 20)
+player1.life
+
+monster.attack(user: player2, amount: 20)
+player2.life
+```
+
+
