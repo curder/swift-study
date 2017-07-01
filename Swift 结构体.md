@@ -34,7 +34,9 @@ googleHeadQarterLocation.longitude
 ```
 
 ## 结构体的嵌套使用
+
 结构体的使用时非常灵活的，我们不仅仅可以使用之前学习使用的基本数据类型`Int`、`String`、`Doubel` 等等，还可以在结构体内部嵌套结构体。如下
+
 ```
 struct Place{
     let location: Location // 该结构体是上文中设置的Location的类型
@@ -48,6 +50,7 @@ googleHeadQarter.location.latitude // 37.422
 
 
 ## 结构体之构造函数
+
 ```
 struct Location {
     var latitude: Double = 0 // 结构体可以赋初始值
@@ -160,8 +163,6 @@ struct Location {
 
 let location3 = Location(latitude: 37.3230, longitude: -122.0322, placeName: "Apple Head Quarter")
 ```
-
-
 
 ### 可失败的构造函数
 
