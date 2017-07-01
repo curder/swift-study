@@ -232,7 +232,7 @@ person1 !== person3 // true
 
 ```
 // 游戏角色类
-class Avater{
+class Avatar{
     var name: String // 角色名
     var life: Int = 100 // 血量
     var isAlive: Bool = true // 是否还活着
@@ -251,7 +251,7 @@ class Avater{
 }
 
 // 玩家继承自角色类
-class User: Avater {
+class User: Avatar {
     var score: Int = 0 // 玩家得分
     var level: Int = 0 // 玩家等级
     
@@ -306,7 +306,7 @@ magician.magic
 
 ```
 // 游戏角色类
-class Avater{
+class Avatar{
     var name: String // 角色名
     var life: Int = 100 { // 属性观察器
         didSet {
@@ -335,7 +335,7 @@ class Avater{
 }
 
 // 玩家继承自角色类
-class User: Avater {
+class User: Avatar {
     var score: Int = 0 // 玩家得分
     var level: Int = 0 // 玩家等级
     
@@ -363,7 +363,7 @@ final class Warrior: User {
 }
 
 // 怪兽
-class Monster: Avater {
+class Monster: Avatar {
     func attack(user: User, amount: Int) {
         user.beAttacked(attack: amount)
     }
@@ -380,7 +380,7 @@ let player2 = Warrior(name: "Stive") // 战士角色对象
 let zombie = Zombie(name: "Default Zombie") // 僵尸角色对象
 let monster = Monster(name: "Monster") // 怪兽角色对象
 
-func printBasicInfo(avatar: Avater) { // 打印对象的基本信息
+func printBasicInfo(avatar: Avatar) { // 打印对象的基本信息
     print("The avatar's name is \(avatar.name)")
     print("The life is \(avatar.life). He is \((avatar.isAlive) ? "still alive" : "dead")")
     print("")
@@ -393,7 +393,7 @@ printBasicInfo(avatar: zombie)
 printBasicInfo(avatar: monster)
 
 // 批量操作Avatar对象
-let avatarArr: [Avater] = [player1, player2, zombie, monster]
+let avatarArr: [Avatar] = [player1, player2, zombie, monster]
 
 // 全部受到10攻击
 for avatar in avatarArr {
