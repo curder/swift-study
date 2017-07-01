@@ -533,3 +533,254 @@ player2.life
 ```
 
 
+### Swift两段式构造
+
+在`Swift`语言中，当需要子类构造函数初始化父类的属性时，关于父类的属性必须通过父类的构造函数来进行构造，这时需要使用`super`关键字调用父类的构造函数初始化父类的属性。并且调用父类的构造函数之前需要先初始化子类相关的所有属性完成。
+
+在`Swift`构造函数中，可以有自己的逻辑，但是这个逻辑全都是用户初始化类。当类还没有构造完成时，不能使用 `self.属性名或者方法名`来调用其它还没有构造的属性以及所有的方法的，这是因为此时，`self`还不存在。
+
+对于子类而言，我们可能首先需要构造自身的属性，然后构造父类的属性，最后再做进一步的类的完善(此时才可以使用`self`这个关键字)。
+
+```
+// 游戏角色类
+class Avatar{
+    var name: String // 角色名
+    var life: Int = 100 {
+        didSet {
+            if self.life <= 0 {
+                self.isAlive = false
+            }
+            if self.life > 100 {
+                self.life = 100
+            }
+        }
+    }// 血量
+    var isAlive: Bool = true // 是否还活着
+    var description: String { // 存储型属性
+        return "I'm avatar \(name)."
+    }
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    // 角色受攻击逻辑
+    func beAttacked(attack: Int) {
+        self.life -= attack
+        if life <= 0 {
+            isAlive = false
+        }
+    }
+}
+
+// 玩家继承自角色类
+class User: Avatar {
+    var score: Int = 0 // 玩家得分
+    var level: Int = 0 // 玩家等级
+    override var description: String { // 子类重新定义属性覆盖父类属性
+        return "I'm user \(name)."
+    }
+    
+    var gourp: String
+    
+    init(group: String, name: String) { // 子类构造函数初始化group属性
+        // 构造
+        self.gourp = group // 首先初始化自身的属性
+        super.init(name: name) // 使用super关键字调用父类的构造函数初始化父类的属性
+        
+        // 进一步完善
+        if group == "" {
+            self.getScore(score: -10)
+        }
+    }
+    
+    func getScore(score: Int) {
+        self.score += score
+        if self.score > level * 100{
+            level += 1
+        }
+    }
+}
+
+
+//战士类
+final class Warrior: User {
+    var weapon: String // 武器属性
+    
+    // 子类构造函数初始化weapon属性
+    init(group: String, name: String, weapon: String) {
+        
+        self.weapon = weapon // 首先初始化自身的属性
+        
+        super.init(group: group, name: name)
+    }
+    
+    override var description: String { // 子类重新定义属性覆盖父类属性
+        return "I'm warrior \(name)."
+    }
+    
+    override func beAttacked(attack: Int) { // 子类重载了父类的方法
+        self.life -= attack/2
+    }
+}
+
+let user = User(group: "Apple", name: "Stive")
+```
+
+> 注意看上面子类的构造函数中的属性赋值的先后顺序。
+
+
+### 便利构造函数和指定构造函数
+
+
+因为构造函数也是一个函数，所以很多函数的特性也可以在构造函数中应用，比如：可以在构造函数中指定默认的参数。
+
+便利的构造函数(convenience关键字)：一定要调用到自身的一个指定构造函中，只有指定的构造函数才能调用父类的构造函数。
+
+
+```
+// 游戏角色类
+class Avatar {
+    var name: String // 角色名
+    var life: Int = 100 {
+        didSet {
+            if self.life <= 0 {
+                self.isAlive = false
+            }
+            if self.life > 100 {
+                self.life = 100
+            }
+        }
+    }// 血量
+    var isAlive: Bool = true // 是否还活着
+    var description: String { // 存储型属性
+        return "I'm avatar \(name)."
+    }
+    
+    // 指定构造函数
+    init(name: String) {
+        self.name = name
+    }
+    
+    // 方便的构造函数 （构造函数中调用了另外的一个自身的构造函数，它自身并没有把整个对象构造完成）
+    convenience init (firstName: String, lastName: String) {
+        self.init(name: firstName + lastName)
+    }
+    
+    // 角色受攻击逻辑
+    func beAttacked(attack: Int) {
+        self.life -= attack
+        if life <= 0 {
+            isAlive = false
+        }
+    }
+}
+
+// 玩家继承自角色类
+class User: Avatar {
+    var score: Int = 0 // 玩家得分
+    var level: Int = 0 // 玩家等级
+    override var description: String { // 子类重新定义属性覆盖父类属性
+        return "I'm user \(name)."
+    }
+    
+    var gourp: String
+    
+    // 指定构造函数
+    init(name: String, group: String = "") { // 子类构造函数初始化group属性
+        // 构造
+        self.gourp = group // 首先初始化自身的属性
+        super.init(name: name) // 使用super关键字调用父类的构造函数初始化父类的属性
+        
+        // 进一步完善
+        if group == "" {
+            self.getScore(score: -10)
+        }
+    }
+    
+    // 方便的构造函数 （构造函数中调用了另外的一个自身的构造函数，它自身并没有把整个对象构造完成）
+    convenience init(group: String = "") {
+        // 没有名字调用自身静态函数自动生成名字
+        let name = User.generateUserName()
+
+        self.init(name: name, group: group)
+    }
+    
+    static func generateUserName () -> String {
+        return "Player" + String(arc4random())
+    }
+    
+    func getScore(score: Int) {
+        self.score += score
+        if self.score > level * 100{
+            level += 1
+        }
+    }
+}
+
+
+//战士类
+final class Warrior: User {
+    var weapon: String // 武器属性
+    
+    // 子类构造函数初始化weapon属性
+    init(name: String, group: String, weapon: String = "Sword") { // 构造函数默认参数
+        
+        self.weapon = weapon // 首先初始化自身的属性
+        
+        super.init(name: name, group: group)
+    }
+    
+    override var description: String { // 子类重新定义属性覆盖父类属性
+        return "I'm warrior \(name)."
+    }
+    
+    override func beAttacked(attack: Int) { // 子类重载了父类的方法
+        self.life -= attack/2
+    }
+}
+
+
+// 魔术师类
+final class Magician: User {
+    var magic: Int = 100
+    override var description: String { // 子类重新定义属性覆盖父类属性
+        return "I'm magician \(name)."
+    }
+    
+    // 子类构造函数重写父类构造函数
+    override init(name: String, group: String) {
+        let defaultGrouops: [String] = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]
+        for theGroup in defaultGrouops {
+            if group == theGroup {
+                super.init(name: name, group: group)
+                return
+            }
+        }
+        // 如果传入的group字符串不在数组单元中，分配一个随机的分组
+        let group = defaultGrouops[ Int(arc4random_uniform(3))]
+        super.init(name: name, group: group)
+    }
+    
+    // 治疗
+    func heal(user: User){
+        user.life += 10
+    }
+}
+
+let player1 = Warrior(name: "Stive", group: "Apple")
+
+player1.weapon
+
+```
+
+> 上述demo中，各个类中都有相应的指定构造函数和便利构造函数。具体的调用规则是：便利构造函数只能调用自身的指定构造函数实例化对象属性，而指定构造函数可以调用父类的指定构造函数实例化对象属性。
+
+
+
+
+
+
+
+
+
