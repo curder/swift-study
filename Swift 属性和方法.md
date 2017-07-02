@@ -166,7 +166,7 @@ if let e = Matrix.identityMatrix(n: 8) {
 
 ```
 class LightBulb{
-    static let macCurrent = 30
+    static let maxCurrent = 30
     var current = 0 {
         willSet { // 在对象中赋值 current 之前，{} 中的逻辑代码将执行
             print("Current value changed. The Change is \(abs(current - newValue))")
@@ -174,9 +174,9 @@ class LightBulb{
         
         didSet{ // 在对象中赋值 current 完成，{} 中的逻辑代码将执行
             
-            if self.current == LightBulb.macCurrent {
+            if self.current == LightBulb.maxCurrent {
                 print("Pay attention, the current value get to the maximum point.")
-            }else if self.current > LightBulb.macCurrent{
+            }else if self.current > LightBulb.maxCurrent{
                 print("Current too height , falling back to previous setting.")
                 self.current = oldValue
             }

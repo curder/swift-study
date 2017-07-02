@@ -1,6 +1,5 @@
 ## Swift 下标和运算符重载
 
-[TOC]
 
 在Swift的基础类型中，比如数组、字典。我们通过`arr[0]`、`dict["name"]`等，在方括号中传入的参数就是下标。
 在Swift语言中，我们不仅仅可以使用系统自带的下标来索引数组、字典中的元素，我们还可以为自己所创建的任何类型，例如：枚举、结构体或者类来定义下标。
@@ -13,9 +12,9 @@ struct Vector{
     var y: Double = 0.0
     var z: Double = 0.0
 	
-    // 下标
+    // 下标：接受参数为整型，返回浮点型
     subscript(index: Int) -> Double? {
-        get{
+        get { // 调用下标的逻辑
             switch index{
             case 0: return x
             case 1: return y
@@ -24,7 +23,7 @@ struct Vector{
             }
         }
 
-        set{
+        set { // 设置下标的逻辑
             guard let newValue = newValue else{
                 return
             }
@@ -62,6 +61,11 @@ v["T"] // nil
 v[1] = 9.09
 v.y // 9.09
 ```
+
+> 在一个结构体、枚举或者类中，我们可以根据需要写多个下标的定义。
+
+
+
 
 ### 运算符重载
 假如有如下自定义结构体为例，进行运算符的重载。
