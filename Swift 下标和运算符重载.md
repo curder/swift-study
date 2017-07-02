@@ -64,13 +64,71 @@ v.y // 9.09
 
 > 在一个结构体、枚举或者类中，我们可以根据需要写多个下标的定义。
 
+### 多维下标
 
+```
+// 矩阵
+struct Matrix {
+    var data: [[Double]]
+    var r: Int
+    var c: Int
+    
+    init(row: Int, col:Int) {
+        self.r = row
+        self.c = col
+        
+        data = [[Double]]()
+        
+        for _ in 0..<r {
+            
+            let aRow = Array(repeating: 0.0, count: col)
+            data.append(aRow)
+        }
+    }
+    
+    subscript(x: Int, y:Int) -> Double {
+        get {
+            assert(x >= 0 && x < self.r && y >= 0 && y < self.c, "Index out of range") // 断言
+            return data[x][y]
+        }
+        set {
+            assert(x >= 0 && x < self.r && y >= 0 && y < self.c, "Index out of range") // 断言
+            data[x][y] = newValue
+        }
+    }
+    
+    subscript(row: Int) -> [Double] {
+        get {
+            assert(row >= 0 && row < self.r, "Index out of range.") // 断言
+            return data[row]
+        }
+        set(vector) {
+            assert(vector.count == self.c, "column number does not match.") // 断言
+            data[row] = vector
+        }
+    }
+}
+
+
+var m = Matrix(row: 2, col: 2)
+
+m[1, 1]
+m[1, 1] = 100.0
+
+m[1]
+m[1][1]
+
+m[0] = [1.5, 4.5]
+m[0][1]
+m[0, 0]
+print(m)
+```
 
 
 ### 运算符重载
 假如有如下自定义结构体为例，进行运算符的重载。
 ```
-struct Vector{
+struct Vector {
     var x: Double = 0.0
     var y: Double = 0.0
     var z: Double = 0.0
