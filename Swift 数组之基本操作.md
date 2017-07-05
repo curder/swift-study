@@ -181,11 +181,19 @@ print( list ) // ["Banner", "Grape"]
 
 
 
+### 其他操作
+
+#### filter
+```
+let bigNumbers = [2, 47, 118, 5, 9].filter({ $0 > 20 }) // bigNumbers = [47, 118]
+```
 
 
+#### map
 
-
-
+```
+let stringified; [String] = [1, 2, 3].map({ String($0) }) // ["1", "2", "3"]
+```
 
 
 
