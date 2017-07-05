@@ -184,6 +184,9 @@ print( list ) // ["Banner", "Grape"]
 ### 其他操作
 
 #### filter
+
+`filter(includeElement: (T) -> Bool) -> [T]`
+
 ```
 let bigNumbers = [2, 47, 118, 5, 9].filter({ $0 > 20 }) // bigNumbers = [47, 118]
 ```
@@ -191,12 +194,20 @@ let bigNumbers = [2, 47, 118, 5, 9].filter({ $0 > 20 }) // bigNumbers = [47, 118
 
 #### map
 
+`map(transform: (T) -> U) -> U`
+
 ```
 let stringified; [String] = [1, 2, 3].map({ String($0) }) // ["1", "2", "3"]
 ```
 
+#### refuce
 
+`reduce(initial: U, combine: (U, T) -> U) -> U`
 
+```
+let sum: Int = [1, 2, 3].reduce(0){ $0 + $1} // add up the numbers in the Array.
+let sum = [1, 2, 3].reduce(0, +) // some thing because `+` is a function in Swift.
+```
 
 
 
