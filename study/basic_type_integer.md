@@ -7,14 +7,12 @@
 例如：这里使用的是 64 位的操作系统，如下定义是能够通过的。
 ```
 var myInt: Int = 9223372036854775807
-
 let myUInt: UInt = 18446744073709551615
 ```
 ### 整型
 ```
 Int.max // 9223372036854775807
 Int.min // -9223372036854775808
-
 UInt.max // 18446744073709551615
 UInt.min // 0
 ```
@@ -89,20 +87,21 @@ let hexInt:Int = 0xa
 
 ###  可以使用 `_` 分割表示整型
 
-　　这种写法可以增加程序的可读性。
+这种写法可以增加程序的可读性。
+
 ```
 let bigNum = 100_0000 // 1000000
 ```
+
 ### 在整型运算中 Swift 不允许隐式的类型转换
 
-　　在整型运算中 Swift 不允许隐式的类型转换，这种机制能有效的减少潜在Bug的出现，也表明 Swift 是一门强类型语言。
+在整型运算中 Swift 不允许隐式的类型转换，这种机制能有效的减少潜在Bug的出现，也表明 Swift 是一门强类型语言。
 
 ```
 let x: UInt16 = 10
 let y: UInt8 = 20
-
-x + y // binary operator '+' cannot be applied to operands of type 'UInt16' and 'UInt8'
-
+// binary operator '+' cannot be applied to operands of type 'UInt16' and 'UInt8'
+x + y 
 let m = x + UInt16(y)
 let n = UInt8(x) + y
 ```

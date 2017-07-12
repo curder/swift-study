@@ -1,17 +1,14 @@
 ## Swift 基础类型之元组
 
-[TOC]
-
 元组（`tuples`）把多个值组合成一个复合值。
-  * **元组内的值可以是任意类型**
-  * **并不强制要求是相同类型**。
+* **元组内的值可以是任意类型**
+* **并不强制要求是相同类型**。
 
 ### 元组的声明
 
 ```
 // 记录一个点的坐标位置
 var point = ( 2 , 1 )
-
 // 记录Http的相应头信息
 let http404Error = ( httpStatus: 404 , httpMessage: "The Page Not Found!" )
 ```
@@ -61,9 +58,7 @@ let ( _ , userName , _ ) = loginResult // 常量 userName 的值为 `curder`
 ```
 var userInfo = (name: "Stive", true, age: 22)
 let user = (name: "Stive" , true , age: 50)
-
 userInfo.name = "Stive Jobs" // 修改成功
-
 user.name = "Stive Jobs" // 无法修改 error: cannot assign to property: 'user' is a 'let' constant
 ```
 
@@ -71,6 +66,5 @@ user.name = "Stive Jobs" // 无法修改 error: cannot assign to property: 'user
 
 ```
 var userInfo = (name: "Stive", true, age: 22)
-
 userInfo.name = 22 // 修改了数据类型报错 error: cannot assign value of type 'Int' to type 'String'
 ```
